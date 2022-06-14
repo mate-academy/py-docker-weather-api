@@ -1,3 +1,7 @@
-# TODO: add initial code
-def hello_world():
-    return "Hello, world!"
+def get_weather():
+    # write your code here
+    pass
+
+
+if __name__ == "__main__":
+    get_weather()

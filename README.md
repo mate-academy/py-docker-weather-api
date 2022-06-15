@@ -19,7 +19,7 @@ So in this task requirements are next:
 - The script for getting & printing weather info must be located at `app/main.py`;
 - This service must be Dockerized using only `Dockerfile` (`docker-compose.yml` here is forbidden);
 - The image of the service should be as thin as possible;
-- Use `.dockerignore` file not to add unnecessary stuff to docker image.
+- Use `.dockerignore` file to avoid adding unnecessary stuff to docker image;
 - You must use `requests` module for interacting with Weather API;
 - You must publish your image to Docker Hub and check it is available for the world;
 - You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`. 

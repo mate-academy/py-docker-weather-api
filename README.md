@@ -24,6 +24,7 @@ So in this task requirements are next:
 - You must publish your image to Docker Hub and check it is available for the world;
 - You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`. 
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
-  And to pass environment variables to docker container use `-e` flag.
-- You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  And to path environment variables to docker container use `-e` flag.
+- COMMANDS:
+`docker pull serhii1leonenko/docker-py-weather-api`
+`run -e API_KEY="your API_KEY" serhii1leonenko/docker-py-weather-api`

@@ -2,9 +2,7 @@ import os
 import requests
 
 
-def get_weather():
-    city = "Paris"
-    api_key = os.environ["API_KEY"]
+def get_api_response(city: str, api_key: str):
     payload = {
         "key": api_key,
         "q": city
@@ -14,7 +12,15 @@ def get_weather():
     print(f"Performing request to Weather Api for city {city}...")
 
     response = requests.get(url, params=payload)
-    response_data = response.json()
+
+    return response.json()
+
+
+def get_weather():
+    city = "Paris"
+    api_key = os.environ["API_KEY"]
+
+    response_data = get_api_response(city, api_key)
 
     returned_city = response_data["location"]["name"]
     country = response_data["location"]["country"]

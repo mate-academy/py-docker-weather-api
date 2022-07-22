@@ -1,8 +1,7 @@
-FROM python:3.10.5
+FROM python:3.10.5-alpine
 LABEL maintainer = "belochard@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
-ENV API_KEY "b45afc4e7b2a4bf9a02151752222107"
 
 WORKDIR app/
 

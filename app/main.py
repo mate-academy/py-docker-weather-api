@@ -9,8 +9,9 @@ def get_weather(url: str, params: dict):
 
     city = params.get("q")
     current_time_city = response.get("location").get("localtime")
-    temperature = response.get("current").get("temp_f")
+    temperature = response.get("current").get("temp_c")
     last_update_temp = response.get("current").get("last_updated")
+    print("Performing requests to Weather API ...")
     return f"City : {city} \n" \
            f"Current datetime: {current_time_city} \n" \
            f"Temperature: {temperature} C\n" \

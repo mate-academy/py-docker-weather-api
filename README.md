@@ -27,3 +27,7 @@ So in this task requirements are next:
   And to path environment variables to docker container use `-e` flag.
 - You must *modify* this line with correct command to pull your image:
   COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+
+## Test
+You can run this docker using command
+- sudo docker run -e API_KEY=828f09aa85dc4173bc0103345222107 bohdan01/docker-weather-api

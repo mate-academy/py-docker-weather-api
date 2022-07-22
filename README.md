@@ -29,5 +29,8 @@ So in this task requirements are next:
   COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
 
 ## Test
-You can run this docker using command
+You can pull this docker image from my repository!
+- https://hub.docker.com/r/bohdan01/docker-weather-api
+
+Also, you can run this docker using command:
 - sudo docker run -e API_KEY=828f09aa85dc4173bc0103345222107 bohdan01/docker-weather-api

@@ -26,4 +26,3 @@ So in this task requirements are next:
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
   And to pass environment variables to docker container use `-e` flag.
   COMMAND=`docker pull magus/weather`.
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.

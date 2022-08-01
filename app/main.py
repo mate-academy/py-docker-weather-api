@@ -2,7 +2,6 @@ import requests
 import json
 import os
 
-# API_KEY=661e47b4f1a34d989df132324222107
 API_KEY = os.environ.get("API_KEY")
 API_URL = "https://api.weatherapi.com/v1/current.json"
 

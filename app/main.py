@@ -18,7 +18,7 @@ def get_weather():
         current_temperature = weather_in_city["temp_c"]
         print(f"Temperature in {CITY_NAME} {current_temperature} °С")
     else:
-        print(" City Not Found ")
+        print("Сheck that you entered all the data correctly")
 
 
 if __name__ == "__main__":

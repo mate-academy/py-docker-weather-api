@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "manage.py", "runserver"]
+CMD ["python", "app/main.py", "runserver"]

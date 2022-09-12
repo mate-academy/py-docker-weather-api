@@ -3,9 +3,10 @@ import time
 
 import requests
 
-
 URL = "http://api.weatherapi.com/v1/current.json"
 KEY = os.getenv("API_KEY")
+
+
 def get_weather():
     params = {
         "key": KEY,

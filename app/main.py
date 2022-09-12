@@ -5,13 +5,13 @@ import requests
 
 
 def get_weather():
-    url = "http://api.weatherapi.com/v1/current.json"
-    key = os.getenv("API_KEY")
+    URL = "http://api.weatherapi.com/v1/current.json"
+    KEY = os.getenv("API_KEY")
     params = {
-        "key": key,
+        "key": KEY,
         "q": "Paris"
     }
-    res = requests.get(url, params=params).json()
+    res = requests.get(URL, params=params).json()
     city, country = res["location"]["name"], res["location"]["country"]
     localtime = res["location"]["localtime"]
     weather = res["current"]["temp_c"]

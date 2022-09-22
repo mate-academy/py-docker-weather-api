@@ -1,6 +1,21 @@
+import requests
+import os
+
+KEY = os.environ["API_KEY"]
+CITY = "Paris"
+URL = f"https://api.weatherapi.com/v1/current.json?key={KEY}&q={CITY}"
+
+
 def get_weather():
-    # write your code here
-    pass
+    data = requests.get(URL, KEY).json()
+
+    date_time = data["location"]["localtime"]
+    temperature = data["current"]["temp_c"]
+
+    print(
+        f"In Paris {date_time} "
+        f"air temperature is {temperature} °C"
+    )
 
 
 if __name__ == "__main__":

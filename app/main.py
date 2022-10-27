@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-KEY = os.environ.get("API_KEY")
+API_KEY = os.environ.get("API_KEY")
 CITY = "Paris"
 API_URL = "http://api.weatherapi.com/v1/current.json"
 
@@ -14,7 +14,7 @@ def get_weather() -> None:
 
     response = requests.get(
         API_URL,
-        params={"key": {KEY}, "q": {CITY}}
+        params={"key": {API_KEY}, "q": {CITY}}
     )
 
     if response.status_code == 200:
@@ -27,7 +27,7 @@ def get_weather() -> None:
             f"{info['current']['condition']['text']}"
         )
 
-    print("You need to check your API_URL, KEY and CITY")
+    print("You need to check your API_URL, API_KEY and CITY")
 
 
 if __name__ == "__main__":

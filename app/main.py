@@ -20,7 +20,8 @@ def get_weather() -> None:
         }
     ).json()
 
-    print(f"City: {CITY}; Current temperature: {res['current']['temp_c']} Celsius; "
+    print(f"City: {CITY}; Current temperature: "
+          f"{res['current']['temp_c']} Celsius; "
           f"Local time: {res['location']['localtime']}; "
           f"Condition: {res['current']['condition']['text']};")
 

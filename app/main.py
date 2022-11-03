@@ -11,12 +11,15 @@ prefer_city = "Paris"
 
 def get_weather() -> None:
     result = requests.get(
-        f"http://api.weatherapi.com/v1/current.json?key={key}&q={prefer_city}")
+        f"http://api.weatherapi.com/v1/current.json?"
+        f"key={key}&q={prefer_city}")
+
     res = json.loads(result.text)
 
     city = f"{res['location']['name']}/{res['location']['country']} "
     localtime = f"{res['location']['localtime']} "
-    weather = f"Weather: {res['current']['temp_c']} Celsius, {res['current']['condition']['text']}"
+    weather = f"Weather: {res['current']['temp_c']} Celsius, " \
+              f"{res['current']['condition']['text']}"
 
     for_printing = city + localtime + weather
 

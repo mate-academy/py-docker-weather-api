@@ -2,17 +2,16 @@ import os
 import requests
 import json
 
-key = os.environ.get("API_KEY")
-prefer_city = "Paris"
+KEY = os.environ.get("API_KEY")
+PREFER_CITY = "Paris"
+CURRENT_WEATHER_URL = "http://api.weatherapi.com/v1/current.json?"
 
 # check it on DockerHub
 # https://hub.docker.com/r/monobod/py-docker-weather
 
 
 def get_weather() -> None:
-    result = requests.get(
-        f"http://api.weatherapi.com/v1/current.json?"
-        f"key={key}&q={prefer_city}")
+    result = requests.get(CURRENT_WEATHER_URL + f"key={KEY}&q={PREFER_CITY}")
 
     res = json.loads(result.text)
 

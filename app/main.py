@@ -8,7 +8,7 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def full_url(base: str, key: str, city: str) -> str:
-    return base + key + "&q=" + city + "&aqi=no"
+    return f"{base}{key}&q={city}&aqi=no"
 
 
 def get_weather() -> None:

@@ -8,6 +8,8 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
+    print(f"Performing request to Weather API for city {CITY}...")
+
     url = BASE_URL + API_KEY + "&q=" + CITY
     result = requests.get(url)
 

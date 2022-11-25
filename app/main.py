@@ -31,9 +31,10 @@ def get_weather() -> None:
             f"was updated at {last_updated.hour}:{last_updated.minute}"
         )
     else:
+        error = data["error"]["message"]
         print(
             f"Ooops, something goes wrong. "
-            f"Seems like {data['error']['message']}"
+            f"Seems like {error}"
         )
 
 

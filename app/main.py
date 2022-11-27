@@ -16,11 +16,16 @@ def get_weather() -> None:
     received = json.loads(response.content)
 
     print(
-        "###################################__WEATHER__###################################\n"
-        f"{received['location']['name']} ({received['location']['localtime']})\n"
+        "###################################"
+        "__WEATHER__"
+        "###################################\n"
+        f"{received['location']['name']} "
+        f"({received['location']['localtime']})\n"
         f"Temperature: {received['current']['temp_c']} °C\n"
         f"{received['current']['condition']['text']}\n"
-        "#################################################################################"
+        "####################################"
+        "#########"
+        "####################################"
     )
 
 

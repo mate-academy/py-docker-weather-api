@@ -16,7 +16,8 @@ def get_weather() -> None:
     payload = {"key": API_KEY, "q": location}
 
     # 'r' is the name used in requests docs. Not a bad idea either.
-    r = requests.get(BASE_URL + REALTIME_ENDPOINT, params=payload)
+    # It turns out that flake8 doesn't think so. Well, what can I do?
+    r = requests.get(BASE_URL + REALTIME_ENDPOINT, params=payload) # noqa VNE001
 
     data = json.loads(r.content)
     location_data = data["location"]

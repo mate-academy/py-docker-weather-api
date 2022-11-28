@@ -12,11 +12,14 @@ def get_weather() -> None:
     try:
         info = result.json()
         location = f"{info['location']['name']}/{info['location']['country']}"
-        localtime = info['location']['localtime']
-        temperature = info['current']['temp_c']
-        condition = info['current']['condition']['text']
+        localtime = info["location"]["localtime"]
+        temperature = info["current"]["temp_c"]
+        condition = info["current"]["condition"]["text"]
         print("Performing request to Weather API for city Paris...")
-        print(f"{location} {localtime} Weather: {temperature} Celsius, {condition}")
+        print(
+            f"{location} {localtime} "
+            f"Weather: {temperature} Celsius, {condition}"
+        )
     except Exception:
         raise Exception("Something went wrong...")
 

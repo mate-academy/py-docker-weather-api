@@ -19,7 +19,8 @@ def get_weather() -> None:
         current = res["current"]
 
         print(
-            f"And now for the weather in {location['region']}, {location['country']}:\n"
+            f"And now for the weather in "
+            f"{location['region']}, {location['country']}:\n"
             f"Temperature is {current['temp_c']} Celsius. "
             f"Feels like {current['feelslike_c']} degrees.\n"
             f"It's {(current['condition']['text'].lower())} now.\n"

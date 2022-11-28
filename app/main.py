@@ -18,7 +18,7 @@ def get_weather() -> None:
     print(f"Performing request to Weather API for {city}...")
     print(
         f"For {city} in {country} "
-        f"the temperature is {temperature}°C and the conditions are {conditions}."
+        f"the temperature is {temperature}°C and it is {conditions} now."
     )
 
 

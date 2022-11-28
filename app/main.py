@@ -4,13 +4,13 @@ import requests
 
 URL = "http://api.weatherapi.com/v1/current.json/?"
 API_KEY = os.environ.get("API_KEY")
-FILTERING = "Paris"
-result = requests.get(URL + f"q={FILTERING}")
+CITY = "Paris"
+parameters = {"key": API_KEY, "q": CITY}
 
 
 def get_weather() -> None:
     try:
-        info = result.json()
+        info = requests.get(URL, parameters).json()
         location = f"{info['location']['name']}/{info['location']['country']}"
         localtime = info["location"]["localtime"]
         temperature = info["current"]["temp_c"]

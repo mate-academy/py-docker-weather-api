@@ -17,7 +17,7 @@ def get_weather() -> None:
 
     print(
         f"""
-        {received_data['location']['name']} 
+        {received_data['location']['name']}
         ({received_data['location']['localtime']})
         Temperature: {received_data['current']['temp_c']} °C
         Condition: {received_data['current']['condition']['text']}

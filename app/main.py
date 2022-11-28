@@ -5,10 +5,11 @@ import requests
 URL = "http://api.weatherapi.com/v1/current.json/?"
 FILTERING = "Paris"
 API_KEY = os.environ.get("API_KEY")
-response = requests.get(URL + f"q={FILTERING}")
 
 
 def get_weather() -> None:
+    response = requests.get(URL + f"q={FILTERING}")
+
     if response.status_code == 200:
         data = response.json()
         main = data["main"]

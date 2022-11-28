@@ -1,7 +1,6 @@
 import os
-
 import requests
-from pprint import pprint
+
 
 WEATHER_API = os.environ.get("API_KEY", "1a61cecd1bb949cfa8d150443222811")
 CURRENT_WEATHER_URL = "https://api.weatherapi.com/v1/current.json"

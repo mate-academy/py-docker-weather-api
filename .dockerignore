@@ -1,0 +1,10 @@
+venv/
+env/
+.venv/
+.idea
+.env
+.git
+.gitignore
+.gitattributes
+.python-version
+

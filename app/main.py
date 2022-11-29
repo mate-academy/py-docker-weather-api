@@ -20,8 +20,8 @@ def get_weather() -> None:
             f"{location} {localtime} "
             f"Weather: {temperature} Celsius, {condition}"
         )
-    except Exception:
-        raise Exception("Something went wrong...")
+    except KeyError:
+        raise KeyError("Something went wrong...")
 
 
 if __name__ == "__main__":

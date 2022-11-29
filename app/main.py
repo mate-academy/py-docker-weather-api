@@ -12,10 +12,10 @@ def get_weather() -> None:
     res = requests.get(WEATHER_URL, params=PARAMS).json()
 
     location = f'{res["location"]["name"]}/{res["location"]["country"]}'
-    localtime = f'{res["location"]["localtime"]}'
-    temperature = f'{res["current"]["temp_c"]}'
-    wind_speed = f'{res["current"]["wind_kph"]}'
-    condition = f'{res["current"]["condition"]["text"]}'
+    localtime = res["location"]["localtime"]
+    temperature = res["current"]["temp_c"]
+    wind_speed = res["current"]["wind_kph"]
+    condition = res["current"]["condition"]["text"]
 
     print(
         f"Now in {location} \n"

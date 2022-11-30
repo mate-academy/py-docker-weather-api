@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 
 import requests
 
@@ -15,13 +14,9 @@ def get_weather() -> None:
     if response.status_code == 200:
         city = data["location"]["name"]
         region = data["location"]["region"]
-        localtime = datetime.strptime(
-            data["location"]["localtime"], "%Y-%m-%d %H:%M"
-        )
+        localtime = data["location"]["localtime"]
         temp_c = data["current"]["temp_c"]
-        last_updated = datetime.strptime(
-            data["current"]["last_updated"], "%Y-%m-%d %H:%M"
-        )
+        last_updated = data["current"]["last_updated"]
         weather = data["current"]["condition"]["text"]
         print(
             f"Today in {city} {weather.lower()}"

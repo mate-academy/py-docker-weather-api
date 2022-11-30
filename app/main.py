@@ -14,13 +14,12 @@ def get_weather() -> None:
     response = requests.get(
         URL,
         params={"key": API_KEY, "q": CITY},
-    )
-    print(response.json())
-    city = response.json()["location"]["name"]
-    country = response.json()["location"]["country"]
-    temp = response.json()["current"]["temp_c"]
-    date = response.json()["location"]["localtime"]
-    condition = response.json()["current"]["condition"]["text"]
+    ).json()
+    city = response["location"]["name"]
+    country = response["location"]["country"]
+    temp = response["current"]["temp_c"]
+    date = response["location"]["localtime"]
+    condition = response["current"]["condition"]["text"]
     print(
         f"City: {city}, Country: {country}, "
         f"Temperature: {temp}, Date: {date}, Condition: {condition}"

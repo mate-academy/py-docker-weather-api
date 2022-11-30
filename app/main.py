@@ -20,10 +20,10 @@ def get_weather() -> None:
         weather = data["current"]["condition"]["text"]
         print(
             f"Today in {city} {weather.lower()}"
-            f" at {localtime.hour}:{localtime.minute}. "
+            f" at {localtime}. "
             f"Temperature is {int(temp_c)} Celsius degrees.\n"
             f"Weather for {region} region "
-            f"was updated at {last_updated.hour}:{last_updated.minute}"
+            f"was updated at {last_updated}"
         )
     else:
         error = data["error"]["message"]

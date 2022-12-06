@@ -2,12 +2,12 @@ import requests as requests
 
 URL = "https://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
-API_KEY="271b353fbbe744ddb39102709220512"
+API_KEY = "271b353fbbe744ddb39102709220512"
 
 
 def get_weather() -> None:
     try:
-        result = requests.get(URL, params={'q': FILTERING, 'key': API_KEY})
+        result = requests.get(URL, params={"q": FILTERING, "key": API_KEY})
         data = result.json()
         print(f'{data["location"]["name"]}/{data["location"]["country"]} '
               f'{data["location"]["localtime"]} '

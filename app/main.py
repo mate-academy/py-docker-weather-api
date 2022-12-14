@@ -5,9 +5,9 @@ import requests
 
 def get_weather() -> None:
 
-    API_KEY = os.environ.get("API_KEY")
-    CITY = "Paris"
-    URL = "http://api.weatherapi.com/v1/current.json"
+    API_KEY = os.environ.get("API_KEY") # noqa
+    CITY = "Paris" # noqa
+    URL = "http://api.weatherapi.com/v1/current.json" # noqa
 
     res = requests.get(URL, {"key": API_KEY, "q": CITY}).json()
 

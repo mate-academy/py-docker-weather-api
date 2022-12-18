@@ -13,21 +13,16 @@ def get_weather() -> None:
     response = requests.get(URL, params={"key": API_KEY,
                                          "q": CITY}).json()
 
-    city = response["location"]["name"]
-    country = response["location"]["country"]
-    temperature = response["current"]["temp_c"]
-    date = response["location"]["localtime"]
-    temp_feel_like = response["current"]["feelslike_c"]
-    humidity = response["current"]["humidity"]
-    wind_report = response["current"]["wind_mph"]
+    location = response["location"]
+    current = response["current"]
 
-    print(f"Country: {country}")
-    print(f"City: {city}")
-    print(f"Date: {date}")
-    print(f"Temperature: {temperature}")
-    print(f"Feel Like: {temp_feel_like}")
-    print(f"Humidity: {humidity}")
-    print(f"Wind Speed: {wind_report}")
+    print(f"Country: {location['country']}")
+    print(f"City: {location['name']}")
+    print(f"Date: {location['localtime']}")
+    print(f"Temperature: {current['temp_c']}")
+    print(f"Feel Like: {current['feelslike_c']}")
+    print(f"Humidity: {current['humidity']}")
+    print(f"Wind Speed: {current['wind_mph']}")
 
 
 if __name__ == "__main__":

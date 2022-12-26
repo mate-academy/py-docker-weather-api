@@ -11,7 +11,8 @@ and pushed to the dockerhub. Use [Weather API](https://www.weatherapi.com/docs/)
 data about the weather.
 
 The result of this task will be tested by the next commands:
-![img.png](result.png)
+![img.png](img.png)
+
 Of course, instead of `danylott` - it must be your docker id.
 
 So in this task requirements are next:

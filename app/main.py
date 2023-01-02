@@ -3,9 +3,11 @@ import requests
 from prettytable import PrettyTable
 
 
+URL = "https://api.weatherapi.com/v1/current.json?"
+FILTERING = "Paris"
+
+
 def get_weather() -> None:
-    URL = "https://api.weatherapi.com/v1/current.json?"
-    FILTERING = "Paris"
     payload = {
         "q": FILTERING,
         "key": os.environ["API_KEY"]

@@ -9,7 +9,8 @@ def get_weather() -> None:
         "q": "Paris",
     }
 
-    request = requests.get("https://api.weatherapi.com/v1/current.json", params=data).json()
+    request = requests.get("https://api.weatherapi.com/v1/current.json",
+                           params=data).json()
 
     location = request["location"]
     current = request["current"]

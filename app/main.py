@@ -3,10 +3,11 @@ import os
 import requests
 
 
-def get_weather() -> None:
-    URL = os.environ["API_KEY"]
-    FILTERING = "Paris"
+URL = os.environ["API_KEY"]
+FILTERING = "Paris"
 
+
+def get_weather() -> None:
     data = {
         "key": URL,
         "q": FILTERING,

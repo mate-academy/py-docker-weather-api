@@ -4,9 +4,12 @@ import requests
 
 
 def get_weather() -> None:
+    URL = os.environ["API_KEY"]
+    FILTERING = "Paris"
+
     data = {
-        "key": os.environ["API_KEY"],
-        "q": "Paris",
+        "key": URL,
+        "q": FILTERING,
     }
 
     request = requests.get("https://api.weatherapi.com/v1/current.json",

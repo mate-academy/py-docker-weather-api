@@ -4,10 +4,11 @@ import os
 URL = "https://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 API_KEY = os.environ.get("API_KEY")
+params = F"{URL}?key={API_KEY}&q={CITY}&aqi=no"
 
 
 def get_weather() -> None:
-    response = requests.get(F"{URL}?key={API_KEY}&q={CITY}&aqi=no").json()
+    response = requests.get(params).json()
     city = response["location"]["name"]
     country = response["location"]["country"]
     localtime = response["location"]["localtime"]

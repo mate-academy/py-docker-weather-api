@@ -1,5 +1,7 @@
 import os
+
 import requests
+
 
 def get_weather() -> None:
     base_url = "http://api.weatherapi.com/v1/current.json"

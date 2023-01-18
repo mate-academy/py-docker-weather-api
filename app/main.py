@@ -6,13 +6,15 @@ load_dotenv()
 
 BASE_URL = "http://api.weatherapi.com/v1/current.json?"
 API_KEY = os.environ.get("API_KEY")
-CITY = "Kiev"
-print(API_KEY)
+CITY = "Paris"
 
 
 def get_weather(city: str = CITY, appi_key: str = API_KEY) -> print:
 
-    response = requests.get(BASE_URL + f"key={appi_key}&q={city}").json()
+    response = requests.get(
+        url=BASE_URL, params={"key": appi_key, "q": city}
+    ).json()
+
     get_city = response["location"]["name"]
     get_region = response["location"]["region"]
     get_country = response["location"]["country"]

@@ -2,18 +2,17 @@ from pprint import pprint
 import requests
 import os
 
+URL = "http://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
+
 
 def get_weather() -> None:
-    url = "http://api.weatherapi.com/v1/current.json"
-    filtering = "Paris"
-    # First I used uppercase as advise
-    # in best practice but flake8 did not pass
 
     querystring = {
         "key": os.environ["API_KEY"],
-        "q": filtering,
+        "q": FILTERING,
     }
-    response = requests.request("GET", url=url, params=querystring)
+    response = requests.request("GET", url=URL, params=querystring)
     pprint(response.json())
 
 

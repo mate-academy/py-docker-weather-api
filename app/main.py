@@ -2,15 +2,15 @@ import requests
 import os
 
 
-weather_site = "https://api.weatherapi.com/v1/current.json?key="
+weather_site = "https://api.weatherapi.com"
 
 
 def get_weather() -> None:
-    city = "Paris"
+    FILTERING = "Paris"
     api_key = os.environ["weatherapi_key"]
-    url = f"{weather_site}{api_key}&q={city}&aqi=no"
+    URL = f"{weather_site}/v1/current.json?key={api_key}"
 
-    data = requests.get(url, params={"city": city})
+    data = requests.get(f"{URL}&q={FILTERING}")
     data = data.json()
     city = data["location"]["name"]
     country = data["location"]["country"]

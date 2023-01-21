@@ -6,9 +6,9 @@ weather_site = "https://api.weatherapi.com"
 
 
 def get_weather() -> None:
-    FILTERING = "Paris"
+    FILTERING = "Paris" # noqa
     api_key = os.environ["weatherapi_key"]
-    URL = f"{weather_site}/v1/current.json?key={api_key}"
+    URL = f"{weather_site}/v1/current.json?key={api_key}" # noqa
 
     data = requests.get(f"{URL}&q={FILTERING}")
     data = data.json()

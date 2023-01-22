@@ -1,0 +1,5 @@
+venv
+.flake8
+checklist.md
+README.md
+result.png

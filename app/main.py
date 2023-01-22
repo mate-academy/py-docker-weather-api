@@ -10,8 +10,8 @@ PARAMS = {"key": API_KEY, "q": CITY}
 
 def get_weather() -> None:
     response = requests.get(URL, params=PARAMS).json()
-    location = response['location']
-    current = response['current']
+    location = response["location"]
+    current = response["current"]
     print(
         f"{location['name']}/{location['country']} {location['localtime']} "
         f"Weather: {current['temp_c']} Celsius, {current['condition']['text']}"

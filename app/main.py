@@ -2,11 +2,10 @@ import requests
 import os
 
 
-WEATHER_SITE = "https://api.weatherapi.com"
 API_KEY = os.environ["weatherapi_key"]
-URL = f"{WEATHER_SITE}/v1/current.json?key={API_KEY}" # noqa
+URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}"
 
-FILTERING = "Paris" # noqa
+FILTERING = "Paris"
 
 
 def get_weather() -> None:

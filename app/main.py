@@ -9,8 +9,9 @@ FILTERING = "Paris"
 
 
 def get_weather() -> None:
-    data = requests.get(f"{URL}&q={FILTERING}")
+    data = requests.get(URL, params={"q": FILTERING})
     data = data.json()
+
     city = data["location"]["name"]
     country = data["location"]["country"]
     temperature = data["current"]["temp_c"]

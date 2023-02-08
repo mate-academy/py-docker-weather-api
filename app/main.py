@@ -1,5 +1,6 @@
 from pprint import pprint
 import requests
+import os
 
 
 URL = "http://api.weatherapi.com/v1/current.json"

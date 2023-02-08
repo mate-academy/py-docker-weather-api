@@ -35,5 +35,5 @@ So in this task requirements are next:
 
 ```docker pull test_user/weather```
 </details>
-
+use pull request to access my submission "docker pull sunrises2929/weather-api"
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

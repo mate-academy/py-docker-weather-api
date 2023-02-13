@@ -9,7 +9,7 @@ API_KEY = os.getenv("API_KEY")
 
 
 def get_weather() -> None:
-    response = requests.get(URL + "key=" + API_KEY + f"&q={FILTERING}")
+    response = requests.get(f"{URL}key= {API_KEY}&q={FILTERING}")
     if response.status_code == 200:
         response = response.json()
         location = response["location"]

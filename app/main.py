@@ -1,7 +1,10 @@
-import requests
-from decouple import config
+from os import getenv
 
-API_KEY = config("API_KEY")
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+API_KEY = getenv("API_KEY")
 URL = "https://api.weatherapi.com/v1/current.json?"
 FILTERING = "Paris"
 

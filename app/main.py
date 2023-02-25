@@ -1,6 +1,26 @@
+import requests
+from time import sleep
+import os
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+    API_KEY = os.getenv("API_KEY")
+    URL = "http://api.weatherapi.com/v1/current.json?"
+    CITY = "Paris"
+    response = requests.get(URL + f"key={API_KEY}" + f"&q={CITY}")
+    if response.status_code == 200:
+        response = response.json()
+        print(f"Performing request for Weather Api for city {CITY}...")
+        sleep(1)
+        print(
+            f'{response["location"]["name"]}/'
+            f'{response["location"]["country"]}'
+            f' {response["location"]["localtime"]}'
+            f' Weather: {response["current"]["temp_c"]}'
+            f' Celsius, {response["current"]["condition"]["text"]}'
+        )
+    else:
+        print("Please check your API_KEY and be sure it`s right")
 
 
 if __name__ == "__main__":

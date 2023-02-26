@@ -20,7 +20,7 @@ def get_weather() -> None:
             f' Celsius, {response["current"]["condition"]["text"]}'
         )
     else:
-        print("Please check your API_KEY and be sure it`s right")
+        print("your API_KEY is wrong or Weather site unavailable")
 
 
 if __name__ == "__main__":

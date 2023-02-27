@@ -6,3 +6,7 @@
 venv/
 .pytest_cache/
 **__pycache__/
+.dockerignore
+Dockerfile
+result.png
+.github

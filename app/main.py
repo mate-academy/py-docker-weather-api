@@ -4,13 +4,14 @@ import requests
 import json
 
 URL = "http://api.weatherapi.com/v1/current.json?"
-FILTERING = "Paris"
 
 
-def get_weather() -> None:
-    print("Performing request to Weather API for city Paris...")
-    api_key = os.environ["API_KEY"]
-    request = requests.get(URL + f"q={FILTERING}" + f"&key={api_key}")
+def get_weather(query_params: dict) -> None:
+    query_params["key"] = os.environ["API_KEY"]
+    params = "&".join([f"{k}={v}" for k, v in query_params.items()])
+
+    print("Performing request to Weather API...")
+    request = requests.get(URL + params)
 
     data = json.loads(request.text)
     location = data["location"]
@@ -27,4 +28,4 @@ def get_weather() -> None:
 
 
 if __name__ == "__main__":
-    get_weather()
+    get_weather({"q": "Paris"})

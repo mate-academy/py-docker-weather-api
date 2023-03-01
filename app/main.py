@@ -8,10 +8,9 @@ URL = "http://api.weatherapi.com/v1/current.json?"
 
 def get_weather(query_params: dict) -> None:
     query_params["key"] = os.environ["API_KEY"]
-    params = "&".join([f"{k}={v}" for k, v in query_params.items()])
 
     print("Performing request to Weather API...")
-    request = requests.get(URL + params)
+    request = requests.get(URL, params=query_params)
 
     data = json.loads(request.text)
     location = data["location"]

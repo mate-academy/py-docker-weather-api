@@ -7,9 +7,6 @@ load_dotenv()
 
 
 def get_weather() -> None:
-    URL = "http://api.weatherapi.com/v1/current.json?"
-    CITY = "Paris"
-    API = os.environ.get("API_KEY")
     if API:
         result = requests.get(URL + f"key={API}&q={CITY}")
         temperature = result.json()["current"]["temp_c"]
@@ -24,4 +21,7 @@ def get_weather() -> None:
 
 
 if __name__ == "__main__":
+    URL = "http://api.weatherapi.com/v1/current.json?"
+    CITY = "Paris"
+    API = os.environ.get("API_KEY")
     get_weather()

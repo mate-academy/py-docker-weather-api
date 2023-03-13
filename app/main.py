@@ -15,7 +15,7 @@ def get_weather() -> None:
     Weather report in {location["name"]}, {location["country"]}.
     Temperature is {weather["temp_c"]}°C. Feels like {weather["feelslike_c"]}.
     Condition: {weather["condition"]["text"]}.
-    Wind report: 
+    Wind report:
         Speed is {weather["wind_kph"]} km/h (gusts to {weather["gust_kph"]}),
         Direction is {weather["wind_dir"]} ({weather["wind_degree"]}°).
     Pressure is {weather["pressure_mb"]} hPa.

@@ -20,6 +20,7 @@ def get_weather() -> None:
                f"{location['localtime']}"
                f"Weather: {current['temp_c']},"
                f"{current['condition']['text']}")
+    print(f"Performing request to weather API for city Paris")
     print(message)
 
 

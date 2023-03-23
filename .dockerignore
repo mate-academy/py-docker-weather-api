@@ -1,0 +1,7 @@
+venv/
+.idea/
+.github/
+README.md
+checklist.md
+result.png
+.flake8

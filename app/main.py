@@ -8,11 +8,11 @@ load_dotenv()
 BASE_URL = "https://api.weatherapi.com/v1/current.json"
 API_KEY = os.getenv("SECRET_API_KEY")
 CITY = "Paris"
+QUERY = {"key": f"{API_KEY}", "q": f"{CITY}"}
 
 
 def get_weather() -> None:
-    weather_paris = requests.get(f"{BASE_URL}?key={API_KEY}&q={CITY}")
-
+    weather_paris = requests.get(BASE_URL, params=QUERY)
     data = weather_paris.json()
 
     if weather_paris.status_code == 200:

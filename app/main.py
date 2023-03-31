@@ -9,11 +9,11 @@ URL = "http://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
 API_KEY = os.environ.get("API_KEY")
 
-PARAMS = f"?key={API_KEY}&q={FILTERING}"
+PARAMS = {"key": API_KEY, "q": FILTERING}
 
 
 def get_weather() -> None:
-    weather_response = requests.get(f"{URL}{PARAMS}")
+    weather_response = requests.get(URL, params=PARAMS)
     w_rj = weather_response.json()
 
     temperature_celsius = w_rj["current"]["temp_c"]

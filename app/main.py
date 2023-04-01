@@ -19,12 +19,9 @@ def get_weather() -> None:
     current_pressure = response["current"]["pressure_mb"]
     current_humidity = response["current"]["humidity"]
 
-    print("Temperature (in celsius) = " +
-          str(current_temperature) +
-          "\nAtmospheric pressure (in millibars) = " +
-          str(current_pressure) +
-          "\nHumidity (in percentage) = " +
-          str(current_humidity))
+    print(f"Temperature (in celsius) = {current_temperature} "
+          f"\nAtmospheric pressure (in millibars) = {current_pressure} "
+          f"\nHumidity (in percentage) = {current_humidity}")
 
 
 if __name__ == "__main__":

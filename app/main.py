@@ -7,7 +7,7 @@ load_dotenv()
 
 
 def get_weather() -> None:
-    API_KEY = os.environ.get("API_KEY", None)
+    API_KEY = os.environ["API_KEY"]
     URL = "https://api.weatherapi.com/v1/current.json?"
     CITY = "Paris"
 

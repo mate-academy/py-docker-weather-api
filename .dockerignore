@@ -1,0 +1,7 @@
+venv
+.env
+.flake8
+checklist.md
+README.md
+result.png
+.github

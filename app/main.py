@@ -1,9 +1,11 @@
 import requests
 
 
-def get_weather():
+def get_weather() -> None:
+    """Get weather data from an external API and print the result."""
     api_key = "b54a45c623e74410aed183111231004"
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q=Paris&lang=en"
+    url = ("http://api.weatherapi.com/v1/current.json?"
+           f"key={api_key}&q=Paris&lang=en")
 
     response = requests.get(url)
 

@@ -1,9 +1,11 @@
+import os
+
 import requests
 
 
 def get_weather() -> None:
     """Get weather data from an external API and print the result."""
-    api_key = "b54a45c623e74410aed183111231004"
+    api_key = os.environ.get("WEATHER_API_KEY")
     url = ("http://api.weatherapi.com/v1/current.json?"
            f"key={api_key}&q=Paris&lang=en")
 

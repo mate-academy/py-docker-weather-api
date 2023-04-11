@@ -11,17 +11,15 @@ def get_weather() -> None:
 
     response = requests.get(url)
 
-    if response.status_code == 200:
+    if response.status_code != 200:
+        print(f"Error: {response.status_code} - {response.reason}")
+    else:
         data = response.json()
 
         location = data["location"]["name"]
         temperature = data["current"]["temp_c"]
         condition = data["current"]["condition"]["text"]
         print(f"The weather in {location} is {temperature}°C and {condition}")
-    if response.status_code != 200:
-        print(f"Error: {response.status_code} - {response.reason}")
-    else:
-        print("Error: Could not retrieve weather data")
 
 
 if __name__ == "__main__":

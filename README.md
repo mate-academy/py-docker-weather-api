@@ -26,8 +26,7 @@ So in this task requirements are next:
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
-- You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+-COMMAND=`docker pull morty67/docker-weather`.
 
 <details>
   <summary><strong>Hint</strong></summary>

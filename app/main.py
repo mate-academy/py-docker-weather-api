@@ -10,6 +10,7 @@ URL_WITH_PARAMS = URL + f"&q={FILTER_CITY}"
 
 
 def get_weather() -> None:
+    print(f"Performing request to Weather API for city {FILTER_CITY}...")
     answer = requests.get(URL_WITH_PARAMS).json()
     country = answer["location"]["country"]
     city = answer["location"]["name"]
@@ -23,7 +24,6 @@ def get_weather() -> None:
         f"Weather: {temp_c} "
         f"Celsius, {condition}"
     )
-    print(f"Performing request to Weather API for city {FILTER_CITY}...")
     print(res)
 
 

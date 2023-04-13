@@ -9,7 +9,9 @@ PAYLOAD = {"key": API_KEY, "q": CITY}
 def get_weather() -> None:
     response = requests.get(URL, PAYLOAD).json()
 
-    print(f"{response['location']['name']}({response['location']['country']}): {response['current']['temp_c']}")
+    print(f"{response['location']['name']}"
+          f"({response['location']['country']}): "
+          f"{response['current']['temp_c']}")
 
 
 if __name__ == "__main__":

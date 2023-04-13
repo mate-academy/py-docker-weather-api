@@ -8,11 +8,11 @@ FILTERING = "Paris"
 
 
 def get_weather() -> None:
-    URl = "https://api.weatherapi.com/v1/current.json"
+    url = "https://api.weatherapi.com/v1/current.json"
 
     params = {"key": API_KEY, "q": FILTERING}
 
-    response = requests.get(URl, params=params)
+    response = requests.get(url, params=params)
 
     if response.status_code == 200:
         data: Dict = response.json()

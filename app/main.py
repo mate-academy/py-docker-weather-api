@@ -12,11 +12,14 @@ def get_weather() -> None:
     if response.status_code == 200:
         data = response.json()
 
-        print(f"Location: {data['location']['name']}, {data['location']['country']}"
+        print(f"Location: {data['location']['name']},"
+              f" {data['location']['country']}"
               f" (local date/time: {data['location']['localtime']})\n"
-              f"Temperature: {data['current']['temp_c']} Celsius / {data['current']['temp_f']} Fahrenheit"
+              f"Temperature: {data['current']['temp_c']} Celsius"
+              f" / {data['current']['temp_f']} Fahrenheit"
               f" |-> {data['current']['condition']['text']}\n"
-              f"Wind speed: {data['current']['wind_kph']} kilometers per hours")
+              f"Wind speed: {data['current']['wind_kph']}"
+              f" kilometers per hours")
 
     print("Recheck url and params in 'get' method")
 

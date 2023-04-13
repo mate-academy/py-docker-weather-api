@@ -17,5 +17,6 @@ def get_weather() -> None:
         f"Time Zone: {data['location']['tz_id']}"
     )
 
+
 if __name__ == "__main__":
     get_weather()

@@ -1,0 +1,2 @@
+class BadWeatherApiRequestError(Exception):
+    pass

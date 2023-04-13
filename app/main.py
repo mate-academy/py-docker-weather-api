@@ -16,12 +16,7 @@ def get_weather() -> None:
             city = data["location"]["name"]
             temperature = data["current"]["temp_c"]
             condition = data["current"]["condition"]["text"]
-            print(
-                f"{country}"
-                f"\n{city}"
-                f"\n{round(temperature)}°C"
-                f"\n{condition}"
-            )
+            print(f"{country}\n{city}\n{round(temperature)}°C\n{condition}")
 
 
 if __name__ == "__main__":

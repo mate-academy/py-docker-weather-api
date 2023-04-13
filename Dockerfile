@@ -8,7 +8,6 @@ WORKDIR app/
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-ENV API_KEY=${API_KEY}
 
 COPY . .
 

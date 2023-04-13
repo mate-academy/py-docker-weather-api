@@ -8,8 +8,6 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
-    url = URL + f"?key={API_KEY}" + "&" + f"q={FILTERING}" + "&" + "aqi=no"
-    print(url)
     result = requests.get(
         URL + f"?key={API_KEY}" + "&" + f"q={FILTERING}" + "&" + "aqi=no"
     )

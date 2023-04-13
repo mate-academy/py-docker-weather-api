@@ -6,14 +6,13 @@ import requests
 API_KEY = os.getenv("API_KEY")
 
 FILTER = "Paris"
+URL = "https://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
-    url = "https://api.weatherapi.com/v1/current.json"
-
     params = {"key": API_KEY, "q": FILTER}
 
-    response = requests.get(url, params=params)
+    response = requests.get(URL, params=params)
 
     print(response.content)
 

@@ -1,9 +1,6 @@
 FROM python:3.11.2-slim
 LABEL maintainer="rybenchukv@gmail.com"
 
-ENV PYTHONUNBUFFERED 1
-
-
 WORKDIR app/
 
 COPY requirements.txt requirements.txt

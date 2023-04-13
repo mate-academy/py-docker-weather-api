@@ -14,5 +14,6 @@ def get_weather() -> None:
 
     print(response.content)
 
+
 if __name__ == "__main__":
     get_weather()

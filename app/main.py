@@ -9,17 +9,19 @@ CITY = "Paris"
 
 def get_weather() -> None:
     if all([URL, API_KEY, CITY]):
-        r = requests.get(URL, params={"key": {API_KEY}, "q": {CITY}})
-        if r.status_code == 200:
-            data = r.json()
+        res = requests.get(URL, params={"key": {API_KEY}, "q": {CITY}})
+        if res.status_code == 200:
+            data = res.json()
             country = data["location"]["country"]
             city = data["location"]["name"]
             temperature = data["current"]["temp_c"]
             condition = data["current"]["condition"]["text"]
-            print(f"{country}" 
-                  f"\n{city}" 
-                  f"\n{round(temperature)}°C" 
-                  f"\n{condition}")
+            print(
+                f"{country}"
+                f"\n{city}"
+                f"\n{round(temperature)}°C"
+                f"\n{condition}"
+            )
 
 
 if __name__ == "__main__":

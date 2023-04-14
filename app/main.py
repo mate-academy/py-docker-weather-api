@@ -17,7 +17,7 @@ def get_weather() -> None:
     print(f"Performing request to Weather API for city {FILTERING}...")
     print(
         (
-            f"{location['country']}/"
+            f"{location['country'] }"
             f"{location['name']} "
             f"{location['localtime']} "
             f"Weather: {current['temp_c']} "

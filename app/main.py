@@ -1,4 +1,5 @@
 import os
+from pprint import pprint
 
 import requests
 
@@ -14,7 +15,7 @@ def get_weather() -> None:
 
     response = requests.get(URL, params=params)
 
-    print(response.content)
+    pprint(response.content)
 
 
 if __name__ == "__main__":

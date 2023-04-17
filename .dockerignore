@@ -1,4 +1,5 @@
 venv
 result.png
 .flake8
-.github
+.git*
+*docker*

@@ -3,16 +3,15 @@ import requests
 
 
 URL = "http://api.weatherapi.com/v1/current.json"
+KEY = os.environ.get("API_KEY")
+CITY = "Paris"
 
 
 def get_weather() -> None:
 
-    key = os.environ.get("API_KEY")
-    city = "Paris"
+    print(f"Performing request to Weather API for city {CITY}...")
 
-    print(f"Performing request to Weather API for city {city}...")
-
-    response = requests.get(URL, params={"key": key, "q": city}).json()
+    response = requests.get(URL, params={"KEY": KEY, "q": CITY}).json()
 
     print(
         f"{response['location']['name']}/{response['location']['country']} "

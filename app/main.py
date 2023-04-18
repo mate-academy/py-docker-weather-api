@@ -1,7 +1,19 @@
-def get_weather() -> None:
-    # write your code here
-    pass
+import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+def get_weather() -> str:
+    key = os.environ.get("KEY")
+    FILTERING = "Paris"
+    URL = "http://api.weatherapi.com/v1/current.json?key="
+    response = requests.get(URL + f"{key}&q=" + f"{FILTERING}&api=no")
+    weather_data = response.json()
+    temperature = weather_data.get("current")["temp_c"]
+    return f"The temperature in {FILTERING} is {temperature} degrees Celsius"
 
 
 if __name__ == "__main__":
-    get_weather()
+    print(get_weather())

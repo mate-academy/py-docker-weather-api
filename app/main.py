@@ -5,6 +5,7 @@ CITY = "Paris"
 API_KEY = os.environ["API_KEY"]
 URL = "http://api.weatherapi.com/v1/current.json"
 
+
 def get_weather() -> None:
     params = {"q": CITY, "key": API_KEY}
     response = requests.get(

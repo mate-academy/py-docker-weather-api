@@ -2,16 +2,14 @@ import os
 import requests
 
 API_KEY = os.environ.get("API_KEY")
-if not API_KEY:
-    raise ValueError("API_KEY not found")
-FILTERING = "Paris"
+CITY = "Paris"
 URL = "https://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
     params = {
         "key": API_KEY,
-        "q": FILTERING,
+        "q": CITY,
     }
     response = requests.get(URL, params=params)
     response.raise_for_status()

@@ -9,7 +9,7 @@ CITY = "Paris"
 def get_weather() -> None:
     url = "https://api.weather.com/v1/current.json"
 
-    params = {"key": API_KEY, "q": FILTERING}
+    params = {"key": API_KEY, "q": CITY}
 
     response = requests.get(url, params=params)
 

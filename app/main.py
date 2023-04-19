@@ -1,6 +1,19 @@
+import os
+
+import requests
+
+API_KEY = os.getenv("API_KEY")
+URL = "http://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+
+    params = {"key": API_KEY, "q": FILTERING}
+
+    response = requests.get(URL, params=params)
+
+    print(response.content)
 
 
 if __name__ == "__main__":

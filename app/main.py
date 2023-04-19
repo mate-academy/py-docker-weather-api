@@ -3,7 +3,7 @@ import os
 import requests
 
 API_KEY = os.getenv("API_KEY")
-FILTERING = "Paris"
+CITY = "Paris"
 
 
 def get_weather() -> None:

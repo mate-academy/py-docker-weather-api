@@ -8,7 +8,7 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
-    params = {'key': API_KEY, 'q': FILTERING, 'aqi': 'no'}
+    params = {"key": API_KEY, "q": FILTERING, "aqi": 'no'}
     result = requests.get(URL, params=params)
 
     if result.status_code == 200:

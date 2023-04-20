@@ -16,7 +16,7 @@ result = requests.get(URL + f"q={FILTERING}")
 
 Bad example:
 ```python   
-result = requests.get("http://api.weatherapi.com/?q=Kyiv"")
+result = requests.get("http://api.weatherapi.com/?q=Kyiv")
 ```
 
 ### 2. Use uppercase style for constants' names

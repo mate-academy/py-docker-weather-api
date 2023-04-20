@@ -1,6 +1,5 @@
 import os
 import requests
-# 3e82112350fd46cd8d954441231404
 
 LOCATION = "Paris"
 API_KEY = os.getenv("API_KEY")

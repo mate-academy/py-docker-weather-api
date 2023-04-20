@@ -8,9 +8,9 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
-    result = requests.get(
-        URL + f"?key={API_KEY}" + "&" + f"q={FILTERING}" + "&" + "aqi=no"
-    )
+    params = {'key': API_KEY, 'q': FILTERING, 'aqi': 'no'}
+    result = requests.get(URL, params=params)
+
     if result.status_code == 200:
         weather = result.json()
         temperature = weather["current"]["temp_c"]

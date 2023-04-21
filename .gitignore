@@ -1,8 +1,9 @@
 .idea/
 .vscode/
 *.iml
-.env
+venv/.env
 .DS_Store
 venv/
 .pytest_cache/
 **__pycache__/
+.env

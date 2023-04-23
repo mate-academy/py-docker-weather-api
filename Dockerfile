@@ -1,4 +1,4 @@
-FROM python:3.10.4
+FROM python:3.10.4-slim
 LABEL maintainer="zenion@ukr.net"
 
 ENV PYTHONUNBUFFERED 1

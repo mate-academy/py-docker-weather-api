@@ -1,0 +1,7 @@
+venv
+.env
+.flake8
+checklist.md
+result.png
+.pytest_cache/
+**__pycache__/

@@ -7,16 +7,19 @@ URL = "http://api.weatherapi.com/v1/current.json?"
 
 
 def get_weather() -> None:
-    response = requests.get(f"{URL}key={API_KEY}&q={LOCATION}")
-    data = response.json()
 
     print(f"Performing request to Weather API for city {LOCATION}...")
-    location = data.get("location")
-    current = data.get("current")
+    params = {"key": API_KEY, "q": LOCATION}
+    response = requests.get(URL, params=params).json()
+
+    country = response["location"]["country"]
+    _datetime = response["location"]["localtime"]
+    temperature = response["current"]["temp_c"]
+    condition = response["current"]["condition"]["text"]
+
     print(
-        f"{location.get('name')}/{location.get('country')} "
-        f"{location.get('localtime')} Weather: {current.get('temp_c')} "
-        f"Celsius, {current.get('condition').get('text')}"
+        f"{country}/{LOCATION} {_datetime} "
+        f"Weather: {temperature} Celsius, {condition}"
     )
 
 

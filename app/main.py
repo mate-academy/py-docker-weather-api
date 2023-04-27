@@ -6,17 +6,18 @@ load_dotenv()
 
 
 def get_weather() -> None:
-    api_key = os.environ.get("API_KEY")
-    city = "Paris"
+    API_KEY = os.environ.get("API_KEY")
+    URL = "https://api.weatherapi.com/v1/current.json?"
+    FILTERING = "Paris"
 
-    response = requests.get(
-        f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
-    )
+    response = requests.get(URL + f"key={API_KEY}&q={FILTERING}")
 
     if response.status_code == 200:
         data = response.json()
-        country = data["location"]["country"]
+        location = data["location"]
         current = data["current"]
+        city = location["name"]
+        country = location["country"]
         date = current["last_updated"]
         temperature = current["temp_c"]
         condition = current["condition"]["text"]
@@ -24,7 +25,6 @@ def get_weather() -> None:
             f"{city}/{country} {date} "
             f"Weather: {temperature} Celsius, {condition}"
         )
-
     else:
         print("Failed to fetch weather data")
 

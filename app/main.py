@@ -3,15 +3,20 @@ import os
 import requests
 
 
+URL = "https://api.weatherapi.com/v1/current.json"
+API_KEY = os.environ.get("API_KEY")
+
+
 def get_weather() -> None:
-    url = "https://api.weatherapi.com/v1/current.json"
-    api_key = os.environ.get("API_KEY")
     params = {
-        "key": api_key,
+        "key": API_KEY,
         "q": "Paris",
     }
 
-    response = requests.get(url, params=params)
+    response = requests.get(URL, params=params)
+
+    if response.status_code == 200:
+        data = response.json()
 
     if response.status_code == 200:
         data = response.json()

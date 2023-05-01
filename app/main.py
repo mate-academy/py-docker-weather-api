@@ -8,15 +8,13 @@ from dotenv import load_dotenv
 
 load_dotenv("./.env")
 KEY = os.getenv("API_KEY")
-BASE_URL = "http://api.weatherapi.com/v1"
-WEATHER_ENDPOINT = "/current.json"
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
 CITY = os.getenv("CITY", "Paris")
-CITY_WEATHER_ENDPOINT = f"{BASE_URL}{WEATHER_ENDPOINT}?key={KEY}&q={CITY}"
 
 
 def get_weather() -> None:
     """Get the weather for Paris"""
-    res = requests.get(CITY_WEATHER_ENDPOINT)
+    res = requests.get(BASE_URL, params={"key": KEY, "q": CITY})
 
     if res.status_code != http.HTTPStatus.OK:
         raise exceptions.BadWeatherApiRequestError()

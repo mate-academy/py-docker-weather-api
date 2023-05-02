@@ -3,13 +3,19 @@ import os
 from dotenv import load_dotenv
 
 FILTERING = "Paris"
-URL = "http://api.weatherapi.com/v1/current.json?key="
+URL = "http://api.weatherapi.com/v1/current.json"
 KEY = os.environ.get("KEY")
 load_dotenv()
 
 
 def get_weather() -> str:
-    response = requests.get(URL + f"{KEY}&q=" + f"{FILTERING}&api=no")
+    params = {
+        "key": KEY,
+        "q": FILTERING,
+        "api": "no"
+    }
+
+    response = requests.get(URL, params=params)
     weather_data = response.json()
     temperature = weather_data.get("current")["temp_c"]
     return f"The temperature in {FILTERING} is {temperature} degrees Celsius"

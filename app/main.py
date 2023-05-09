@@ -2,10 +2,11 @@ import os
 from dotenv import load_dotenv
 import requests
 
+
 load_dotenv()
 
-def get_weather() -> str:
-    # api_key = "52145937a2094a8d80f124722230705"
+
+def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     city = "Paris"
 

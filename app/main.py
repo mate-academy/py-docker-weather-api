@@ -10,8 +10,13 @@ FILTERING = "Paris"
 
 
 def get_weather() -> None:
+    params = {
+        "key": API_KEY,
+        "q": FILTERING
+    }
+
     result = requests.get(
-        f"{URL}key={API_KEY}&q={FILTERING}"
+        URL, params=params
     ).json()
 
     print(f"{result.get('location').get('name')}"

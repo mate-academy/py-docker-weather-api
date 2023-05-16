@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 def get_weather() -> None:
-    response = requests.get(BASE_URL)
+    response = requests.get(URL)
     data = response.json()
 
     text = data["current"]["condition"]["text"]
@@ -30,6 +30,6 @@ def get_weather() -> None:
 if __name__ == "__main__":
     load_dotenv()
     API_KEY = os.environ.get("API_KEY")
-    CITY = 'Paris'
-    BASE_URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
+    CITY = "Paris"
+    URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
     get_weather()

@@ -1,11 +1,12 @@
 import requests
 import os
 
+URL = "http://api.weatherapi.com/v1/current.json?"
+API_KEY = os.getenv("API_KEY")
+CITY = "Paris"
+
 
 def get_weather() -> None:
-    URL = "http://api.weatherapi.com/v1/current.json?"
-    API_KEY = os.getenv("API_KEY")
-    CITY = "Paris"
     response = requests.get(URL, params={"key": API_KEY, "q": CITY})
     if response.status_code == 200:
         response = response.json()

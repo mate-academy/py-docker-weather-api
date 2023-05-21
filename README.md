@@ -27,7 +27,15 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+- 
+- 
+  COMMAND=`docker pull pauldmaslov/docker-paris_weather:latest`.
+- 
+- if you want to use this programme:
+
+- step 1 = received API_KEY from https://www.weatherapi.com/
+- step 2 = create file ".env" in the root directory
+- step 3 = save API_KEY in .env
 
 <details>
   <summary><strong>Hint</strong></summary>

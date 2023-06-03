@@ -10,12 +10,12 @@ def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     url = (URL + f"key={api_key}&q={FILTERING}&lang=en")
 
-    res = requests.get(url)
+    result = requests.get(url)
 
-    if res.status_code != 200:
-        print(f"Error: {res.status_code} - {res.reason}")
+    if result.status_code != 200:
+        print(f"Error: {result.status_code} - {result.reason}")
     else:
-        data = res.json()
+        data = result.json()
         location = data["location"]["name"]
         temperature = data["current"]["temp_c"]
         condition = data["current"]["condition"]["text"]

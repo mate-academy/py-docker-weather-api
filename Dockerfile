@@ -1,5 +1,5 @@
-FROM python:3.10.4-slim
-LABEL maintainer="=kkononenko3@gmail.com"
+FROM python:3.9.0-slim
+LABEL maintainer="kkononenko3@gmail.com"
 
 ENV PYTHONUNBEFFERED 1
 

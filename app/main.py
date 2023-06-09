@@ -1,35 +1,35 @@
 import os
+from dotenv import load_dotenv
 
 import requests
-from dotenv import load_dotenv
+
+load_dotenv()
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
+API_KEY = os.getenv("API_KEY")
+CITY = "Paris"
 
 
 def get_weather() -> None:
-    response = requests.get(URL)
-    data = response.json()
 
-    text = data["current"]["condition"]["text"]
-    temp_c = data["current"]["temp_c"]
-    feelslike_c = data["current"]["feelslike_c"]
-    gust_kph = data["current"]["gust_kph"]
-    pressure_in = data["current"]["pressure_in"]
-    humidity = data["current"]["humidity"]
-    last_updated = data["current"]["last_updated"]
+    response = requests.get(
+        url=BASE_URL, params={"q": CITY, "key": API_KEY}
+    ).json()
 
-    print(
-        f"Current weather in Paris, France:\n"
-        f"{text}. "
-        f"Temperature: {temp_c}°C, feels like {feelslike_c}°C.\n"
-        f"Wind: {gust_kph} km/h \n"
-        f"Humidity: {humidity}% \n"
-        f"Precipitation: {pressure_in} mm \n"
-        f"Last updated: {last_updated}"
-    )
+    last_update = response["current"]["last_updated"]
+    text = response["current"]["condition"]["text"]
+    temp_c = response["current"]["temp_c"]
+    wind = response["current"]["wind_kph"]
+    wind_dir = response["current"]["wind_dir"]
+    pressure_mb = response["current"]["pressure_mb"]
+    humidity = response["current"]["humidity"]
+
+    print(f"Weather report for {last_update}:")
+    print(f"The weather in the {CITY} is {text}")
+    print(f"The temperature is {temp_c} celsius.")
+    print(f"The wind is {wind_dir}, speed {wind} km per hour.")
+    print(f"Pressure: {pressure_mb} mb.")
+    print(f"Humidity: {humidity}.")
 
 
 if __name__ == "__main__":
-    load_dotenv()
-    API_KEY = os.environ.get("API_KEY")
-    CITY = "Paris"
-    URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
     get_weather()

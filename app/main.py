@@ -27,4 +27,3 @@ def get_weather() -> None:
 if __name__ == "__main__":
     load_dotenv()
     get_weather()
-

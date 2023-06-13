@@ -31,7 +31,7 @@ So in this task requirements are next:
  To launch you will need:
  1. API-KEY, it can be obtained at https://www.weatherapi.com/my/
  2. You can use the command: $docker run -e API_KEY="your generated gey" -e CITY="your chosen city" weather-api 
- 3. docker-command = `docker pull soobig666/docker-weather-api:latest`. 
+ 3. docker-command: `docker pull soobig666/docker-weather-api:latest`. 
 
 <details>
   <summary><strong>Hint</strong></summary>

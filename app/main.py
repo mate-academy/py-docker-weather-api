@@ -3,8 +3,6 @@ import requests
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 
 def get_weather() -> None:
     """ Here is a func for getting weather info from Weather API """
@@ -27,4 +25,6 @@ def get_weather() -> None:
 
 
 if __name__ == "__main__":
+    load_dotenv()
     get_weather()
+

@@ -27,7 +27,11 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+
+ To launch you will need:
+ 1. API-KEY, it can be obtained at https://www.weatherapi.com/my/
+ 2. You can use the command: $docker run -e API_KEY="your generated gey" -e CITY="your chosen city" weather-api 
+ 3. docker-command: `docker pull soobig666/docker-weather-api:latest`. 
 
 <details>
   <summary><strong>Hint</strong></summary>

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 def get_weather() -> None:
     """ Here is a func for getting weather info from Weather API """
     api_key = os.getenv("API_KEY")
-    city = "Paris"
+    city = os.getenv("CITY")
     base_url = "https://api.weatherapi.com/v1/current.json"
 
     url = f"{base_url}?key={api_key}&q={city}"

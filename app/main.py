@@ -7,7 +7,7 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 FILTERING = "Barcelona"
-URL = f"https://api.weatherapi.com/v1/current.json"
+URL = "https://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
@@ -27,7 +27,8 @@ def get_weather() -> None:
         wind_kph = response["current"]["wind_kph"]
 
         print(
-            f"The weather in {city}, {country} (local time: {localtime}) is {condition}\n"
+            f"The weather in {city}, {country} "
+            f"(local time: {localtime}) is {condition}\n"
             f"Temperature: {temperature}°C\n"
             f"Feels like {feelslike_c}°C\n"
             f"Humidity: {humidity}\n"

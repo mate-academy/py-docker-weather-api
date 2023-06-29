@@ -8,7 +8,9 @@ CITY = os.getenv("CITY")
 
 
 def get_weather() -> str:
-    response = requests.get(URL, params={"key": "17a68495b6f84a4088b125435232906", "q": "Lviv"})
+    response = requests.get(
+        URL, params={"key": "17a68495b6f84a4088b125435232906", "q": "Lviv"}
+    )
     if response.status_code == 200:
         response = response.json()
         print(f"Performing request to Weather API {CITY}.")

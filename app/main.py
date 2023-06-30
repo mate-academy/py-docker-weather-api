@@ -6,16 +6,16 @@ load_dotenv()
 
 
 def get_weather() -> None:
-    API_KEY = os.environ.get("API_KEY")
-    FILTERING = "Paris"
+    api_key = os.environ.get("API_KEY")
+    filtering = "Paris"
 
     weather_url = (
         f"http://api.weatherapi.com/"
-        f"v1/current.json?key={API_KEY}&q={FILTERING}"
+        f"v1/current.json?key={api_key}&q={filtering}"
     )
     timezone_url = (
         f"http://api.weatherapi.com/"
-        f"v1/timezone.json?key={API_KEY}&q={FILTERING}"
+        f"v1/timezone.json?key={api_key}&q={filtering}"
     )
 
     weather_response = requests.get(weather_url)

@@ -3,7 +3,7 @@ LABEL maintainer="sashajanchuck13@gmail.com"
 
 ENV PYTHONUNBUFFERD 1
 
-WORKDIR /app
+WORKDIR app/
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt

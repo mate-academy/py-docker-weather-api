@@ -19,7 +19,8 @@ def get_weather() -> None:
 
         location = weather_data.get("location", {}).get("name")
         temperature = weather_data.get("current", {}).get("temp_c")
-        condition = weather_data.get("current", {}).get("condition", {}).get("text")
+        condition = weather_data.get("current", {})\
+            .get("condition", {}).get("text")
 
         print(
             f"The current weather in {location} is:\n"

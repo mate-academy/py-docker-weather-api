@@ -7,17 +7,19 @@ def get_weather() -> None:
     # write your code here
     api_key = os.getenv("API_KEY")
     response = requests.get(
-        (f"https://api.weatherapi.com/v1/"
-         f"current.json?q=Paris&"
-         f"key={api_key}")
+        (
+            f"https://api.weatherapi.com/v1/"
+            f"current.json?q=Paris&"
+            f"key={api_key}"
+        )
     )
 
     if response.status_code == 200:
         weather_data = response.json()
 
-        location = weather_data["location"]["name"]
-        temperature = weather_data["current"]["temp_c"]
-        condition = weather_data["current"]["condition"]["text"]
+        location = weather_data.get("location").get("name")
+        temperature = weather_data.get("current").get("temp_c")
+        condition = weather_data.get("current").get("condition").get("text")
 
         print(
             f"The current weather in {location} is:\n"

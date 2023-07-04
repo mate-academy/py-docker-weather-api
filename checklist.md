@@ -44,6 +44,4 @@ Bad example:
 ```
 FROM python:3.10.8
 ```
-Command:
 
-COMMAND=docker pull ivankorshunov/docker_weather_app

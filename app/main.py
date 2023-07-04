@@ -4,7 +4,6 @@ import requests
 
 
 def get_weather() -> None:
-    # write your code here
     api_key = os.getenv("API_KEY")
     response = requests.get(
         (

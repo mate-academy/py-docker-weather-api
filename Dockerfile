@@ -1,4 +1,3 @@
-#FROM python:3.11.0
 FROM python:3.11.0-alpine
 LABEL maintainer="ivan.korshunov.1997@gmail.com"
 # Who is responsible for this project.
@@ -15,5 +14,4 @@ COPY . .
 # Copy py-docker-weather-api2 directory to
 # app/ directory in container
 
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 CMD ["python3", "app/main.py"]

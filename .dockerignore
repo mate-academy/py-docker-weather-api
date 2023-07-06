@@ -1,0 +1,6 @@
+venv
+.env
+.idea
+.git
+Dockerfile
+.python-version

@@ -1,0 +1,8 @@
+venv/
+.git/
+.github/
+.gitignore
+checklist.md
+README.md
+result.png
+Dockerfile

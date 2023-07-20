@@ -9,7 +9,11 @@ URL = "http://api.weatherapi.com/v1/"
 FILTERING = "Paris"
 
 
-def get_weather(url, filtering, api_key) -> None:
+def get_weather(
+        url: str,
+        filtering: str,
+        api_key: str
+) -> None:
 
     endpoint = f"current.json?key={api_key}&q={filtering}"
     request_url = url + endpoint
@@ -18,7 +22,8 @@ def get_weather(url, filtering, api_key) -> None:
     if response.status_code == 200:
         weather_data = response.json()
         print(f"[+] Weather received successfully\n"
-              f"Location: {weather_data['location']['country']}/{weather_data['location']['name']}\n"
+              f"Location: {weather_data['location']['country']}"
+              f"/{weather_data['location']['name']}\n"
               f"Today is {weather_data['current']['condition']['text']}\n"
               f"{weather_data['current']['temp_c']} degrees Celsius")
     else:

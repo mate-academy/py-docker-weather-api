@@ -21,12 +21,12 @@ def get_weather() -> None:
     data = response.json()
 
     print(
-        f"The weather in {data['location'].get('name', 'Unknown')} "
-        f"{data['location'].get('country', 'Unknown')}:\n"
-        f"{data['location'].get('localtime', 'Unknown')}\n"
-        f"Weather: {data['current'].get('temp_c', 'Unknown')} Celsius,\n"
-        f"{data['current'].get('condition', {}).get('text', 'Unknown')}\n"
-        f"Wind: {data['current'].get('wind_kph', 'Unknown')} km/h\n"
+        f"The weather in {data['location'].get('name', 'no value')} "
+        f"{data['location'].get('country', 'no value')}:\n"
+        f"{data['location'].get('localtime', 'no value')}\n"
+        f"Weather: {data['current'].get('temp_c', 'no value')} Celsius,\n"
+        f"{data['current'].get('condition', {}).get('text', 'no value')}\n"
+        f"Wind: {data['current'].get('wind_kph', 'no value')} km/h\n"
     )
 
 

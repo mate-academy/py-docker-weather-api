@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 
-def get_weather(city_name, api_key) -> dict:
+def get_weather(city_name: str, api_key: str) -> dict:
     base_url = "https://api.weatherapi.com/v1/current.json"
     params = {"q": city_name, "key": api_key}
 

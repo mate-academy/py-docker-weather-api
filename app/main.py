@@ -7,20 +7,22 @@ FILTERING = "Paris"
 
 
 def get_weather() -> None:
-    result = requests.get(BASE_URL, params={
-        "key": API_KEY,
-        "q": FILTERING})
+    response = requests.get(
+        "http://api.weatherapi.com/v1/current.json",
+        params={
+            "key": os.environ.get("API_KEY"),
+            "q": "Paris"}
+    ).json()
 
-    if result.status_code == 200:
-        country = result.json()["location"]["country"]
-        city = result.json()["location"]["name"]
-        local_time = result.json()["location"]["localtime"]
-        temperature = result.json()["current"]["temp_c"]
-        condition = result.json()["current"]["condition"]["text"]
+    city = response.get("location")["name"]
+    country = response.get("location")["country"]
+    date = response.get("location")["localtime"]
+    temperature = response.get("current")["temp_c"]
+    condition = response.get("current")["condition"]["text"]
 
-        print(
-            f"{city}/{country} {local_time} "
-            f"Weather: {temperature} Celsius, {condition}")
+    print(
+        f"{city}/{country} {date} "
+        f"Weather: {temperature} Celsius, {condition}")
 
 
 if __name__ == "__main__":

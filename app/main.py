@@ -11,18 +11,20 @@ def get_weather() -> None:
         "http://api.weatherapi.com/v1/current.json",
         params={
             "key": os.environ.get("API_KEY"),
-            "q": "Paris"}
-    ).json()
+            "q": "Paris"
+        }
+    )
 
-    city = response.get("location")["name"]
-    country = response.get("location")["country"]
-    date = response.get("location")["localtime"]
-    temperature = response.get("current")["temp_c"]
-    condition = response.get("current")["condition"]["text"]
-
+    data = response.json()
+    city = data.get("location")["name"]
+    country = data.get("location")["country"]
+    date = data.get("location")["localtime"]
+    temperature = data.get("current")["temp_c"]
+    condition = data.get("current")["condition"]["text"]
     print(
         f"{city}/{country} {date} "
-        f"Weather: {temperature} Celsius, {condition}")
+        f"Weather: {temperature} Celsius, {condition}"
+    )
 
 
 if __name__ == "__main__":

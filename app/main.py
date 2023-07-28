@@ -3,11 +3,11 @@ import requests
 
 from dotenv import load_dotenv
 
+BASIC_URL = "http://api.weatherapi.com/v1"
+CITY = "Paris"
 
 load_dotenv()
-BASIC_URL = os.getenv("BASIC_URL")
 API_KEY = os.getenv("API_KEY")
-CITY = "Paris"
 
 
 def get_weather() -> None:

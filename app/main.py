@@ -15,15 +15,15 @@ def get_weather() -> None:
         + f"q={FILTERING}"
         + "&"
         + "aqi=no"
-    )
+    ).json()
 
     print("Performing request to Weather API for city Paris...")
     print(
-        f"{result.json()['location']['name']}/"
-        f"{result.json()['location']['country']} "
-        f"{result.json()['location']['localtime']} "
-        f"Weather: {result.json()['current']['temp_c']} Celsius, "
-        f"{result.json()['current']['condition']['text']}"
+        f"{result['location']['name']}/"
+        f"{result['location']['country']} "
+        f"{result['location']['localtime']} "
+        f"Weather: {result['current']['temp_c']} Celsius, "
+        f"{result['current']['condition']['text']}"
     )
 
 

@@ -13,7 +13,9 @@ FILTERING = "Paris"
 
 
 def get_weather() -> str:
-    current_weather = requests.get(BASE_URL + API_METHOD + f"?key={API_KEY}&q={FILTERING}").json()
+    current_weather = (
+        requests.get(BASE_URL + API_METHOD + f"?key={API_KEY}&q={FILTERING}").json()
+    )
     location = current_weather.pop("location")
     str_location = location.get("name") + "/" + location.get("country")
     data_time = location.get("localtime")

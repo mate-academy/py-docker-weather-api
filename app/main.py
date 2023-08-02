@@ -6,12 +6,12 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 WEATHER_URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
 
 
 def get_weather() -> None:
     print("WORLD CITIES WEATHER")
-    location = input("Enter town:")
-    payload = {"key": API_KEY, "q": location}
+    payload = {"key": API_KEY, "q": CITY}
     response = requests.get(WEATHER_URL, params=payload)
     if response.status_code == 200:
         country = response.json()["location"]["country"]
@@ -33,6 +33,7 @@ def get_weather() -> None:
         print(f"Last updated: {last_updated}")
     else:
         print("Page not found. Possibly incorrect data. Try again")
+
 
 if __name__ == "__main__":
     get_weather()

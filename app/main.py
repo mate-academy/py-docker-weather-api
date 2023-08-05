@@ -14,13 +14,13 @@ API_KEY = os.getenv("API_KEY")
 def get_weather() -> None:
     response = requests.get(
         REQUEST_URL,
-        params={"key": API_KEY, "q": "Paris"})
+        params={"key": API_KEY, "q": "Paris"}).json()
 
-    city = response.json()["location"]["name"]
-    country = response.json()["location"]["country"]
-    localtime = response.json()["location"]["localtime"]
-    temperature = response.json()["current"]["temp_c"]
-    condition = response.json()["current"]["condition"]["text"]
+    city = response.get("location").get("name")
+    country = response.get("location").get("country")
+    localtime = response.get("location").get("localtime")
+    temperature = response.get("current").get("temp_c")
+    condition = response.get("current").get("condition").get("text")
 
     print(f"{city}/{country} {localtime} "
           f"Weather: {temperature} Celsius, {condition}")

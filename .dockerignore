@@ -1,0 +1,7 @@
+venv/
+.github/
+README.md
+checklist.md
+result.png
+.flake8
+.gitignore

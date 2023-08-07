@@ -17,7 +17,7 @@ def get_weather() -> None:
     location = paris_weather_json["location"]
     current_weather = paris_weather_json["current"]
     current_condition = paris_weather_json["current"]["condition"]["text"]
-    print(f"Performing request to Weather API for city Paris")
+    print("Performing request to Weather API for city Paris")
     print(
         f"{location['name']}/{location['country']} {location['localtime']} "
         f"Weather: {current_weather['temp_c']}, {current_condition}"

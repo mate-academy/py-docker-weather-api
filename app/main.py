@@ -1,6 +1,31 @@
+from os import environ
+import requests
+
+
+KEY = environ.get("API_KEY")
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+    response = requests.get(
+        "https://api.weatherapi.com/v1/current.json",
+        params={
+            "q": "Paris",
+            "key": KEY
+        }
+    )
+
+    response_json = response.json()
+
+    weather_data = response_json.get("current")
+    location_data = response_json.get("location")
+
+    result = (f"{location_data.get('name')}/"
+              f"{location_data.get('country')}"
+              f" {location_data.get('localtime')}"
+              f" Weather: {weather_data.get('temp_c')} Celsius,"
+              f" {weather_data.get('condition').get('text')}")
+
+    print(result)
 
 
 if __name__ == "__main__":

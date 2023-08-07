@@ -30,12 +30,14 @@ def get_weather() -> None:
     humidity = data["current"]["humidity"]
 
     print(
-        f"""Weather at local time: {localtime} in {country}({region}) in {city}:
+        f"""
+        Weather at local time: {localtime} in {country}({region}) in {city}:
             - Condition: {condition},
             - Air temperature(in Celsius): {temp_c}°C,
             - Wind rate: {wind_kph} kph,
             - Wind direction: {wind_degree}°
-            - Air humidity: {humidity}%"""
+            - Air humidity: {humidity}%
+        """
     )
 
 

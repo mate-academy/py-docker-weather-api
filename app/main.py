@@ -1,7 +1,27 @@
+import requests
+
+
+API_KEY = "967cf4e71dfe436ba53110325230808"
+CITY = "Paris"
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+    params = {
+        "q": CITY,
+        "key": API_KEY,
+        "lang": "en"
+    }
+    response = requests.get(BASE_URL, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        print(f"{data['location']['tz_id']} {data['location']['localtime']} "
+              f"Weather: {data['current']['temp_c']} Celsius, "
+              f"{data['current']['condition']['text']}")
+    else:
+        print("Error:", response.status_code)
 
 
 if __name__ == "__main__":
+    print("Performing request to Weather API for city Paris...")
     get_weather()

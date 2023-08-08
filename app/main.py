@@ -3,9 +3,19 @@ import requests
 
 from dotenv import load_dotenv
 
+API_KEY = os.environ.get("API_KEY")
+CITY = "Paris"
+URL = "https://api.weatherapi.com/v1/current.json"
+
 
 def get_weather() -> None:
-    response = requests.get(URL)
+    response = requests.get(
+        "https://api.weatherapi.com/v1/current.json",
+        params={
+            "key": os.environ.get("API_KEY"),
+            "q": "Paris"
+        }
+    )
     data = response.json()
 
     main_text = data.get("current")
@@ -29,9 +39,4 @@ def get_weather() -> None:
 
 
 if __name__ == "__main__":
-    load_dotenv()
-
-    API_KEY = os.environ.get("API_KEY")
-    CITY = "Paris"
-    URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
     get_weather()

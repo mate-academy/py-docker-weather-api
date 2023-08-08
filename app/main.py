@@ -29,7 +29,6 @@ def get_weather() -> None:
         f"Wind is {wind} km/h",
         f"Percentage of clouds is {clouds}"
     )
-    # print(response.content)
 
 
 if __name__ == "__main__":

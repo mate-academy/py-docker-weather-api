@@ -1,7 +1,8 @@
+import os
 import requests
 
 
-API_KEY = "967cf4e71dfe436ba53110325230808"
+API_KEY = os.getenv("API_KEY")
 CITY = "Paris"
 BASE_URL = "http://api.weatherapi.com/v1/current.json"
 

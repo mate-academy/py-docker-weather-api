@@ -26,7 +26,7 @@ So in this task requirements are next:
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
-- COMMAND=`docker pull oliaaalio/olia-weather-api`.
+- COMMAND=`docker pull oliaaalio/olia-weather-api:latest`.
 
 <details>
   <summary><strong>Hint</strong></summary>

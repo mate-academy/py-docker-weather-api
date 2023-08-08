@@ -11,8 +11,8 @@ def get_weather() -> None:
     response = requests.get(
         "https://api.weatherapi.com/v1/current.json",
         params={
-            "key": os.environ.get("API_KEY"),
-            "q": "Paris"
+            "key": API_KEY,
+            "q": CITY
         }
     )
     data = response.json()

@@ -9,7 +9,7 @@ URL = "https://api.weatherapi.com/v1/current.json"
 
 def get_weather() -> None:
     response = requests.get(
-        "https://api.weatherapi.com/v1/current.json",
+        URL,
         params={
             "key": API_KEY,
             "q": CITY

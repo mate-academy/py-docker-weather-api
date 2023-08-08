@@ -1,7 +1,6 @@
 import os
 import requests
 
-from dotenv import load_dotenv
 
 API_KEY = os.environ.get("API_KEY")
 CITY = "Paris"

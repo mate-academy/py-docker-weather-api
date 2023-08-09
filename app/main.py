@@ -14,7 +14,7 @@ def get_weather() -> None:
 
     print(f"Performing request to Weather API to city {CITY}")
 
-    result_json = requests.get(URL + f"key={API_KEY}&q={CITY}").json()
+    result_json = requests.get(URL, params={"key": API_KEY, "q": CITY}).json()
 
     city = result_json["location"]["name"]
     country = result_json["location"]["country"]
@@ -22,11 +22,10 @@ def get_weather() -> None:
     temp_celsius = result_json["current"]["temp_c"]
     condition = result_json["current"]["condition"]["text"]
 
-    result_str = (f"{city}/{country} {localtime} "
-                  f"Weather: {temp_celsius} Celsius, {condition}"
-                  )
-
-    print(result_str)
+    print(
+        f"{city}/{country} {localtime} "
+        f"Weather: {temp_celsius} Celsius, {condition}"
+    )
 
 
 if __name__ == "__main__":

@@ -14,8 +14,10 @@ def get_weather() -> str:
     temperature = data["main"]["temp"]
     description = data["weather"][0]["description"]
 
-    return f"Current weather in {CITY}: " \
-           f"{description}, Temperature: {temperature}°C"
+    return (
+        f"Current weather in {CITY}:"
+        f" {description}, Temperature: {temperature}°C"
+    )
 
 
 if __name__ == "__main__":

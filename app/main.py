@@ -13,16 +13,19 @@ PARAMS = {"key": KEY, "q": CITY}
 
 def get_weather() -> None:
     result = requests.get(URL, params=PARAMS)
-    data = result.json()
+    if result.status_code == 200:
+        data = result.json()
 
-    city = data["location"]["name"]
-    country = data["location"]["country"]
-    localtime = data["location"]["localtime"]
-    temperature = data["current"]["temp_c"]
-    info = data["current"]["condition"]["text"]
+        city = data["location"]["name"]
+        country = data["location"]["country"]
+        localtime = data["location"]["localtime"]
+        temperature = data["current"]["temp_c"]
+        info = data["current"]["condition"]["text"]
 
-    print(f"{city}/{country} {localtime} "
-          f"Weather: {temperature} Celsius, {info}")
+        print(f"{city}/{country} {localtime} "
+            f"Weather: {temperature} Celsius, {info}")
+    else:
+        print("Sorry, an error occured")
 
 
 if __name__ == "__main__":

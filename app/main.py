@@ -31,8 +31,7 @@ def get_weather() -> None:
         condition = data.get("current")["condition"]["text"]
 
         print(f"{city}/{country} {localtime} "
-              f"Weather: {temperature}, {condition}"
-              )
+              f"Weather: {temperature}, {condition}")
     else:
         print(f"ERROR: {response.status_code}")
 

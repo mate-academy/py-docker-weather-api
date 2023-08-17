@@ -24,16 +24,20 @@ def get_weather() -> None:
 
         print(f"Performing request to Weather API for city {CITY}")
 
-        city = data.get("location")["name"]
-        country = data.get("location")["country"]
-        localtime = data.get("location")["localtime"]
-        temperature = data.get("current")["temp_c"]
-        condition = data.get("current")["condition"]["text"]
+        location = data.get("location")
+        current = data.get("current")
 
-        print(f"{city}/{country} {localtime} "
-              f"Weather: {temperature}, {condition}")
-    else:
-        print(f"ERROR: {response.status_code}")
+        if location and current:
+            city = location["name"]
+            country = location["country"]
+            localtime = location["localtime"]
+            temperature = current["temp_c"]
+            condition = current["condition"]["text"]
+
+            print(f"{city}/{country} {localtime} "
+                  f"Weather: {temperature}, {condition}")
+        else:
+            print(f"ERROR: {response.status_code}")
 
 
 if __name__ == "__main__":

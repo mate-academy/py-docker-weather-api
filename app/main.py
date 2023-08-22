@@ -15,10 +15,10 @@ def get_weather() -> None:
 
     if response.status_code == 200:
         data = response.json()
-        tz_id = data["location"]["tz_id"]
-        temp_c = round(data["current"]["temp_c"])
-        condition = data["current"]["condition"]["text"]
-        localtime = data["location"]["localtime"]
+        tz_id = data.get("location", {}).get("tz_id")
+        temp_c = round(data.get("current", {}).get("temp_c"))
+        condition = data.get("current", {}).get("condition", {}).get("text")
+        localtime = data.get("location", {}).get("localtime")
         print(f"{tz_id} {localtime} Weather: {temp_c}°C, {condition}")
     else:
         print("Error fetching weather data")

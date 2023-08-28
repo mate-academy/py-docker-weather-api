@@ -14,20 +14,28 @@ PARAMS = {
 
 
 def get_weather() -> None:
-    request = requests.get(url=URL, params=PARAMS).json()
+    request = requests.get(url=URL, params=PARAMS)
 
-    city = request.get("location")["name"]
-    country = request.get("location")["country"]
-    localtime = request.get("location")["localtime"]
-    temp = request.get("current")["temp_c"]
-    condition = request.get("current")["condition"]["text"]
+    if request.status_code == 200:
+        data = request.json()
 
-    weather_string = (
-        f"{city}/{country} {localtime} "
-        f"Weather: {temp} Celsius, {condition}"
-    )
+        location = data.get("location")
+        current = data.get("current")
 
-    print(weather_string)
+        city = location["name"]
+        country = location["country"]
+        localtime = location["localtime"]
+        temp = current["temp_c"]
+        condition = current["condition"]["text"]
+
+        weather_string = (
+            f"{city}/{country} {localtime} "
+            f"Weather: {temp} Celsius, {condition}"
+        )
+
+        print(weather_string)
+
+    return request.status_code
 
 
 if __name__ == "__main__":

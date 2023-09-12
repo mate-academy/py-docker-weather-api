@@ -15,8 +15,7 @@ def get_weather() -> None:
     }
     response = requests.get(URL, params=params)
 
-    try:
-        response.raise_for_status()
+    if response.status_code == 200:
         data = response.json()
 
         city = data["location"]["name"]
@@ -29,8 +28,8 @@ def get_weather() -> None:
         print(f"{city}/{country} {localtime} "
               f"Weather: {temp_c} Celsius, {description}")
 
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to fetch weather data. An error occurred: {e}")
+    else:
+        print(response.status_code)
 
 
 if __name__ == "__main__":

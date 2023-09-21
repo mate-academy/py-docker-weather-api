@@ -2,6 +2,9 @@ import os
 import requests
 import logging
 
+URL = "http://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -17,8 +20,6 @@ def get_api_key() -> str:
 
 def get_weather() -> None:
     """Get current weather for Paris city"""
-    url = "http://api.weatherapi.com/v1/current.json"
-    filtering = "Paris"
 
     api_key = get_api_key()
 
@@ -26,7 +27,7 @@ def get_weather() -> None:
         return  # Exit gracefully if API_KEY is missing.
 
     try:
-        response = requests.get(url, params={"q": filtering, "key": api_key})
+        response = requests.get(URL, params={"q": FILTERING, "key": api_key})
 
         if response.status_code == 200:
             data = response.json()

@@ -17,7 +17,8 @@ def get_weather() -> None:
         condition = data["current"]["condition"]["text"]
         print(
             f"Paris/France {datetime.date.today()} "
-            f"Weather: {temperature}°C, {condition}")
+            f"Weather: {temperature}°C, {condition}"
+        )
     else:
         print("Weather data could not be obtained")
 

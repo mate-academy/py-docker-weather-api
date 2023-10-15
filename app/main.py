@@ -1,6 +1,6 @@
+import os
 import requests
 from dotenv import load_dotenv
-import os
 
 
 load_dotenv()
@@ -19,6 +19,7 @@ def get_weather() -> None:
 
     if response.status_code != 200:
         print(f"No data: error code {response.status_code}")
+        return
 
     data = response.json()
 

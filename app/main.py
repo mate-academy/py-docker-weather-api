@@ -12,10 +12,10 @@ def get_weather() -> None:
     print("Performing request to Weather API for city Paris...")
     data_location = response.json()['location']
     data_weather = response.json()['current']
-    print(f"{data_location['name']}/{data_location['country']} "
-          f"{data_location['localtime']} "
-          f"Weather: {data_weather['temp_c']} "
-          f"Celsius, {data_weather['condition']['text']}")
+    print(f"{data_location['name']}/{data_location['country']} "  # noqa: Q000
+          f"{data_location['localtime']} "  # noqa: Q000
+          f"Weather: {data_weather['temp_c']} "  # noqa: Q000
+          f"Celsius, {data_weather['condition']['text']}")  # noqa: Q000
 
 
 if __name__ == "__main__":

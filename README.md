@@ -27,7 +27,8 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=`docker pull lgsilay/docker-wheather-api`.
+- To run application use command: docker run -e API_KEY=<Your API_KEY> lgsilay/docker-wheather-api
 
 <details>
   <summary><strong>Hint</strong></summary>

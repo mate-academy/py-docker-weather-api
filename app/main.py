@@ -20,4 +20,4 @@ def get_weather() -> str:
 
 
 if __name__ == "__main__":
-    print(get_weather())
+    get_weather()

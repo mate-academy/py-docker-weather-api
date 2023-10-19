@@ -1,6 +1,31 @@
+import os
+
+import requests
+
+
+API_KEY = os.environ.get("API_KEY")
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
+FILTERING_CITY = "Paris"
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+    result = requests.get(
+        BASE_URL + f"?key={API_KEY}&q={FILTERING_CITY}"
+    )
+    if result.status_code == 200:
+        data = result.json()
+
+        location = data["location"]
+        country = location["country"]
+        local_date = location["localtime"]
+
+        current = data["current"]
+        temperature_c = current["temp_c"]
+        condition_t = current["condition"]["text"]
+
+        print(f"{FILTERING_CITY}/{country} {local_date} Weather: {temperature_c} Celsius, {condition_t}")
+    else:
+        print(f"Oops! An error occurred while receiving data. Status code: {result.status_code}. Maybe next time...")
 
 
 if __name__ == "__main__":

@@ -18,7 +18,8 @@ def get_weather() -> None:
     air_condition = result["current"]["condition"]["text"]
 
     print(f"Performing request to Weather API for city {city}...")
-    print(f"{city}/{country} {localtime} Weather: {temp_c} Celsius, {air_condition}")
+    print(f"{city}/{country} {localtime} "
+          f"Weather: {temp_c} Celsius, {air_condition}")
 
 
 if __name__ == "__main__":

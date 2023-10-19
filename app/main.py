@@ -26,8 +26,8 @@ def get_weather() -> None:
         print(f"{FILTERING_CITY}/{country} {local_date} "
               f"Weather: {temperature_c} Celsius, {condition_t}")
     else:
-        print(f"Oops! An error occurred while receiving data. "
-              "Status code: {result.status_code}. Maybe next time...")
+        print("Oops! An error occurred while receiving data. "
+              f"Status code: {result.status_code}. Maybe next time...")
 
 
 if __name__ == "__main__":

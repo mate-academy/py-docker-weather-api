@@ -6,7 +6,7 @@ CITY = "Paris"
 API_KEY = os.environ.get("API_KEY")
 
 
-def weather():
+def get_weather() -> None:
     if not API_KEY:
         raise ValueError("Weather API key is not provided")
 
@@ -32,4 +32,4 @@ def weather():
 
 
 if __name__ == "__main__":
-    weather()
+    get_weather()

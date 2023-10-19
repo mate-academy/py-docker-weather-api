@@ -1,0 +1,6 @@
+venv
+.env
+.gitignore
+.flake8
+checklist.md
+result.png

@@ -4,7 +4,7 @@ import requests
 
 
 def get_weather() -> None:
-    print(f"Performing request to Weather API for city Paris...")
+    print("Performing request to Weather API for city Paris...")
     api_key = os.environ.get("API_KEY")
     if api_key is None:
         raise Exception("API Key not found.")
@@ -16,8 +16,8 @@ def get_weather() -> None:
         raise Exception("Bad request. Check API key and WeatherAPI status")
 
 
-def retrieve_result(input):
-    data = input.json()
+def retrieve_result(input_response: requests.Response) -> None:
+    data = input_response.json()
     print(
         f"{data['location']['name']}/{data['location']['country']} "
         f"{data['location']['localtime']} "

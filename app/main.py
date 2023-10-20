@@ -8,10 +8,7 @@ FILTER = "Paris"
 
 
 def get_weather() -> None:
-    query_param = {
-        "key": API_KEY,
-        "q": FILTER
-    }
+    query_param = {"key": API_KEY, "q": FILTER}
 
     response = requests.get(URL, params=query_param)
 
@@ -23,7 +20,10 @@ def get_weather() -> None:
         temp_cels = data["current"]["temp_c"]
         condition = data["current"]["condition"]["text"]
         print("Performing request to Weather API for city Paris...")
-        print(f"{city}/{country} {time} Weather: {temp_cels} Celsius, {condition}")
+        print(
+            f"{city}/{country} {time} Weather: "
+            f"{temp_cels} Celsius, {condition}"
+        )
 
     else:
         print(f"Bad request: {response.status_code}")

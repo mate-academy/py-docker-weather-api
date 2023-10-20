@@ -1,0 +1,7 @@
+.git/
+.github/
+venv/
+**/__pycache__/
+checklist.md
+README.md
+result.png

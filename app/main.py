@@ -28,7 +28,7 @@ def get_weather() -> None:
         )
         print(data)
     else:
-        print("Invalid FILTERING OR API_KEY!!!")
+        print("Error")
 
 
 if __name__ == "__main__":

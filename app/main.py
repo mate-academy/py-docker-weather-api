@@ -33,12 +33,14 @@ def get_weather() -> None:
         percentage_of_cloud = data["current"]["cloud"]
         percentage_of_air_humidity = data["current"]["humidity"]
 
-        print(f"Current location: {city}/{country}\n"
-              f"Local time: {local_time}\n"
-              f"Wind direction: {wind_dir}\n"
-              f"Wind speed: {wind_speed} km/hour\n"
-              f"Cloudiness: {percentage_of_cloud}%\n"
-              f"Air Humidity: {percentage_of_air_humidity}%")
+        print(
+            f"Current location: {city}/{country}\n"
+            f"Local time: {local_time}\n"
+            f"Wind direction: {wind_dir}\n"
+            f"Wind speed: {wind_speed} km/hour\n"
+            f"Cloudiness: {percentage_of_cloud}%\n"
+            f"Air Humidity: {percentage_of_air_humidity}%"
+        )
 
     else:
         print(

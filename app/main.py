@@ -43,7 +43,8 @@ def get_weather() -> None:
     else:
         print(
             f"Sorry, your token is not valid."
-            f" Regenerate it and come again! Status code: {response.status_code}"
+            f" Regenerate it and come again! Status code:"
+            f" {response.status_code}"
         )
 
 

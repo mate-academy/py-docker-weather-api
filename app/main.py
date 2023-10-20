@@ -12,10 +12,10 @@ PARAMS = {
 
 
 def get_weather() -> None:
-    res = get(url=URL, params=PARAMS)
+    response = get(url=URL, params=PARAMS)
 
-    if res.status_code == 200:
-        weather_data = res.json()
+    if response.status_code == 200:
+        weather_data = response.json()
 
         city_datetime = weather_data["location"]["localtime"]
         cur_temp = weather_data["current"]["temp_c"]
@@ -23,6 +23,8 @@ def get_weather() -> None:
         print(f"Current weather in {CITY} at {city_datetime}: \n"
               f"{cur_temp}°C \n"
               f"{condition}")
+    else:
+        print(f"Bad request: {response.status_code}")
 
 
 if __name__ == "__main__":

@@ -3,7 +3,7 @@ import os
 import requests
 
 
-API_KEY = os.environ.get("API_KEY", "1e1a09c423c045fd812121336231710 ")
+API_KEY = os.environ.get("API_KEY")
 
 BASE_URL = "https://api.weatherapi.com/v1/current.json"
 

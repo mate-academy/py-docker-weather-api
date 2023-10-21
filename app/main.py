@@ -9,9 +9,8 @@ FILTERING_CITY = "Paris"
 
 
 def get_weather() -> None:
-    result = requests.get(
-        BASE_URL + f"?key={API_KEY}&q={FILTERING_CITY}"
-    )
+    parameters = {"key": API_KEY, "q": FILTERING_CITY}
+    result = requests.get(BASE_URL, params=parameters)
     if result.status_code == 200:
         data = result.json()
 

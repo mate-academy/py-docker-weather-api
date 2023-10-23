@@ -12,7 +12,7 @@ def get_weather() -> None | str:
     res = requests.get(URL + KEY + FILTERING)
 
     if res.status_code != 200:
-        return print("Please, provide correct API_KEY!")
+        return print("Something goes wrong:(")
 
     json_data = res.json()
 

@@ -1,20 +1,19 @@
 import os
-
 import requests
 
+API_KEY = os.environ.get("API_KEY")
 
-api_key = os.environ.get("API_KEY")
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
 
-BASE_URL = "https://api.weatherapi.com/v1/current.json?q=Paris&key="
-
-URL = BASE_URL + api_key
+params = {
+    "q": "Paris",
+    "key": API_KEY
+}
 
 
 def get_weather() -> None:
-    # write your code here
-    pass
     print("Performing request to Weather API for city Paris...")
-    response = requests.get(URL)
+    response = requests.get(BASE_URL, params=params)
     json_data = response.json()
     city = json_data["location"]["name"]
     country = json_data["location"]["country"]

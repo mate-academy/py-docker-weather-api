@@ -15,9 +15,7 @@ PARAMS = {
 def get_weather() -> None:
     res = requests.get(url=API_URL, params=PARAMS)
 
-    if res.status_code != 200:
-        print("Unable to get weather data...")
-        return
+    res.raise_for_status()
 
     location = res.json()["location"]
     weather = res.json()["current"]

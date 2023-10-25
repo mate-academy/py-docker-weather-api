@@ -7,6 +7,7 @@ BASE_URL = "http://api.weatherapi.com/v1/current.json"
 API_KEY = os.environ.get("API_KEY")
 CITY_NAME = "Paris"
 
+
 def get_weather() -> None:
     response = requests.get(
         BASE_URL,

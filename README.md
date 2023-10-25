@@ -27,7 +27,7 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull kurta97/docker-weather-api`.
+  COMMAND=`docker pull kurta97/docker-weather-apigit push origin develop`.
 
 <details>
   <summary><strong>Hint</strong></summary>

@@ -1,15 +1,10 @@
 import os
 import requests
-import time
-from dotenv import load_dotenv
 
-
-load_dotenv()
 
 URL = "https://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
-API_KEY = os.getenv("API_KEY")
-print(API_KEY)
+API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
@@ -20,11 +15,7 @@ def get_weather() -> None:
     payload = {"key": API_KEY, "q": CITY}
     request = requests.get(URL, params=payload)
 
-    print(f"Performing request to Weather API for city {CITY}...")
-    for i in range(1, 4):
-        time.sleep(0.5)
-        print(i)
-    time.sleep(0.5)
+    print(f"Performing request to Weather API for city {CITY}.")
 
     if request.status_code == 200:
         request_data = request.json()

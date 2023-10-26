@@ -1,1 +1,14 @@
+<<<<<<< HEAD
 venv
+=======
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.tmp
+*.swp
+*.bak
+>>>>>>> 65fd3b4f0b1a8dce5c0d8f1e49c18f9f7e98d0c9

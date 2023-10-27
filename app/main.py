@@ -23,11 +23,11 @@ def get_weather() -> None:
     current = res.get("current", {})
 
     weather_data = {
-        "Country": location.get('country', 'N/A'),
-        "City": location.get('name', 'N/A'),
-        "Time": location.get('localtime', 'N/A'),
-        "Weather": current.get('condition', {}).get('text', 'N/A'),
-        "Temperature": f"{current.get('temp_c', 'N/A')} Celsius"
+        "Country": location.get("country", "N/A"),
+        "City": location.get("name", "N/A"),
+        "Time": location.get("localtime", "N/A"),
+        "Weather": current.get("condition", {}).get("text", "N/A"),
+        "Temperature": f"{current.get('temp_c', 'N/A')} Celsius",
     }
 
     pprint(weather_data, width=1)

@@ -13,22 +13,25 @@ def get_weather() -> None:
     url = f"{BASE_URL}?q={CITY}&key={API_KEY}"
     response = requests.get(url)
 
-    if response.status_code == 200:
-        data = response.json()
-        country = data["location"]["country"]
-        city = data["location"]["name"]
-        region = data["location"]["region"]
-        condition = data["current"]["condition"]["text"]
-        temperature = data["current"]["temp_c"]
-        feels_like = data["current"]["feelslike_c"]
-        print(
-            f"Location: {country}, {region}, {city}\n"
-            f"Condition: {condition}\n"
-            f"Air temperature: {temperature}°C\n"
-            f"Feels like: {feels_like}°C\n"
-        )
-    else:
+    if response.status_code != 200:
         print("Failed to retrieve weather data")
+        return
+
+    data = response.json()
+    country = data["location"]["country"]
+    city = data["location"]["name"]
+    region = data["location"]["region"]
+    condition = data["current"]["condition"]["text"]
+    temperature = data["current"]["temp_c"]
+    feels_like = data["current"]["feelslike_c"]
+    print(
+        F"""
+    Location: {country}, {region}, {city}
+    Condition: {condition}
+    Air temperature: {temperature}°C
+    Feels like: {feels_like}°C
+        """
+    )
 
 
 if __name__ == "__main__":

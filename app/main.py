@@ -1,7 +1,6 @@
 import os
 import requests
 import dotenv
-from pprint import pprint
 
 dotenv.load_dotenv()
 
@@ -22,15 +21,13 @@ def get_weather() -> None:
     location = res.get("location", {})
     current = res.get("current", {})
 
-    weather_data = {
-        "Country": location.get("country", "N/A"),
-        "City": location.get("name", "N/A"),
-        "Time": location.get("localtime", "N/A"),
-        "Weather": current.get("condition", {}).get("text", "N/A"),
-        "Temperature": f"{current.get('temp_c', 'N/A')} Celsius",
-    }
-
-    pprint(weather_data, width=1)
+    print(
+        f"Country: {location.get('country', 'N/A')};\n"
+        f"City: {location.get('name', 'N/A')};\n"
+        f"Time: {location.get('localtime', 'N/A')};\n"
+        f"Weather: {current.get('condition', {}).get('text', 'N/A')}\n"
+        f"Temperature: {current.get('temp_c', 'N/A')} Celsius;"
+    )
 
 
 if __name__ == "__main__":

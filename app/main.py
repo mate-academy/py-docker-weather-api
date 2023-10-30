@@ -4,18 +4,19 @@ import requests
 
 API_KEY = os.environ.get("API_KEY")
 CITY = "Paris"
-URL = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
+URL = f"http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
     print("Performing request to Weather API for city Paris...")
     if API_KEY is None:
         raise Exception("API Key not found.")
-    response = requests.get(URL)
+    url = URL + f"?key={API_KEY}&q={CITY}"
+    response = requests.get(url)
     if response.status_code == 200:
         retrieve_result(response)
     else:
-        raise Exception("Bad request. Check API key and WeatherAPI status")
+        raise Exception(response.status_code)
 
 
 def retrieve_result(input_response: requests.Response) -> None:

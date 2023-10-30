@@ -16,7 +16,7 @@ def get_weather() -> None:
     location_data = response_json.get("location")
 
     if response.status_code == 200:
-        if 'condition' in weather_data:
+        if "condition" in weather_data:
             condition_text = weather_data["condition"].get("text")
         else:
             condition_text = "N/A"

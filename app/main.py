@@ -4,7 +4,7 @@ import requests
 
 API_KEY = os.environ.get("API_KEY")
 CITY = "Paris"
-URL = f"http://api.weatherapi.com/v1/current.json"
+URL = "http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:

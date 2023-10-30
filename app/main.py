@@ -1,6 +1,30 @@
+import os
+
+import requests
+
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
+API_KEY = os.getenv("API_KEY")
+CITY = "Paris"
+
+
 def get_weather() -> None:
-    # write your code here
-    pass
+    payload = {"key": API_KEY, "q": CITY}
+    result = requests.get(BASE_URL, params=payload)
+
+    if result.status_code == 200:
+        data = result.json()
+        country = data["location"]["country"]
+        localtime = data["location"]["localtime"]
+        temperature = data["current"]["temp_c"]
+        text = data["current"]["condition"]["text"]
+
+        print(
+            f"Country: {country}, "
+            f"City: {CITY}, "
+            f"Localtime: {localtime}, "
+            f"Temperature: {temperature}°С "
+            f"{text}"
+        )
 
 
 if __name__ == "__main__":

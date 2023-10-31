@@ -26,7 +26,7 @@ def get_weather() -> None:
             f"{text}"
         )
     else:
-        print(f"Bad request: {resource.status_code}")
+        print(f"Bad request: {result.status_code}")
 
 
 if __name__ == "__main__":

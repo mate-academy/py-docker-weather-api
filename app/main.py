@@ -3,8 +3,10 @@ import os
 import requests
 
 
+API_KEY = os.getenv("API_KEY")
+
+
 def get_weather() -> None:
-    API_KEY = os.getenv("API_KEY")
     response = requests.get(
         "https://api.weatherapi.com/v1/current.json",
         params={
@@ -13,11 +15,11 @@ def get_weather() -> None:
         },
     )
     data = response.json()
-    TIME = data["location"]["localtime"]
-    TEMPERATURE = data["current"]["temp_c"]
-    CONDITION = data["current"]["condition"]["text"]
+    time = data["location"]["localtime"]
+    temperature = data["current"]["temp_c"]
+    condition = data["current"]["condition"]["text"]
     print("Performing request to Weather API for city Paris...")
-    print(f"Paris/France {TIME} Weather: {TEMPERATURE}, {CONDITION}")
+    print(f"Paris/France {time} Weather: {temperature}, {condition}")
 
 
 if __name__ == "__main__":

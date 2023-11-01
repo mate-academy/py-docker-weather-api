@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim
+FROM python:3.10.4-alpine
 LABEL maintainer = "wonnnakoo@gmail.com"
 
 ENV PYTHONUNBUFFERED 1

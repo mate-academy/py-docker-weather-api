@@ -1,5 +1,6 @@
-import requests
 import os
+
+import requests
 
 
 BASE_URL = "https://api.weatherapi.com/v1"

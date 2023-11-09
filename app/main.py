@@ -1,10 +1,11 @@
 import requests
+import os
 
 
 def get_weather() -> None:
     url = (
         "http://api.weatherapi.com/v1/current.json"
-        "?key=a57a9bf8f7fa4865885175927230811&q=Paris"
+        f"?key={os.environ.get('API_KEY')}=Paris"
     )
     res = requests.get(url)
     if res.status_code == 200:

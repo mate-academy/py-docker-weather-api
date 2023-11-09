@@ -3,10 +3,11 @@ import os
 
 
 def get_weather() -> None:
-    url = (
-        "http://api.weatherapi.com/v1/current.json"
-        f"?key={os.environ.get('API_KEY')}=Paris"
-    )
+    BASE_URL = "http://api.weatherapi.com/v1/current.json"
+    FILTERING = "Paris"
+
+    url = BASE_URL + f"?key={os.environ.get('API_KEY')}" + f"&q={FILTERING}"
+
     res = requests.get(url)
     if res.status_code == 200:
         temp_c = res.json().get("current").get("temp_c")

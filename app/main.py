@@ -1,6 +1,5 @@
 import requests
 import os
-import json
 
 URL = "https://api.weatherapi.com/v1/current.json?"
 FILTERING = "Paris"
@@ -9,9 +8,12 @@ KEY = os.environ.get("API_KEY")
 
 def get_weather() -> None:
 
-    result_from_weather_api = requests.get(URL + f"q={FILTERING}&key={KEY}")
+    result_from_weather_api = requests.get(
+        URL,
+        params={"q": FILTERING, "key": KEY}
+    )
 
-    weather_dict = json.loads(result_from_weather_api.text)
+    weather_dict = result_from_weather_api.json()
 
     print(f"Performing request to Weather API for city {FILTERING}...")
     print(

@@ -16,12 +16,16 @@ def get_weather() -> None:
     response = requests.get(url, params=payload)
 
     response_data = response.json()
+    print(response_data)
 
-    country = response_data["location"]["country"]
-    city = response_data["location"]["name"]
-    localtime = response_data["location"]["localtime"]
-    temperature = response_data["current"]["temp_c"]
-    conditions = response_data["current"]["condition"]["text"]
+    location_data = response_data.get("location", {})
+    weather_data = response_data.get("current", {})
+
+    country = location_data.get("country")
+    city = location_data.get("name")
+    localtime = location_data.get("localtime")
+    temperature = weather_data.get("temp_c")
+    conditions = weather_data.get("condition", {}).get("text")
 
     location = f"{city}/{country}"
     weather = f"Weather: {temperature} Celsius, {conditions}"

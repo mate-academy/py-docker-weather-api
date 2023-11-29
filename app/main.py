@@ -17,10 +17,12 @@ def get_weather() -> None:
         weather_dict = res.json()
 
         location = weather_dict.get("location").get("name")
-        condition_text = weather_dict.get("current").get("condition").get("text")
         last_updated = weather_dict.get("current").get("last_updated")
         temp_c = weather_dict.get("current").get("temp_c")
         humidity = weather_dict.get("current").get("humidity")
+        condition_text = (weather_dict.get("current")
+                          .get("condition")
+                          .get("text"))
 
         print(f"Location: {location}")
         print(f"Condition: {condition_text}")

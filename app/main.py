@@ -10,8 +10,8 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
-    url = BASE_URL + f"?key={API_KEY}" + f"&q={CITY_FILTERING}"
-    res = requests.get(url)
+    payload = {'key': API_KEY, 'q': CITY_FILTERING}
+    res = requests.get(BASE_URL, params=payload)
 
     if res.status_code == 200:
         weather_dict = res.json()

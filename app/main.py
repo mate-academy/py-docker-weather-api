@@ -13,16 +13,21 @@ def get_weather() -> None:
             "q": "Paris"
         }
     )
-    weather_data = response.json()
-    localtime = weather_data["location"]["localtime"]
-    temp_c = weather_data["current"]["temp_c"]
-    condition = weather_data["current"]["condition"]["text"]
-    print("Performing request to Weather API for city Paris...")
-    print(
-        f"Paris/France {localtime} "
-        f"Weather: {temp_c} Celsius, "
-        f"{condition}"
-    )
+
+    # Check if the request was successful (status code 2xx)
+    if response.status_code // 100 == 2:
+        weather_data = response.json()
+        localtime = weather_data["location"]["localtime"]
+        temp_c = weather_data["current"]["temp_c"]
+        condition = weather_data["current"]["condition"]["text"]
+        print("Performing request to Weather API for city Paris...")
+        print(
+            f"Paris/France {localtime} "
+            f"Weather: {temp_c} Celsius, "
+            f"{condition}"
+        )
+    else:
+        print(f"Error: Failed to retrieve weather data. Status Code: {response.status_code}")
 
 
 if __name__ == "__main__":

@@ -27,7 +27,10 @@ def get_weather() -> None:
             f"{condition}"
         )
     else:
-        print(f"Error: Failed to retrieve weather data. Status Code: {response.status_code}")
+        print(
+            f"Error: Failed to retrieve weather data."
+            f" Status Code: {response.status_code}"
+        )
 
 
 if __name__ == "__main__":

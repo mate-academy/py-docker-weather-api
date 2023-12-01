@@ -6,6 +6,7 @@ CITY = "Paris"
 API_KEY = os.getenv("API_KEY")
 URL = "http://api.weatherapi.com/v1/current.json"
 
+
 def get_weather() -> None:
     payload = {
         "key": API_KEY,

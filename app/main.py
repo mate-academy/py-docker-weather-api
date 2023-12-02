@@ -15,7 +15,7 @@ def get_weather() -> None:
     )
 
     # Check if the request was successful (status code 2xx)
-    if response.status_code // 100 == 2:
+    if response.status_code == 200:
         weather_data = response.json()
         localtime = weather_data["location"]["localtime"]
         temp_c = weather_data["current"]["temp_c"]

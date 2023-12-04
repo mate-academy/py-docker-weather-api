@@ -6,7 +6,6 @@ URL = "https://api.weatherapi.com/v1/current.json"
 API_KEY = os.getenv("API_KEY")
 
 
-
 def get_weather() -> None:
     response = requests.get(
         URL,

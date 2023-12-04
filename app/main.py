@@ -11,8 +11,9 @@ PAYLOAD = {
 
 
 def get_weather() -> None:
-    res = requests.get(URL, params=PAYLOAD).json()
-
+    res = requests.get(URL, params=PAYLOAD)
+    res.raise_for_status()
+    res = res.json()
     location = res["location"]
     temperature = res["current"]["temp_c"]
     condition = res["current"]["condition"]["text"]

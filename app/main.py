@@ -1,10 +1,10 @@
 import os
 import requests
 
-URL = ("http://api.weatherapi.com/v1/current."
-       "json?key=9ed0ea20d5ea4cf2bbd224726230212&q=Paris&aqi=yes")
+URL = "https://api.weatherapi.com/v1/current.json"
 
 API_KEY = os.getenv("API_KEY")
+
 
 
 def get_weather() -> None:
@@ -22,8 +22,8 @@ def get_weather() -> None:
     condition = weather_data["current"]["condition"]["text"]
     print("Performing request to Weather API for city Paris...")
     print(
-        f"Paris/France {localtime} "
-        f"Weather: {temp_c} Celsius, "
+        f"Paris/France {localtime} \n"
+        f"Weather: {temp_c} Celsius, \n"
         f"{condition}"
     )
 

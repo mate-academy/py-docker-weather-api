@@ -3,16 +3,16 @@ import os
 import requests
 
 URL = "http://api.weatherapi.com/v1/current.json"
-WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
+API_KEY = os.environ.get("API_KEY")
 PAYLOAD = {
-    "key": WEATHER_API_KEY,
+    "key": API_KEY,
     "q": "Paris"
 }
 
 
 def get_weather() -> None:
     res = requests.get(URL, params=PAYLOAD).json()
-    print(WEATHER_API_KEY)
+
     location = res["location"]
     temperature = res["current"]["temp_c"]
     condition = res["current"]["condition"]["text"]

@@ -12,16 +12,16 @@ PAYLOAD = {
 
 def get_weather() -> None:
     res = requests.get(URL, params=PAYLOAD)
-    res.raise_for_status()
-    res = res.json()
-    location = res["location"]
-    temperature = res["current"]["temp_c"]
-    condition = res["current"]["condition"]["text"]
+    if res.status_code == 200:
+        res = res.json()
+        location = res["location"]
+        temperature = res["current"]["temp_c"]
+        condition = res["current"]["condition"]["text"]
 
-    print(
-        f"{location['name']}/{location['country']} {location['localtime']} "
-        f"Weather: {temperature} Celcius, {condition}"
-    )
+        print(
+            f"{location['name']}/{location['country']} {location['localtime']} "
+            f"Weather: {temperature} Celcius, {condition}"
+        )
 
 
 if __name__ == "__main__":

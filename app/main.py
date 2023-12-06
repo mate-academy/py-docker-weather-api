@@ -16,11 +16,13 @@ def get_weather() -> None:
                                     "aqi": "no"})
     if response.status_code == 200:
         data = response.json()
-        print(f"{data['location']['localtime']}, {data['location']['name']}, {data['location']['country']}\n"
+        print(f"{data['location']['localtime']}, "
+              f"{data['location']['name']}, {data['location']['country']}\n"
               f"current temperature: {data['current']['temp_c']}C"
               f"{data['current']['condition']['text']}")
     else:
-        print(f"Failed to retrieve weather data. Status Code: {response.status_code}")
+        print(f"Failed to retrieve weather data. "
+              f"Status Code: {response.status_code}")
 
 
 if __name__ == "__main__":

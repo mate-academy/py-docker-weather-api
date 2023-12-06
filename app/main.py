@@ -33,4 +33,3 @@ if __name__ == "__main__":
         f"Weather: {data['current']['temp_c']} Celsius, "
         f"{data['current']['condition']['text']}"
     )
-

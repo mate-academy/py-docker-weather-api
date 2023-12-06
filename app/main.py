@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = os.environ["URL"]
-FILTERING = os.environ["FILTERING"]
+URL = "http://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
 API_KEY = os.environ["API_KEY"]
 
 

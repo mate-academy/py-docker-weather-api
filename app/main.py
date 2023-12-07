@@ -1,23 +1,20 @@
 import requests
-import os
 
-from dotenv import load_dotenv
-
-load_dotenv()
 
 URL = "http://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
-API_KEY = os.environ["API_KEY"]
+API_KEY = "90e87bfedd4841d9a03140608230612"
 
 
 def get_weather() -> None:
-
     params = {
         "q": FILTERING,
         "key": API_KEY
     }
 
     response = requests.get(URL, params=params)
+
+    print("Performing request to Weather API for city Paris...")
 
     if response.status_code != 200:
         print(f"Request error, Status code: {response.status_code} != 200")

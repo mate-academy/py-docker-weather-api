@@ -20,7 +20,8 @@ if __name__ == "__main__":
     weather_data = get_weather()
     if weather_data:
         print(
-            f"{weather_data['location']['name']}/{weather_data['location']['country']} "
+            f"{weather_data['location']['name']}/"
+            f"{weather_data['location']['country']} "
             f"{weather_data['location']['localtime']} "
             f"Weather: {weather_data['current']['temp_c']} Celsius, "
             f"{weather_data['current']['condition']['text']}"

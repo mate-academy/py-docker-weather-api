@@ -16,22 +16,34 @@ def get_weather(
         api_key: str = API_KEY
 ) -> None:
     """Get weather from API and print it."""
+    main_api = "https://weatherapi.com/"
+    msg_api = f"You need to visit {main_api} and get your API key."
+    msg_doc = f"You may visit {main_api}/docs/ for more information."
+
     params = {"key": api_key, "q": filtering}
-    res = requests.get(url, params=params).json()
 
-    city = res["location"]["name"]
-    country = res["location"]["country"]
-    temp = res["current"]["temp_c"]
-    condition = res["current"]["condition"]["text"]
+    try:
+        res = requests.get(url, params=params).json()
+    except Exception as e:
+        print(e, msg_doc)
+        return
 
-    print(
-        f"""
-        City: {city}
-        Country: {country}
-        Temperature: {temp}°C
-        Condition: {condition}
-        """
-    )
+    if "error" not in res:
+        city = res["location"]["name"]
+        country = res["location"]["country"]
+        temp = res["current"]["temp_c"]
+        condition = res["current"]["condition"]["text"]
+
+        print(
+            f"""
+            City: {city}
+            Country: {country}
+            Temperature: {temp}°C
+            Condition: {condition}
+            """
+        )
+    else:
+        print(msg_api)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ load_dotenv(find_dotenv())
 
 URL = "http://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
-API_KEY = os.environ["API_KEY"]
+API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:

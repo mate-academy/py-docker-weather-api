@@ -21,17 +21,14 @@ def get_weather() -> None:
         resp = response.json()
         print(
             f"{resp['location']['name']}/{resp['location']['country']}"
-            f" {resp['location']['localtime']} Weather: {resp['current']['temp_c']}"
+            f" {resp['location']['localtime']} "
+            f"Weather: {resp['current']['temp_c']}"
             f" Celsius, {resp['current']['condition']['text']}"
         )
     else:
         print(
             f"Error: status code = {response.status_code}"
         )
-
-
-
-
 
 
 if __name__ == "__main__":

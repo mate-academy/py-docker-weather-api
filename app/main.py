@@ -2,6 +2,7 @@ import os
 
 import requests
 from dotenv import load_dotenv
+from urllib.parse import urlparse
 
 load_dotenv()
 
@@ -16,9 +17,10 @@ def get_weather(
         api_key: str = API_KEY
 ) -> None:
     """Get weather from API and print it."""
-    main_api = "https://weatherapi.com/"
-    msg_api = f"You need to visit {main_api} and get your API key."
-    msg_doc = f"You may visit {main_api}/docs/ for more information."
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc
+    msg_api = f"You need to visit {domain} and get your API key."
+    msg_doc = f"You may visit {domain}/docs/ for more information."
 
     params = {"key": api_key, "q": filtering}
 

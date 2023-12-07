@@ -1,6 +1,4 @@
 import os
-from http.client import HTTPResponse
-from typing import Any
 
 import requests
 from dotenv import load_dotenv
@@ -21,7 +19,7 @@ def get_weather() -> None:
     response = requests.get(WEATHER_BY_CITY_URL, params=params)
 
     if not response.status_code == 200:
-        print(f"Error getting weather. Please try again.")
+        print("Error getting weather. Please try again.")
         return None
 
     location_data = response.json()["location"]

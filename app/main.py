@@ -43,7 +43,7 @@ def get_weather(
             """
         )
     else:
-        print(msg_api)
+        print(msg_api, res['error']['message'])
 
 
 if __name__ == "__main__":

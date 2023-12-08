@@ -1,6 +1,6 @@
 import os
 from datetime import datetime, timedelta
-
+import pycountry
 import requests
 from dotenv import load_dotenv
 
@@ -16,25 +16,24 @@ def get_weather(
         city: str = CITY,
         api_key: str = API_KEY
 ) -> None:
-    response = requests.get(url,
-                            params={"q": city,
-                                    "appid": api_key,
-                                    "units": "metric"}
-                            )
+    request_parameters = {
+        "q": city,
+        "appid": api_key,
+        "units": "metric"
+    }
+    print(f"Performing request to Open Weather Map API for city {city}...")
+    response = requests.get(url, params=request_parameters)
     if response.status_code == 200:
         data = response.json()
         current_time = (datetime.utcnow() + timedelta(
             seconds=data.get("timezone", 0)
-        )).strftime("%d %B %Y - %H:%M")
-        print(f"Weather information for {data['name']}, "
-              f"{data['sys']['country']}:\n"
-              f"current date - time: {current_time}\n"
-              f"current weather: {data['weather'][0]['description']}\n"
-              f"current temperature: {data['main']['temp']}C\n"
-              f"feels like: {data['main']['feels_like']}C\n"
-              f"humidity: {data['main']['humidity']}%\n")
+        )).strftime("%Y-%m-%d %H:%M")
+        country = pycountry.countries.get(alpha_2=data['sys']['country'])
+        print(f"{data['name']}/{country.name} {current_time} "
+              f"Weather: {round(data['main']['temp'], 1)} Celsius, "
+              f"{'/'.join(weather.get('main', '') for weather in data['weather'])}")
     else:
-        print(f"Failed to retrieve weather data. "
+        print("Failed to retrieve weather data. "
               f"Status Code: {response.status_code}")
 
 

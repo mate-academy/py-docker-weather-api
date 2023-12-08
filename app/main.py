@@ -28,10 +28,10 @@ def get_weather(
         current_time = (datetime.utcnow() + timedelta(
             seconds=data.get("timezone", 0)
         )).strftime("%Y-%m-%d %H:%M")
-        country = pycountry.countries.get(alpha_2=data['sys']['country'])
+        country = pycountry.countries.get(alpha_2=data["sys"]["country"])
         print(f"{data['name']}/{country.name} {current_time} "
               f"Weather: {round(data['main']['temp'], 1)} Celsius, "
-              f"{'/'.join(weather.get('main', '') for weather in data['weather'])}")
+              f"{'/'.join(w.get('main', '') for w in data['weather'])}")
     else:
         print("Failed to retrieve weather data. "
               f"Status Code: {response.status_code}")

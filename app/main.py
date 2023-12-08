@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 URL = "http://api.weatherapi.com/v1/current.json"
-CITY = "Kyiv"
+CITY = "Paris"
 API_KEY = os.environ.get("WEATHER_API_KEY")
 
 

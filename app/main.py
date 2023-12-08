@@ -13,12 +13,12 @@ API_KEY = os.environ.get("API_KEY")
 
 def get_weather() -> None:
 
-    r = requests.get(url=URL, params={"key": API_KEY, "q": FILTERING})
+    response = requests.get(url=URL, params={"key": API_KEY, "q": FILTERING})
     print("Performing request to Weather API for city Paris...")
-    if r.status_code != 200:
-        print(f"Request error, Status code: {r.status_code} != 200")
+    if response.status_code != 200:
+        print(f"Request error, Status code: {response.status_code} != 200")
         return
-    data = r.json()
+    data = response.json()
     print(f'{data["location"]["name"]}'
           f'/{data["location"]["country"]}'
           f' {data["location"]["localtime"]}'

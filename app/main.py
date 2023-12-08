@@ -15,16 +15,17 @@ def get_weather() -> None:
         }
     )
 
-    weather_data = response.json()
-    localtime = weather_data["location"]["localtime"]
-    temp_c = weather_data["current"]["temp_c"]
-    condition = weather_data["current"]["condition"]["text"]
-    print("Performing request to Weather API for city Paris...")
-    print(
-        f"Paris/France {localtime} \n"
-        f"Weather: {temp_c} Celsius, \n"
-        f"{condition}"
-    )
+    if response.status_code == 200:
+        weather_data = response.json()
+        localtime = weather_data["location"]["localtime"]
+        temp_c = weather_data["current"]["temp_c"]
+        condition = weather_data["current"]["condition"]["text"]
+        print("Performing request to Weather API for city Paris...")
+        print(
+            f"Paris/France {localtime} \n"
+            f"Weather: {temp_c} Celsius, \n"
+            f"{condition}"
+        )
 
 
 if __name__ == "__main__":

@@ -12,11 +12,11 @@ def get_weather() -> None:
 
     location = data["location"]["country"]
     time = data["location"]["time"]
-    temperature = str(data["current"]["temperature"]) + " Celsius"
+    temperature = data["current"]["temperature"]
     condition = data["current"]["condition"]["text"]
 
     print("Performing request to Weather API for city Paris...")
-    print(f"{location} {time} Weather: {temperature}, {condition}")
+    print(f"{location} {time} Weather: {temperature} Celsius, {condition}")
 
 
 if __name__ == "__main__":

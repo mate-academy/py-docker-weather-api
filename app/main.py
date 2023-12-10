@@ -15,7 +15,7 @@ def get_weather() -> None:
     temperature = str(data["current"]["temperature"]) + " Celsius"
     condition = data["current"]["condition"]["text"]
 
-    print(f"Performing request to Weather API for city Paris...")
+    print("Performing request to Weather API for city Paris...")
     print(f"{location} {time} Weather: {temperature}, {condition}")
 
 

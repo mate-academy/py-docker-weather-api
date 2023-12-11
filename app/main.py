@@ -30,6 +30,5 @@ def get_weather() -> None:
         print(f"status code - {response.status_code} => {response.text}")
 
 
-
 if __name__ == "__main__":
     get_weather()

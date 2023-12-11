@@ -5,18 +5,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-WEATHER_BY_CITY_URL = "https://api.weatherapi.com/v1/current.json"
-FILTERING_CITY = "France,Paris"
+CURRENT_WEATHER_URL = "https://api.weatherapi.com/v1/current.json"
+FILTERING_LOCATION = "France,Paris"
 API_KEY = os.getenv("API_KEY")
 
 
 def get_weather() -> None:
     params = {
-        "q": FILTERING_CITY,
+        "q": FILTERING_LOCATION,
         "key": API_KEY
     }
 
-    response = requests.get(WEATHER_BY_CITY_URL, params=params)
+    response = requests.get(CURRENT_WEATHER_URL, params=params)
 
     if not response.status_code == 200:
         print("Error getting weather. Please try again.")

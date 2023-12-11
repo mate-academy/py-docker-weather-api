@@ -1,0 +1,4 @@
+__pycache__/
+venv
+.flake8
+result.png

@@ -26,6 +26,9 @@ def get_weather() -> None:
             f"Weather: {temp_c} Celsius, \n"
             f"{condition}"
         )
+    else:
+        print(f"status code - {response.status_code} => {response.text}")
+
 
 
 if __name__ == "__main__":

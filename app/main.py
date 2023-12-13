@@ -19,7 +19,8 @@ def get_weather() -> None:
 
     if response.status_code == 200:
         weather_data = response.json()
-        print(f"Current Weather in {CITY} ({weather_data['location']['localtime']}):")
+        print(f"Current Weather in {CITY} "
+              f"({weather_data['location']['localtime']}):")
         print(f"It is {weather_data['current']['condition']['text']} now")
         print(f"Temperature: {weather_data['current']['temp_c']} Celsius")
     else:

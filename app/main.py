@@ -7,6 +7,7 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
 
 
 def get_weather() -> None:
@@ -14,7 +15,7 @@ def get_weather() -> None:
         url=URL,
         params={
             "key": API_KEY,
-            "q": "Paris"
+            "q": CITY
         }
     )
 
@@ -26,8 +27,8 @@ def get_weather() -> None:
         wind_kph = weather_data["current"]["wind_kph"]
         wind_dir = weather_data["current"]["wind_dir"]
 
-        print("Generating short weather forecast for PARIS...")
-        print(f"Now the weather in Paris is {condition}\n"
+        print(f"Generating short weather forecast for {CITY}...")
+        print(f"Now the weather in {CITY} is {condition}\n"
               f"Temperature by Celsius: {temp_c} C\n"
               f"Temperature by Fahrenheit: {temp_f} F\n"
               f"Wind directory is {wind_dir} with {wind_kph} kph")

@@ -6,23 +6,21 @@ URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 
 
-def get_weather() -> None | dict:
+def get_weather() -> None:
     params = {"key": API_KEY, "q": CITY}
     print("Performing request to Weather API for city Paris...")
     response = requests.get(URL, params=params)
     if response.status_code == 200:
-        return response.json()
-    print(f"Error occurred, response status code: {response.status_code}")
-    return None
+        print(
+            f"{response.json()['location']['name']}/"
+            f"{response.json()['location']['country']} "
+            f"{response.json()['location']['localtime']} "
+            f"Weather: {response.json()['current']['temp_c']} Celsius, "
+            f"{response.json()['current']['condition']['text']}"
+        )
+    else:
+        print(f"Error occurred, response status code: {response.status_code}")
 
 
 if __name__ == "__main__":
-    weather_data = get_weather()
-    if weather_data:
-        print(
-            f"{weather_data['location']['name']}/"
-            f"{weather_data['location']['country']} "
-            f"{weather_data['location']['localtime']} "
-            f"Weather: {weather_data['current']['temp_c']} Celsius, "
-            f"{weather_data['current']['condition']['text']}"
-        )
+    get_weather()

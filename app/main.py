@@ -17,7 +17,7 @@ def get_weather() -> None:
     )
     if response.status_code == 200:
         data = response.json()
-        print(f"Performing request to Weather API for city "
+        print("Performing request to Weather API for city "
               f"{data['location']['name']}")
         print(
             f"{data['location']['localtime']}, "
@@ -27,7 +27,7 @@ def get_weather() -> None:
         )
     else:
         print(
-            f"Failed to retrieve weather data. "
+            "Failed to retrieve weather data. "
             f"Status Code: {response.status_code}"
         )
 

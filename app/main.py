@@ -10,10 +10,8 @@ API_KEY = os.environ.get("WEATHER_API_KEY")
 
 
 def get_weather() -> None:
-    response = requests.get(URL,
-                            params={"key": API_KEY,
-                                    "q": CITY,
-                                    "aqi": "no"})
+    params = {"key": API_KEY, "q": CITY, "aqi": "no"}
+    response = requests.get(URL, params=params)
     if response.status_code == 200:
         data = response.json()
         print(f"{data['location']['localtime']}, "

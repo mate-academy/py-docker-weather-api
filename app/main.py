@@ -20,11 +20,11 @@ def get_weather() -> None:
     response = requests.get(BASE_URL, params=params)
     weather_data = response.json()
 
-    city_name = weather_data["location"]["name"]
-    country = weather_data["location"]["country"]
-    local_time = weather_data["location"]["localtime"]
-    temp_c = weather_data["current"]["temp_c"]
-    condition_text = weather_data["current"]["condition"]["text"]
+    city_name = weather_data.get("location", {}).get("name", "Unknown city")
+    country = weather_data.get("location", {}).get("country", "Unknown country")
+    local_time = weather_data.get("location", {}).get("localtime", "Unknown time")
+    temp_c = weather_data.get("current", {}).get("temp_c", "N/A")
+    condition_text = weather_data.get("current", {}).get("condition", {}).get("text", "N/A")
 
     formatted_output = (
         f"{city_name}/{country}"

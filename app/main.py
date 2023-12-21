@@ -29,7 +29,7 @@ def get_weather() -> None:
 
         print(f"Performing request to Weather API for city {FILTERING}...")
         print(
-            f"{city_name}/{country_name}"
+            f"{city_name}/{country_name} "
             f"{local_time} Weather: {temp_c} Celsius, {weather_condition}"
         )
 

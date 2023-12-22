@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 URL = "http://api.weatherapi.com/v1/current.json"
-FILTERING = "Paris"
+CITY = "Paris"
 API_KEY = os.getenv("API_KEY")
 
 
@@ -14,7 +14,7 @@ def get_weather() -> None:
 
     payload = {
         "key": API_KEY,
-        "q": FILTERING
+        "q": CITY
     }
 
     res = requests.get(URL, payload)
@@ -27,7 +27,7 @@ def get_weather() -> None:
         temp_c = weather_info["current"]["temp_c"]
         weather_condition = weather_info["current"]["condition"]["text"]
 
-        print(f"Performing request to Weather API for city {FILTERING}...")
+        print(f"Performing request to Weather API for city {CITY}...")
         print(
             f"{city_name}/{country_name} "
             f"{local_time} Weather: {temp_c} Celsius, {weather_condition}"

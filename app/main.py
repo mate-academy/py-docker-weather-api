@@ -17,10 +17,10 @@ def get_weather() -> None:
         "q": CITY
     }
 
-    res = requests.get(URL, payload)
-    weather_info = res.json()
+    response = requests.get(URL, payload)
+    weather_info = response.json()
 
-    if res.status_code == 200:
+    if response.status_code == 200:
         city_name = weather_info["location"]["name"]
         country_name = weather_info["location"]["country"]
         local_time = weather_info["location"]["localtime"]
@@ -34,7 +34,7 @@ def get_weather() -> None:
         )
 
     else:
-        print(f"Something wrong...Error code: {res.status_code}")
+        print(f"Something wrong...Error code: {response.status_code}")
 
 
 if __name__ == "__main__":

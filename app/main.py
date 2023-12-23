@@ -18,18 +18,16 @@ def get_weather() -> None:
 
     if response.status_code != 200:
         print(f"Error occurred, response status code: {response.status_code}")
-        return None
+        return
 
     data = response.json()
-    return data
-
-
-if __name__ == "__main__":
-    data = get_weather()
-
     print(
         f"{data['location']['name']}/{data['location']['country']} "
         f"{data['location']['localtime']} "
         f"Weather: {data['current']['temp_c']} Celsius, "
         f"{data['current']['condition']['text']}"
     )
+
+
+if __name__ == "__main__":
+    get_weather()

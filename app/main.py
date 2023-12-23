@@ -4,7 +4,7 @@ import os
 
 
 def get_weather() -> None:
-    base_url = "http://api.weatherapi.com/v1/current.json"
+    BASE_URL = "http://api.weatherapi.com/v1/current.json"
     params = {
         "key": os.environ.get("API_KEY"),
         "q": "Paris",
@@ -13,7 +13,7 @@ def get_weather() -> None:
     current_datetime = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
     try:
-        response = requests.get(base_url, params=params)
+        response = requests.get(BASE_URL, params=params)
         response.raise_for_status()
 
         weather_data = response.json()

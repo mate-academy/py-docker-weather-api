@@ -2,9 +2,11 @@ import requests
 from datetime import datetime
 import os
 
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+
 
 def get_weather() -> None:
-    BASE_URL = "http://api.weatherapi.com/v1/current.json"
+
     params = {
         "key": os.environ.get("API_KEY"),
         "q": "Paris",

@@ -17,11 +17,13 @@ def get_weather() -> None:
         data.get("last_updated"),
         data["condition"]["text"],
     )
-    print("City:", CITY)
-    print("As of:", date_and_time)
-    print("Temperature:", temp_c, "Celsius")
-    print("Feels like in Celsius:", feelslike_c)
-    print("Weather description:", descriptions)
+    print(
+        f"City: {CITY}\n"
+        f"As of: {date_and_time}\n"
+        f"Temperature: {temp_c}\n"
+        f"Celsius Feels like in Celsius: {feelslike_c}\n"
+        f"Weather description: {descriptions}"
+    )
 
 
 if __name__ == "__main__":

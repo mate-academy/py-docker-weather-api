@@ -28,13 +28,13 @@ def print_weather(weather: dict) -> None:
     weather_current = weather["current"]
 
     print("Location")
-    print(f"Country: {location["country"]}, City: {location["name"]}")
-    print(f"TimeZone: {location["tz_id"]}, Time: {location["localtime"]}")
+    print(f"Country: {location['country']}, City: {location['name']}")
+    print(f"TimeZone: {location['tz_id']}, Time: {location['localtime']}")
     print("-" * 50)
     print("Weather")
-    print(f"Temperature: {weather_current["temp_c"]}")
-    print(f"Day: {bool(weather_current["is_day"])}")
-    print(f"Wind speed: {weather_current["wind_kph"]}km/h")
+    print(f"Temperature: {weather_current['temp_c']}")
+    print(f"Day: {bool(weather_current['is_day'])}")
+    print(f"Wind speed: {weather_current['wind_kph']}km/h")
 
 
 if __name__ == "__main__":

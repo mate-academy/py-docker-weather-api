@@ -12,13 +12,15 @@ def get_weather() -> None:
     }
 
     result = requests.get(URL, params=params)
+    result.raise_for_status()
     my_data = result.json()
 
     print(
-        f"{my_data['location']['name']}/{my_data['location']['country']} "
-        f"{my_data['location']['localtime']} "
-        f"Weather: {my_data['current']['temp_c']} Celsius, "
-        f"{my_data['current']['condition']['text']}"
+        f"{my_data.get('location').get('name')}/"
+        f"{my_data.get('location').get('country')} "
+        f"{my_data.get('location').get('localtime')} "
+        f"Weather: {my_data.get('current').get('temp_c')} Celsius, "
+        f"{my_data.get('current').get('condition').get('text')}"
     )
 
 

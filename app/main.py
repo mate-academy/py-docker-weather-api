@@ -10,7 +10,6 @@ CITY = "Paris"
 
 
 def get_weather() -> None:
-    pass
     params = {"key": API_KEY, "q": CITY}
 
     response = requests.get(URL, params=params)

@@ -5,14 +5,14 @@ API_URL = "https://api.weatherapi.com/v1/current.json?"
 FILTERING = "Paris"
 
 
-def get_weather(key, city) -> None | str:
+def get_weather(key: str, city: str) -> None | str:
     url = f"{API_URL}key={key}&q={FILTERING}"
     result = requests.get(url)
 
     return result.json() if result.status_code == 200 else None
 
 
-def print_weather(info) -> None:
+def print_weather(info: dict) -> None:
     city_name = info["location"]["name"]
     country_name = info["location"]["country"]
     date_time = info["location"]["localtime"]
@@ -21,7 +21,8 @@ def print_weather(info) -> None:
     weather = info["current"]["condition"]["text"]
 
     print(
-        f"City: {city_name}({country_name}) {date_time} {temperature_celsius}°C ({temperature_fahrenheit}℉) {weather}")
+        f"City: {city_name}({country_name}) {date_time} {temperature_celsius}"
+        f"°C ({temperature_fahrenheit}℉) {weather}")
 
 
 if __name__ == "__main__":

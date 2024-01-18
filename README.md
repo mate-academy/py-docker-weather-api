@@ -27,8 +27,11 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
-
+  COMMAND=`docker pull nsdnite/docker-weather-api`.
+- Run script via next line:
+```python
+docker run -e API_KEY="[YOUR_WEATHER_API_KEY]" nsdnite/docker-weather-api
+```
 <details>
   <summary><strong>Hint</strong></summary>
     Don't use `< >` in docker command. Here is the example:

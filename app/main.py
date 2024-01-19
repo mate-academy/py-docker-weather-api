@@ -9,11 +9,14 @@ load_dotenv()
 def get_weather() -> None:
     city = "Paris"
     params = {
-        'key': os.getenv('API_KEY'),
-        'q': city,
-        'aqi': 'yes'
+        "key": os.getenv("API_KEY"),
+        "q": city,
+        "aqi": "yes"
     }
-    response = requests.get(f"https://api.weatherapi.com/v1/current.json", params=params)
+    response = requests.get(
+        "https://api.weatherapi.com/v1/current.json",
+        params=params
+    )
     weather_data = response.json()
 
     country_name = weather_data["location"]["country"]

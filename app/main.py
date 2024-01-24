@@ -14,7 +14,8 @@ def get_weather() -> None:
     print(
         f"{response['location']['name']}/{response['location']['country']} "
         f"{response['location']['localtime']} "
-        f"Weather: {response['current']['temp_c']} Celsius, {response['current']['condition']['text']}"
+        f"Weather: {response['current']['temp_c']} Celsius, "
+        f"{response['current']['condition']['text']}"
     )
 
 

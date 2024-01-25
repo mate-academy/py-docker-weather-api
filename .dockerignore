@@ -1,0 +1,10 @@
+venv/
+.git
+.github
+.idea
+checklist.md
+Dockerfile
+README.md
+result.png
+.flake8
+.gitignore

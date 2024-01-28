@@ -11,8 +11,8 @@ def get_weather() -> None:
     try:
         url = base_url + "key=" + api_key + "&q=" + city
         response_json = requests.get(url).json()
-    except:
-        raise EnvironmentError(
+    except TypeError:
+        raise TypeError(
             "Set your environment variable API_KEY "
             "in terminal and run this script again"
         )

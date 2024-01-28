@@ -8,16 +8,21 @@ def get_weather() -> None:
 
     city = "Paris"
 
-    url = base_url + "key=" + api_key + "&q=" + city
+    try:
+        url = base_url + "key=" + api_key + "&q=" + city
+        response_json = requests.get(url).json()
+    except:
+        raise EnvironmentError(
+            "Set your environment variable API_KEY "
+            "in terminal and run this script again"
+        )
 
-    response = requests.get(url).json()
     result = (
-        f"{city}/{response['location']['country']} "
-        f"{response['location']['localtime']} "
-        f"Weather: {response['current']['temp_c']} Celsius, "
-        f"{response['current']['condition']['text']}"
+        f"{city}/{response_json['location']['country']} "
+        f"{response_json['location']['localtime']} "
+        f"Weather: {response_json['current']['temp_c']} Celsius, "
+        f"{response_json['current']['condition']['text']}"
     )
-
     print(result)
 
 

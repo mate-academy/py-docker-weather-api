@@ -1,11 +1,7 @@
-.idea/
-.vscode/
-*.iml
-.env
-.DS_Store
 venv/
 .pytest_cache/
 **__pycache__/
+.env
+README.md
 result.png
 checklist.md
-

@@ -6,16 +6,16 @@ def get_weather() -> None:
     base_url = "https://api.weatherapi.com/v1/current.json?"
     api_key = os.getenv("API_KEY")
 
-    city = "Paris"
+    city = "Seoul"
 
-    try:
-        url = base_url + "key=" + api_key + "&q=" + city
-        response_json = requests.get(url).json()
-    except TypeError:
+    if not os.getenv("API_KEY"):
         raise TypeError(
             "Set your environment variable API_KEY "
             "in terminal and run this script again"
         )
+
+    url = base_url + "key=" + api_key + "&q=" + city
+    response_json = requests.get(url).json()
 
     result = (
         f"{city}/{response_json['location']['country']} "

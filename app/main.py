@@ -10,9 +10,10 @@ def get_weather() -> None:
         "key": key,
         "q": "Kyiv"
     })
-    print(f"Kyiv temperature "
-          f"{res.json()['current']['temp_c']},"
-          f" {res.json()['current']['condition']['text']}")
+    if res.status_code == 200:
+        print(f"Kyiv temperature "
+              f"{res.json()['current']['temp_c']},"
+              f" {res.json()['current']['condition']['text']}")
 
 
 if __name__ == "__main__":

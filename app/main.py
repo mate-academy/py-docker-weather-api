@@ -11,9 +11,8 @@ def get_weather() -> None:
             f"Paris/France"
             f" {req.json().get('location')['localtime']}"
             f" Weather: {req.json().get('current').get('temp_c')}"
-            f" Celsius, {
-                req.json().get('current').get('condition').get('text')
-            }"
+            f" Celsius, "
+            f"{req.json().get('current').get('condition').get('text')}"
         )
 
 

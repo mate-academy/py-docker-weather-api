@@ -10,8 +10,9 @@ def get_weather() -> None:
     result = requests.get(URL + f"q={FILTERING}&key={API_KEY}")
     if result.status_code == 200:
         data = result.json()
-        location = (f"{data.get("location").get("name")}"
-                    f"/{data.get("location").get("country")}")
+        city = data.get("location").get("name")
+        country = data.get("location").get("country")
+        location = f"{city}/{country}"
         date = data.get("location").get("localtime")
         temperature = data.get("current").get("temp_c")
         condition = data.get("current").get("condition").get("text")

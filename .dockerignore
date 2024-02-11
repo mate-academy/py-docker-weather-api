@@ -1,0 +1,6 @@
+venv
+.github
+.idea
+result.png
+.gitignore
+.flake8

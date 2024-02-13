@@ -1,0 +1,6 @@
+.venv
+.env
+.python-version
+checklist.md
+README.md
+result.png

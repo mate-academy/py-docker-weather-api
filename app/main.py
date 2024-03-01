@@ -4,18 +4,18 @@ from datetime import datetime
 
 
 def get_weather() -> None:
-    FILTERING = "Paris"
-    API_KEY = os.environ.get("API_KEY")
-    URL = "http://api.weatherapi.com/?"
+    filtering = "Paris"
+    api_key = os.environ.get("API_KEY")
+    url = "http://api.weatherapi.com/?"
 
-    result = requests.get(URL + f"key={API_KEY}&q={FILTERING}")
+    result = requests.get(url + f"key={api_key}&q={filtering}")
 
     try:
         response = requests.get(result)
         data = response.json()
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M")
         weather_text = (
-            f"{FILTERING}/France {current_time}"
+            f"{filtering}/France {current_time}"
             f" Weather: {data['current']['temp_c']}"
             f" Celsius, {data['current']['condition']['text']}"
         )

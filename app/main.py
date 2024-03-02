@@ -2,12 +2,12 @@ import os
 import requests
 from datetime import datetime
 
+FILTERING = "Paris"
+API_KEY = os.environ.get("API_KEY")
+URL = "http://api.weatherapi.com/?"
+
 
 def get_weather() -> None:
-    FILTERING = "Paris"
-    API_KEY = os.environ.get("API_KEY")
-    URL = "http://api.weatherapi.com/?"
-
     params = {"key": API_KEY, "q": FILTERING}
 
     try:

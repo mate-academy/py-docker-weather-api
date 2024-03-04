@@ -13,7 +13,8 @@ def get_weather() -> None:
 
     data = response.json()
 
-    print(f"Performing request to Weather API for city {data['location']['name']}...")
+    print(f"Performing request to "
+          f"Weather API for city {data['location']['name']}...")
 
     print(f"{data['location']['name']}/{data['location']['country']}"
           f" {data['location']['localtime']} "

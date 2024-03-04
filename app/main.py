@@ -17,9 +17,14 @@ def get_weather() -> None:
 
     result = work_request.json()
 
-    test_view = f"Local time: {result['location']['localtime']}, temp(C): {result['current']['temp_c']}, precipitation: {result['current']['condition']['text']}, wind(m/c): {result['current']['wind_mph']}, direction wind: {result['current']['wind_dir']}"
-
-    ttt = 0
+    test_view = (
+        f"Local time: {result['location']['localtime']}, "
+        f"temp(C): {result['current']['temp_c']}, "
+        f"precipitation: {result['current']['condition']['text']}, "
+        f"wind(m/c): {result['current']['wind_mph']}, "
+        f"direction wind: {result['current']['wind_dir']}"
+    )
+    print(test_view)
 
 
 if __name__ == "__main__":

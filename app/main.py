@@ -3,7 +3,6 @@ import os
 
 
 def get_weather() -> None:
-    # write your code here
 
     api_key = os.environ.get("API_KEY")
 

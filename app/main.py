@@ -13,9 +13,13 @@ def get_weather() -> None:
 
     data = response.json()
 
-    print(data)
+    print(f"Performing request to Weather API for city {data['location']['name']}...")
 
-    print("Have a nice day!")
+    print(f"{data['location']['name']}/{data['location']['country']}"
+          f" {data['location']['localtime']} "
+          f"Weather: {data['current']['temp_c']}"
+          f" Celsius, {data['current']['condition']['text']}"
+          )
 
 
 if __name__ == "__main__":

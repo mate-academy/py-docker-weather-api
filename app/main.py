@@ -1,15 +1,23 @@
 import requests
+import os
+import json
 
 
 def get_weather() -> None:
     # write your code here
-    url = ("http://api.weatherapi.com/v1/current."
-           "json?key=8326749241e34abdb6095927240303&q=Paris")
+
+    api_key = os.environ.get("API_KEY")
+
+    url = (f"http://api.weatherapi.com/v1/current."
+           f"json?key={api_key}&q=Paris")
 
     response = requests.get(url)
+
     data = response.json()
 
-    return data
+    print(data)
+
+    print("Have a nice day!")
 
 
 if __name__ == "__main__":

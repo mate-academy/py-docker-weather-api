@@ -12,11 +12,11 @@ CITY = "Paris"
 
 
 def get_weather() -> None:
-    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+    dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
     if os.path.exists(dotenv_path):
         load_dotenv(dotenv_path)
 
-    work_key = os.environ.get('API_KEY')
+    work_key = os.environ.get("API_KEY")
 
     work_params = f"key={work_key}&q={CITY}"
 

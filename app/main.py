@@ -1,16 +1,26 @@
 from __future__ import print_function
+
+import os
+from dotenv import load_dotenv
 import requests
 
 
 # http://api.weatherapi.com/v1/search.json?key=1a89060c76a14afba95134309242702&q=Paris
 
-def get_weather() -> None:
-    url = "http://api.weatherapi.com/v1/current.json?"
-    work_key = "1a89060c76a14afba95134309242702"
-    work_sity = "Paris"
-    work_params = f"key={work_key}&q={work_sity}"
+URL = "http://api.weatherapi.com/v1/current.json?"
+CITY = "Paris"
 
-    work_request = requests.get(url, params=work_params)
+
+def get_weather() -> None:
+    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+    if os.path.exists(dotenv_path):
+        load_dotenv(dotenv_path)
+
+    work_key = os.environ.get('API_KEY')
+
+    work_params = f"key={work_key}&q={CITY}"
+
+    work_request = requests.get(URL, params=work_params)
 
     if work_request.status_code != 200:
         print(f"Error request: {work_request.status_code}")

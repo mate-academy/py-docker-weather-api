@@ -1,18 +1,14 @@
 from requests import get
-import os
 
-from constants import BASE_URL
+from constants import BASE_URL, API_KEY
 
 
 def get_weather(city: str) -> None:
-    api_key = os.environ.get("WEATHER_API_KEY")
 
-    result = get(BASE_URL, {
-        "key": api_key,
+    weather = get(BASE_URL, {
+        "key": API_KEY,
         "q": city,
-    })
-
-    weather = result.json()
+    }).json()
 
     city = weather["location"]["name"]
     country = weather["location"]["country"]

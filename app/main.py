@@ -11,7 +11,11 @@ WEATHER_API_URL = "https://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
-    response = requests.get(WEATHER_API_URL + f"?key={API_KEY}&q={CITY}")
+    params = {
+        "key": API_KEY,
+        "q": CITY
+    }
+    response = requests.get(url=WEATHER_API_URL, params=params)
     print(response.json())
 
 

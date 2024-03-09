@@ -26,8 +26,10 @@ So in this task requirements are next:
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
-- You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+- To pull docker, use follow
+  command:`docker pull lebwa1337/weather-paris`.
+- To run docker i use this command:
+docker run -e API_KEY=(Your API key from weather-api website) b3a8b3c24be9
 
 <details>
   <summary><strong>Hint</strong></summary>

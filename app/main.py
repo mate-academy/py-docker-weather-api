@@ -7,15 +7,18 @@ CURRENT_WEATHER_URL = "http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather(key: str) -> None:
-    req = requests.get(
+    request = requests.get(
         CURRENT_WEATHER_URL,
         params={
             "key": key,
             "q": "Paris"
         }
     )
-
-    print(req.text)
+    if request.status_code == 200:
+        print(request.text)
+    else:
+        raise ValueError(f"Something went wrong. Status code is "
+                         f"{request.status_code}, but expected 200")
 
 
 if __name__ == "__main__":

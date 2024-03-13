@@ -9,8 +9,12 @@ CITY = "Paris"
 
 def get_weather() -> None:
     params = {"key": API_KEY, "q": CITY}
-    res = requests.get(url=URL, params=params).json()
-    print(res)
+    res = requests.get(url=URL, params=params)
+    if res.status_code == 200:
+        print(res.json())
+    else:
+        print(f"Error: {res.status_code}."
+              f"Something wrong with the Weather API request.")
 
 
 if __name__ == "__main__":

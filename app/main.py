@@ -28,8 +28,7 @@ def get_weather() -> None:
             f"Weather: {temperature} Celsius, {condition}"
         )
     else:
-        print("Error. SORRY....")
-        print("Response content:", response.content)
+        print(f"Error. SORRY.... Response content: {response.content}")
 
 
 if __name__ == "__main__":

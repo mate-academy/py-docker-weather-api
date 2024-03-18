@@ -8,10 +8,12 @@ URL = "http://api.weatherapi.com/v1/current.json?"
 def get_weather(city: str) -> None:
     print(f"Performing request to Weather API for city {city}...")
     result = requests.get(
-        URL
-        + f"key={API_KEY}&"
-        + f"q={city}"
-    ).json()
+        URL,
+        params={"key": API_KEY, "q": city}
+    )
+
+    if result.status_code != 200:
+        raise Exception("Somthing went wrong...")
 
     location = result["location"]
     current = result["current"]

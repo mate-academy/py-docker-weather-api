@@ -16,7 +16,7 @@ def get_weather(city: str) -> None:
     location = result["location"]
     current = result["current"]
 
-    city = f"{location["name"]}/{location["country"]}"
+    city = location["name"] + "/" + location["country"]
     localtime = location["localtime"]
     temp_c = current["temp_c"]
     condition = current["condition"]["text"]

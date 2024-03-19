@@ -14,10 +14,10 @@ def get_weather() -> None:
 
     print(
         f"The weather in {CITY} is "
-        f"{weather["condition"]["text"].lower()}"
+        f"{weather['condition']['text'].lower()}"
     )
-    print(f"Temperature in Celsius: {weather["temp_c"]}")
-    print(f"Temperature in Fahrenheit: {weather["temp_f"]}")
+    print(f"Temperature in Celsius: {weather['temp_c']}")
+    print(f"Temperature in Fahrenheit: {weather['temp_f']}")
 
 
 if __name__ == "__main__":

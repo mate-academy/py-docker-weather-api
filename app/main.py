@@ -7,7 +7,8 @@ import os
 def get_weather() -> None:
     dotenv.load_dotenv()
     res = requests.get(
-        f"http://api.weatherapi.com/v1/current.json?key={os.getenv('API_KEY')}&q=Paris"
+        f"http://api.weatherapi.com/v1/current.json?key="
+        f"{os.getenv('API_KEY')}&q=Paris"
     )
     res = json.loads(res.content)
     print(

@@ -23,7 +23,7 @@ def get_weather() -> None:
               f"Weather: {response['current']['temp_c']} Celsius, "
               f"{response['current']['condition']['text']}")
     else:
-        print(f"HTTP status code's Error.")
+        print("HTTP status code's Error.")
 
 
 if __name__ == "__main__":

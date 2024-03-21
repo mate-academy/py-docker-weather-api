@@ -16,10 +16,14 @@ def get_weather() -> None:
     current_weather = "/current.json"
     url = f"{weather_url}{current_weather}?key={API_KEY}&q={CITY}"
     response = requests.get(url).json()
-    print(response)
-    print(response["location"]["name"])
-    print(response["location"]["country"])
-    print("temperature in celsius", response["current"]["temp_c"])
+    print("Performing request to Weather API for city " + CITY)
+    if requests.get(url).status_code == 200:
+        print(f"{CITY}/{response['location']['country']} "
+              f"{response['location']['localtime']} "
+              f"Weather: {response['current']['temp_c']} Celsius, "
+              f"{response['current']['condition']['text']}")
+    else:
+        print(f"HTTP status code's Error.")
 
 
 if __name__ == "__main__":

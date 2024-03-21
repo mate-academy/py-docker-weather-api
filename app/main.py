@@ -19,7 +19,9 @@ def get_weather() -> None:
             f"{res['current']['condition']['text']}"
         )
     else:
-        print("Request was not successful. Status code: " + str(res.status_code))
+        print(
+            "Request was not successful. Status code: " + str(res.status_code)
+        )
 
 
 if __name__ == "__main__":

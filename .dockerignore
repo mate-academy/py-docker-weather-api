@@ -1,0 +1,10 @@
+.venv
+venv
+.idea*
+.git*
+.gitignore
+.flake8
+*.md
+*.png
+Dockerfile
+.dockerignore

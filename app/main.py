@@ -17,15 +17,19 @@ def get_weather(city: str = "Paris") -> Response:
         print(request["error"]["message"])
         return request
 
-    location = request["location"]
-    current_temp = request["current"]
-    condition = current_temp["condition"]
+    city_name = request["location"]["name"]
+    country = request["location"]["country"]
+    localtime = request["location"]["localtime"]
+    current_temp = request["current"]["temp_c"]
+    updated_at = request["current"]["last_updated"]
+    feels_like = request["current"]["feelslike_c"]
+    condition = request["current"]["condition"]["text"]
+
     print("▼" * 50)
     print(
-        f"{location["name"]}/{location["country"]} {location["localtime"]}\n"
-        f"Updated at: {current_temp["last_updated"]} \n"
-        f"Weather: {current_temp["temp_c"]} C "
-        f"(feels like {current_temp["feelslike_c"]} C), {condition["text"]}"
+        f"{city_name}/{country} {localtime}\n"
+        f"Updated at: {updated_at} \n"
+        f"Weather: {current_temp} C (feels like {feels_like} C), {condition}"
     )
     print("▲" * 50)
 

@@ -15,7 +15,8 @@ def get_weather() -> None:
     localtime = result["location"]["localtime"]
     condition = result["current"]["condition"]["text"]
     temp_c = result["current"]["temp_c"]
-    print(f"{city}/{country} {localtime} Weather: {temp_c} Celsius, {condition}")
+    print(f"{city}/{country} {localtime}"
+          f" Weather: {temp_c} Celsius, {condition}")
 
 
 if __name__ == "__main__":

@@ -14,12 +14,13 @@ def get_weather() -> str:
 
     if response.status_code == 200:
         data = response.json()
-        print(f"location: {data["location"]["name"]}, "
-              f"temperature: {data["current"]["temp_c"]}")
+        location = data["location"]["name"]
+        temperature = data["current"]["temp_c"]
+
+        print(f"location: {location}, temperature: {temperature}")
         return data
     else:
         print("Failed to fetch data:", response.status_code)
-        return None
 
 
 if __name__ == "__main__":

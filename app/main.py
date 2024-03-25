@@ -11,7 +11,15 @@ LANGUAGE = "en"
 
 
 def get_weather() -> None:
-    res = requests.get(URL, params={"key": API_KEY, "q": CITY, "units": "metric", "lang": LANGUAGE})
+    res = requests.get(
+        URL,
+        params={
+            "key": API_KEY,
+            "q": CITY,
+            "units": "metric",
+            "lang": LANGUAGE
+        }
+    )
     data = res.json()
 
     if "error" in data:
@@ -24,8 +32,14 @@ def get_weather() -> None:
         print("City:", location["name"])
         print("Localtime:", weather["last_updated"])
         print("Condition:", weather["condition"]["text"])
-        print("Temperature C:", weather["temp_c"], ", feels like", weather["feelslike_c"])
-        print("Temperature F:", weather["temp_f"], ", feels like", weather["feelslike_f"])
+        print(
+            "Temperature C:", weather["temp_c"],
+            ", feels like", weather["feelslike_c"]
+        )
+        print(
+            "Temperature F:", weather["temp_f"],
+            ", feels like", weather["feelslike_f"]
+        )
 
         humidity = weather["humidity"]
         wind_speed = weather["wind_kph"]

@@ -15,9 +15,9 @@ def get_weather() -> None:
     response = requests.get(URL + METHOD + f"?key={KEY}&q={FILTER}")
     if response.status_code == 200:
         data = response.json()
-        print(f"Current location: {data["location"]["name"]}\n"
-              f"Time: {data["location"]["localtime"]}\n"
-              f"Temperature: {data["current"]["temp_c"]}")
+        print(f"Current location: {data['location']['name']}\n"
+              f"Time: {data['location']['localtime']}\n"
+              f"Temperature: {data['current']['temp_c']}")
     else:
         print(f"{response.status_code}")
 

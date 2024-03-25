@@ -12,29 +12,23 @@ LANG = "uk"
 
 
 def get_weather() -> None:
-    response = requests.get(
-        BASE_URL,
-        params={
-            "key": API_KEY,
-            "q": City,
-            "lang": LANG,
-        },
-    )
+    response = requests.get(f"{BASE_URL}?key={API_KEY}&q={City}&lang={LANG}")
+
     if response.status_code == 200:
         response_current = response.json().get("current")
         response_location = response.json().get("location")
 
-        print("\nCurrent weather:\n")
-        print("Country:", response_location.get("country"))
-        print("City:", response_location.get("name"))
-        print("Local datetime:", response_location.get("localtime"))
         print(
-            f"Cloud: {response_current.get('cloud')} "
-            f"{response_current.get('condition').get('text')}",
+            "\nCurrent weather:\n"
+            f"Country: {response_location.get('country')}\n"
+            f"City: {response_location.get('name')}\n"
+            f"Local datetime: {response_location.get('localtime')}\n"
+            f"Cloud: {response_current.get('cloud')}\n"
+            f"{response_current.get('condition').get('text')}\n"
+            f"Humidity: {response_current.get('humidity')}\n"
+            f"Temperature °C: {response_current.get('temp_c')}\n"
+            f"Feels like °C: {response_current.get('feelslike_c')}\n"
         )
-        print("Humidity:", response_current.get("humidity"))
-        print("Temperature °C:", response_current.get("temp_c"))
-        print("Feels like °C:", response_current.get("feelslike_c"))
     else:
         print("Oops! Something went wrong! :)")
 

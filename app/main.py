@@ -19,7 +19,7 @@ def get_weather() -> None:
               f"Time: {data['location']['localtime']}\n"
               f"Temperature: {data['current']['temp_c']}")
     else:
-        print(f"{response.status_code}")
+        print(f"{response.text}")
 
 
 if __name__ == "__main__":

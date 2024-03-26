@@ -1,1 +1,9 @@
 .venv
+*.png
+*.md
+Dockerfile
+.git
+.github
+.gitignore
+.idea
+.flake8

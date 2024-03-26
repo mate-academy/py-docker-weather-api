@@ -7,9 +7,16 @@ URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 
 
+class MissingAPIKeyError(Exception):
+
+    def __init__(self, message):
+        super().__init__(message)
+        self.message = message
+
+
 def get_weather() -> None:
     if not API_KEY:
-        raise ValueError("No API key provided for Weather API")
+        raise MissingAPIKeyError("No API key provided for Weather API")
     print(f"Performing request to {URL} for {CITY}")
 
     response_params = {

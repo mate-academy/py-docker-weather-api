@@ -13,7 +13,7 @@ def get_weather() -> None:
         response = requests.get(
             URL, params={"key": API_KEY, "q": FILTERING}
         ).json()
-        location = (f"{response["location"].get("name")}/"
+        location = (f"{response['location'].get('name')}/"
                     + response["location"].get("country"))
         localtime = response["location"].get("localtime")
         temperature = response["current"].get("temp_c")

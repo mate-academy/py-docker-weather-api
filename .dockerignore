@@ -1,0 +1,15 @@
+#Folders:
+.idea
+.github
+venv
+.git
+
+
+#Files:
+.dockerignore
+.flake8
+.gitignore
+checklist.md
+Dockerfile
+README.md
+result.png

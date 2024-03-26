@@ -12,7 +12,7 @@ METHOD = "current.json"
 
 
 def get_weather() -> None:
-    response = requests.get(URL + METHOD + f"?key={KEY}&q={FILTER}")
+    response = requests.get(f"{URL}{METHOD}", params={"key": KEY, "q": FILTER})
     if response.status_code == 200:
         data = response.json()
         print(f"Current location: {data['location']['name']}\n"

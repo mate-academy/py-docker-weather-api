@@ -44,7 +44,10 @@ def get_weather() -> None:
             f"Wind Speed: {wind_speed} kph\n"
         )
     else:
-        print(f"(Status code: {request.status_code}) " + request.json()["error"]["message"])
+        print(
+            f"(Status code: {request.status_code}) "
+            + request.json()["error"]["message"]
+        )
 
 
 if __name__ == "__main__":

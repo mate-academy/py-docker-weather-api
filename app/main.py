@@ -15,9 +15,9 @@ def get_weather(api_key: str) -> dict:
 
 def print_weather(weather: dict) -> None:
     print("Weather in Paris:")
-    print(f"Temperature: {weather["temp_c"]}°C")
-    print(f"Condition: {weather["condition"]["text"]}")
-    print(f"Wind: {weather["wind_kph"]} km/h")
+    print(f"Temperature: {weather['temp_c']}°C")
+    print(f"Condition: {weather['condition']['text']}")
+    print(f"Wind: {weather['wind_kph']} km/h")
 
 
 if __name__ == "__main__":

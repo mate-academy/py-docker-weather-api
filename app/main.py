@@ -25,7 +25,8 @@ def get_weather() -> None:
 
     print(f"Performing request to Weather API for city {city}...")
     print(
-        f"{city}/{country} {formatted_time} Weather : {temperature:.1f} Celsius, {weather.capitalize()}"
+        f"{city}/{country} {formatted_time} "
+        f"Weather : {temperature:.1f} Celsius, {weather.capitalize()}"
     )
 
 

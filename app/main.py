@@ -16,6 +16,7 @@ def get_weather() -> None:
     if res.status_code != 200:
         print(f"Error: Unable to get weather data. HTTP Status Code: "
               f"{res.status_code}")
+        return
 
     data = res.json()
 

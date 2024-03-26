@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.venv
+.git
+.github
+.idea
+checklist.md
+Dockerfile
+README.md
+result.png
+.flake8
+.gitignore

@@ -1,1 +1,5 @@
 .venv
+.env.sample
+.env
+Dockerfile
+result.png

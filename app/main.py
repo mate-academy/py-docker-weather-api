@@ -22,8 +22,9 @@ def get_weather() -> None:
     )
     data = res.json()
 
-    if "error" in data:
-        print("Error:", data["error"]["message"])
+    if res.status_code != 200:
+        print("Error:", res.status_code)
+        return
     else:
         location = data["location"]
         weather = data["current"]

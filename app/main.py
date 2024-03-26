@@ -12,7 +12,14 @@ LANG = "uk"
 
 
 def get_weather() -> None:
-    response = requests.get(f"{BASE_URL}?key={API_KEY}&q={City}&lang={LANG}")
+    response = requests.get(
+        BASE_URL,
+        params={
+            "key": API_KEY,
+            "q": City,
+            "lang": LANG,
+        },
+    )
 
     if response.status_code == 200:
         response_current = response.json().get("current")

@@ -30,7 +30,7 @@ def get_weather() -> None:
             f"Feels like °C: {response_current.get('feelslike_c')}\n"
         )
     else:
-        print("Oops! Something went wrong! :)")
+        print(f"Status code: {response.status_code}, Reason: {response.reason}")
 
 
 if __name__ == "__main__":

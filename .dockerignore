@@ -6,5 +6,4 @@ venv
 .flake8
 *.md
 *.png
-Dockerfile
-.dockerignore
+

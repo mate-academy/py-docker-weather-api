@@ -1,5 +1,6 @@
 import os
 import requests
+
 from requests import Response
 
 
@@ -9,9 +10,9 @@ URL = "http://api.weatherapi.com/v1/current.json?"
 
 def get_weather(city: str = "Paris") -> Response:
     print(f"Requesting {city} weather from Weather API...")
-    request = requests.get(
-        URL + f"key={API_KEY}&q={city}&aqi=no"
-    ).json()
+
+    params = {"key": API_KEY, "q": city, "aqi": "no"}
+    request = requests.get(URL, params=params).json()
 
     if "error" in request:
         print(request["error"]["message"])

@@ -32,7 +32,8 @@ def get_weather() -> None:
             f"{temperature_c: .1f} Celsius, {condition}"
         )
     else:
-        print("Error fetching weather data:", response.status_code)
+        error_response = response.json()
+        print("Error fetching weather data:", error_response)
 
 
 if __name__ == "__main__":

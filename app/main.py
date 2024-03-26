@@ -12,19 +12,22 @@ def get_weather(city: str = "Paris") -> Response:
     print(f"Requesting {city} weather from Weather API...")
 
     params = {"key": API_KEY, "q": city, "aqi": "no"}
-    request = requests.get(URL, params=params).json()
+    request = requests.get(URL, params=params)
+    request_json = request.json()
 
-    if "error" in request:
-        print(request["error"]["message"])
+    if request.status_code != 200:
+        error = request_json.get("error")
+        if error:
+            print(error.get("message"))
         return request
 
-    city_name = request["location"]["name"]
-    country = request["location"]["country"]
-    localtime = request["location"]["localtime"]
-    current_temp = request["current"]["temp_c"]
-    updated_at = request["current"]["last_updated"]
-    feels_like = request["current"]["feelslike_c"]
-    condition = request["current"]["condition"]["text"]
+    city_name = request_json["location"]["name"]
+    country = request_json["location"]["country"]
+    localtime = request_json["location"]["localtime"]
+    current_temp = request_json["current"]["temp_c"]
+    updated_at = request_json["current"]["last_updated"]
+    feels_like = request_json["current"]["feelslike_c"]
+    condition = request_json["current"]["condition"]["text"]
 
     print("▼" * 50)
     print(

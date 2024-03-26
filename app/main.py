@@ -14,10 +14,10 @@ def get_weather() -> None:
     if response.status_code == 200:
         data = response.json()
         print(
-            f"{data["location"]["name"]}/{data["location"]["country"]}"
-            f" {data["location"]["localtime"]}"
-            f" Weather: {data["current"]["temp_c"]} Celsius,"
-            f" {data["current"]["condition"]["text"]}"
+            f"{data['location']['name']}/{data['location']['country']} "
+            f"{data['location']['localtime']} "
+            f"Weather: {data['current']['temp_c']} Celsius, "
+            f"{data['current']['condition']['text']}"
         )
     else:
         print("Failed to fetch weather data.")

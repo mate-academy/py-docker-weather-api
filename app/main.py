@@ -20,7 +20,6 @@ def get_weather() -> None:
     temperature = data["main"]["temp"] - 273.15
     weather = data["weather"][0]["description"]
 
-    # Convert the timestamp to a readable format
     dt_object = datetime.fromtimestamp(timestamp)
     formatted_time = dt_object.strftime("%Y-%m-%d %H:%M:%S")
 

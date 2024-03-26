@@ -42,7 +42,9 @@ def get_weather() -> None:
             f"Temperature °F: {temp_f}, feels like {feels_like_f}\n"
         )
     else:
-        raise ValueError("Something went wrong :c, Please try again with valid data!")
+        raise ValueError(
+            "Something went wrong :c, Please try again with valid data!"
+        )
 
 
 if __name__ == "__main__":

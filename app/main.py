@@ -19,9 +19,11 @@ def get_weather(api_key: str) -> None:
         temp_c = data["current"]["temp_c"]
         condition = data["current"]["condition"]["text"]
 
-        print(f"Weather in {city}, {country} (local time {local_time}):")
-        print(f"Temperature: {temp_c}°C")
-        print(f"Condition: {condition}")
+        print(
+            f"Weather in {city}, {country} (local time {local_time}): "
+            f"Temperature: {temp_c}°C",
+            f"Condition: {condition}"
+        )
     except requests.exceptions.RequestException as e:
         print(f"Error fetching weather data: {e}")
 

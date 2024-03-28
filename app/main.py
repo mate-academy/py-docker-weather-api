@@ -4,10 +4,9 @@ import requests
 
 def get_weather(query: str) -> None:
     print("Performing request to Weather API for city Paris...")
-    api_key = os.environ.get(
-        "API_KEY",
-        "45aa589d47f145f3874211504242703"
-    )
+    api_key = os.environ.get("API_KEY", )
+    if api_key is None:
+        raise EnvironmentError("You should set your API key")
     responce = requests.post(
         f"https://api.weatherapi.com/v1/current.json?"
         f"key={api_key}&q={query}&aqi=no/"

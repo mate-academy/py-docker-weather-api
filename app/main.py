@@ -17,7 +17,8 @@ def get_weather(query: str) -> None:
         print(f"{location['tz_id']} {current['last_updated']} "
               f"Weather: {current['temp_c']} Celsius!!!")
     else:
-        raise EnvironmentError("Your API key is invalid or servise doesn't work -__-")
+        raise EnvironmentError("Your API key is invalid or "
+                               "servise doesn't work -__-lake8")
 
 
 if __name__ == "__main__":

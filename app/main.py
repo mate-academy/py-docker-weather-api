@@ -38,7 +38,10 @@ def get_weather() -> None:
         temp = current.get("temp_c", "N/A")
         condition = current.get("condition", {}).get("text", "N/A")
 
-        print(f"{FILTERING}/{country} {localtime} Weather: {temp}°C, {condition}")
+        print(
+            f"{FILTERING}/{country} {localtime} "
+            f"Weather: {temp}°C, {condition}"
+        )
 
     except requests.exceptions.RequestException as e:
         print(f"Network error: {e}")

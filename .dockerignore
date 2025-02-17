@@ -1,0 +1,22 @@
+# git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.docker
+.dockerignore
+
+**/__pycache__/
+**/*.py[cod]
+
+.env
+.venv/
+venv/
+
+*.png
+*.md
+*.txt
+!requirements-build.txt
+
+.idea/

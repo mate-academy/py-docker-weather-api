@@ -1,0 +1,15 @@
+.venv
+.env
+.gitignore
+.flake8
+result.png
+Dockerfile
+checklist.md
+README.md
+__pycache__/
+*.db
+*.sqlite3
+*.log
+*.pyc
+*.pyo
+*.pyd

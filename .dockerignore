@@ -1,0 +1,15 @@
+venv/
+.env
+.idea/
+.vscode/
+*.iml
+.DS_Store
+.pytest_cache/
+**__pycache__/
+.gitignore
+Dockerfile
+README.md
+result.png
+checklist.md
+.github
+.dockerignore

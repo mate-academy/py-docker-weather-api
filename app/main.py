@@ -19,8 +19,8 @@ def get_weather(api_key: str, location: str = "London") -> None:
     current_weather = data["current"]
 
     print(f"Current weather in {location}: ")
-    print(f"Temperature: {current_weather["temp_c"]}C")
-    print(f"Wind: {current_weather["wind_kph"]}km/h")
+    print(f"Temperature: {current_weather['temp_c']}C")
+    print(f"Wind: {current_weather['wind_kph']}km/h")
 
 
 if __name__ == "__main__":

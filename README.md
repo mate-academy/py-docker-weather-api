@@ -37,3 +37,6 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+link to the repository:
+https://hub.docker.com/repository/docker/douel/weather_in_paris/general

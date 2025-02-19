@@ -16,10 +16,10 @@ def get_weather() -> dict:
 
     print('Performing request to Weather API to city Paris...')
     print(
-        f'{data['location']['name']}/{data['location']['country']} '
-        f'{data['location']['localtime']} '
-        f'Weather: {data['current']['temp_c']} Celsius, '
-        f'{data['current']['condition']['text']}'
+        f"{data['location']['name']}/{data['location']['country']} "
+        f"{data['location']['localtime']} "
+        f"Weather: {data['current']['temp_c']} Celsius, "
+        f"{data['current']['condition']['text']}"
     )
 
     return data

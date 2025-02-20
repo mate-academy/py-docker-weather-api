@@ -6,7 +6,7 @@ import requests
 API_URL = "http://api.weatherapi.com/v1/current.json"
 
 
-def get_weather(api_key: str, location: str = "London") -> None:
+def get_weather(api_key: str, location: str = "Paris") -> None:
     params = {
         "key": api_key,
         "q": location,

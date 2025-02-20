@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
 LABEL maintainer="ztkkre@gmail.com"
 
 WORKDIR /app
@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY app/main.py .
+COPY app/ ./app/
 
-CMD ["python", "main.py"]
+CMD ["python", "app/main.py"]

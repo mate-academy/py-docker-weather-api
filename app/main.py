@@ -59,5 +59,6 @@ def get_weather() -> None:
         f"{temp_c} Celsius, {weather_condition}"
     )
 
+
 if __name__ == "__main__":
     get_weather()

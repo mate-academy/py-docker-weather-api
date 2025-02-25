@@ -37,7 +37,9 @@ def get_weather() -> None:
 
     try:
         if response.status_code != 200:
-            raise Exception(f"Bad request: got status code {response.status_code}")
+            raise Exception(
+                f"Bad request: got status code {response.status_code}"
+            )
     except Exception as e:
         raise e
 

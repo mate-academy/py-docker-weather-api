@@ -36,9 +36,10 @@ def get_weather() -> None:
     response = requests.get(URL, params=PARAMS)
 
     try:
-        assert response.status_code == 200
-    except AssertionError:
-        raise Exception("Bad request")
+        if response.status_code != 200:
+            raise Exception(f"Bad request: got status code {response.status_code}")
+    except Exception as e:
+        raise e
 
     data = response.json()
 

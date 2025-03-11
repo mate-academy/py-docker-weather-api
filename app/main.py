@@ -9,6 +9,7 @@ API_KEY = os.getenv("API_KEY")
 URL = "https://api.weatherapi.com/v1/current.json?"
 FILTERING = "Paris"
 
+
 def get_weather() -> None:
     print(f"Performing request to Weather API for city {FILTERING}...")
     url = URL + f"key={API_KEY}" + f"&q={FILTERING}"
@@ -18,7 +19,9 @@ def get_weather() -> None:
     localtime = dict_resp_weather["location"]["localtime"]
     temperature = dict_resp_weather["current"]["temp_c"]
     condition = dict_resp_weather["current"]["condition"]["text"]
-    print(f"{FILTERING}/{country} {localtime} Weather: {temperature} Celsius, {condition}")
+    print(f"{FILTERING}/{country} {localtime}"
+          f" Weather: {temperature} Celsius, {condition}"
+          )
 
 
 if __name__ == "__main__":

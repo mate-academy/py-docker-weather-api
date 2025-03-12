@@ -1,7 +1,7 @@
 FROM python:3.10.16-alpine3.20
 LABEL maintainer="nikolajtarasenko71@gmail.com"
 
-ENV PYTHOUNNBUFFERED=1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 

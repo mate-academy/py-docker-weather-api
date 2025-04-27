@@ -29,7 +29,7 @@ def get_weather() -> None:
         print(f"Weather in {city}: {weather}")
         print(f"Temperature: {temperature}°C")
     else:
-        print("Invalid city name.")
+        print(f"Error: {response.status_code}")
 
 
 if __name__ == "__main__":

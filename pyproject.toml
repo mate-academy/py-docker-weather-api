@@ -1,0 +1,9 @@
+[project]
+name = "py-docker-weather-api"
+version = "0.1.0"
+description = "Simple weather api using .env file for settings"
+requires-python = ">=3.13"
+dependencies = [
+    "environs>=14.1.1",
+    "requests>=2.32.3",
+]

@@ -1,8 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+
+# IDE
 .idea/
 .vscode/
-*.iml
-.env
-.DS_Store
-venv/
-.pytest_cache/
-**__pycache__/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Docker
+.docker/

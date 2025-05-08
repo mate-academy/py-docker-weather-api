@@ -1,0 +1,12 @@
+venv
+*.pyc
+*.pyo
+*.pyd
+.env
+.idea
+*.log
+.DS_Store
+__pycache__/
+.git
+.github
+result.png

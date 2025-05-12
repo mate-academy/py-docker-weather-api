@@ -8,7 +8,6 @@ def get_weather() -> None:
     if not api_key:
         print(
             "API_KEY is not set."
-            " Make sure to provide it via environment variable."
         )
         exit(1)
 

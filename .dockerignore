@@ -1,0 +1,4 @@
+*
+!app/main.py
+!Dockerfile
+.venv

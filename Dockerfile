@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # 3. Скопіювати лише необхідне
-COPY ./app ./app
+COPY ./app .
 
 # 4. Встановити requests
 RUN pip install --no-cache-dir requests

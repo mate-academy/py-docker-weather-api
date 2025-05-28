@@ -18,10 +18,21 @@ def get_weather() -> None:
         return
 
     data = response.json()
-    location = data["location"]["name"]
-    country = data["location"]["country"]
-    temp = data["current"]["temp_c"]
-    condition = data["current"]["condition"]["text"]
+
+    # Перевірка наявності ключів
+    if "location" not in data or "current" not in data:
+        print(f"Error: Unexpected API response structure: {data}")
+        return
+
+    location = data["location"].get("name")
+    country = data["location"].get("country")
+    current = data["current"]
+    temp = current.get("temp_c")
+    condition = current.get("condition", {}).get("text")
+
+    if None in (location, country, temp, condition):
+        print(f"Error: Missing weather data in API response: {data}")
+        return
 
     print(f"{location}, {country}: {temp}°C, {condition}")
 

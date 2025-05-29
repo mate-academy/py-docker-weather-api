@@ -1,5 +1,5 @@
 FROM python:3.11-slim
-LABEL mainteiner="danylkiv.pavlo@gmail.com"
+LABEL maintainer="danylkiv.pavlo@gmail.com"
 
 WORKDIR /app
 

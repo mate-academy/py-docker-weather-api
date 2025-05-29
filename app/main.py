@@ -12,6 +12,8 @@ params = {
 
 
 def get_weather() -> None:
+    if not API_KEY:
+        raise EnvironmentError("API_KEY environment variable is missing.")
     response = requests.get(BASE_URL, params)
 
     if response.status_code == 200:

@@ -1,0 +1,17 @@
+# weather_app/.dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.git/
+.idea/
+*.swp
+.DS_Store
+.README.md
+.checklist.md
+.flake8
+.github

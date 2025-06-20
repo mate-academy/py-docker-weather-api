@@ -9,7 +9,10 @@ def get_weather() -> None:
         return
 
     city = "Paris"
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=no"
+    url = (
+        f"http://api.weatherapi.com/v1/current.json?"
+        f"key={api_key}&q={city}&aqi=no"
+    )
 
     try:
         response = requests.get(url)

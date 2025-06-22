@@ -1,8 +1,26 @@
+# IDE
 .idea/
 .vscode/
 *.iml
-.env
-.DS_Store
+
+# Python
 venv/
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+# MacOS
+.DS_Store
+
+# Env
+.env
+
+# Testing
 .pytest_cache/
-**__pycache__/
+
+# Build
+build/
+dist/
+*.egg-info/

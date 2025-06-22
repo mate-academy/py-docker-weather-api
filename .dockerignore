@@ -1,0 +1,31 @@
+ Version control
+.git
+.gitignore
+.github
+
+# IDE/editor configurations
+.idea
+
+# Virtual environments
+.venv
+
+# Docker-specific
+Dockerfile
+
+# Python-related
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Documentation and local files
+checklist.md
+README.md
+result.png
+
+# Optional: test or config files
+.flake8

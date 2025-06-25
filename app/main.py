@@ -6,7 +6,8 @@ import requests
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
-        print("❌ ERROR: API_KEY is not set in environment variables.", file=sys.stderr)
+        print("❌ ERROR: API_KEY is not set in environment variables.",
+              file=sys.stderr)
         sys.exit(1)
 
     url = "http://api.weatherapi.com/v1/current.json"

@@ -15,8 +15,8 @@ def get_weather() -> None:
         response = requests.get(url, timeout=5)
         response.raise_for_status()
         data = response.json()
-        print(f"Weather in {city}: {data["current"]["condition"]["text"]}, "
-              f"Temp: {data["current"]["temp_c"]}°C")
+        print(f'Weather in {city}: {data["current"]["condition"]["text"]}, '
+              f'Temp: {data["current"]["temp_c"]}°C')
     except requests.RequestException as e:
         print(f"Error fetching weather data: {e}")
 

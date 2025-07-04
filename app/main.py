@@ -20,7 +20,7 @@ def get_weather() -> None:
         f"{BASE_URL}/current.json",
         params={
             "q": requested_city,
-            "key": api_key
+            "key": api_key  # API KEY
         }
     )
 

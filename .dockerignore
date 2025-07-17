@@ -1,0 +1,8 @@
+.flake8
+.github
+.gitignore
+result.png
+checklist.md
+README.md
+.dockerignore
+Dockerfile

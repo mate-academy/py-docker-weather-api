@@ -1,0 +1,5 @@
+.idea/
+.venv/
+.github/
+.gitignore
+result.png

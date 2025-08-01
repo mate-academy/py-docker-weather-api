@@ -3,7 +3,11 @@ import requests
 
 api_key = os.getenv("API_KEY")
 city = "Paris"
-url = f"http: //api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=no"
+url = (
+    f"http: //api.weatherapi.com/v1/current.json"
+    f"?key={api_key}&q={city}&aqi=no"
+)
+
 
 response = requests.get(url)
 data = response.json()

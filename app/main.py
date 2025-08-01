@@ -1,7 +1,19 @@
-def get_weather() -> None:
-    # write your code here
-    pass
+import os
+import requests
+
+api_key = os.getenv("API_KEY")
+city = "Paris"
+url = (
+    f"http: //api.weatherapi.com/v1/current.json"
+    f"?key={api_key}&q={city}&aqi=no"
+)
 
 
-if __name__ == "__main__":
-    get_weather()
+response = requests.get(url)
+data = response.json()
+
+weather = data["current"]["condition"]["text"]
+temp_c = data["current"]["temp_c"]
+local_time = data["location"]["localtime"]
+
+print(f"{city}/France {local_time} Weather: {temp_c} Celsius, {weather}")

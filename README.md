@@ -12,7 +12,7 @@ data about the weather.
 
 The result of this task will be tested by the next commands:
 ![img.png](result.png)
-Of course, instead of `danylott` - it must be your docker id.
+Of course, instead of `dmytro12345/paris` - it must be your docker id.
 
 So in this task requirements are next:
 - The script for getting & printing weather info must be located at `app/main.py`;

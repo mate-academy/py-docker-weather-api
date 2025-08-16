@@ -4,9 +4,9 @@ import requests
 
 
 def get_weather() -> None:
-    url = (f"https:"
-           f"//api.weatherapi.com/v1/current.json"
-           f"?key={os.environ['API_KEY']}&q=Paris&aqi=no")
+    api_url = "https://api.weatherapi.com/v1/current.json"
+    city_name = "Paris"
+    url = (f"{api_url}?key={os.environ['API_KEY']}&q={city_name}&aqi=no")
     response = requests.get(url)
     location_info = response.json()["location"]
     current_info = response.json()["current"]

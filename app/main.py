@@ -4,6 +4,7 @@ import sys
 import requests
 
 WEATHER_URL = "http://api.weatherapi.com/v1/current.json"
+DEFAULT_CITY = "Paris"
 
 
 def get_weather() -> None:
@@ -11,7 +12,7 @@ def get_weather() -> None:
     if not api_key:
         raise ValueError("API_KEY environment variable not set.")
 
-    city = "Paris"
+    city = DEFAULT_CITY
     if len(sys.argv) > 1:
         city = sys.argv[1]
 

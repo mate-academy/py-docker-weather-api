@@ -1,0 +1,25 @@
+# VCS / системні
+.git
+.gitignore
+.DS_Store
+
+# Python байткод/віртуалки
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pytest_cache
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Тести / зайве
+tests/
+*.log
+
+# Інше
+*.env

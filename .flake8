@@ -1,7 +1,10 @@
 [flake8]
 inline-quotes = "
-ignore = E203, E266, W503, ANN002, ANN003, ANN101, ANN102, ANN401, N807, N818
+ignore = E203, E266, W503, ANN002, ANN003, ANN101, ANN102, ANN401, N807, N818, E231
 max-line-length = 79
 max-complexity = 18
 select = B,C,E,F,W,T4,B9,ANN,Q0,N8,VNE
 exclude = venv, tests
+
+
+# add ignor E231 (missing whitespace after ':') in f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"

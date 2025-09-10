@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 API_KEY = os.environ["API_KEY"]
-url = "https://api.weatherapi.com/v1/current.json"
+URL = "https://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
 
 
 def print_weather_info(data: dict) -> None:
@@ -25,10 +26,10 @@ def get_weather() -> None:
     print("Performing request to Weather API for city Paris...")
     response = request(
         method="POST",
-        url=url,
+        url=URL,
         params={
             "key": API_KEY,
-            "q": "Paris",
+            "q": FILTERING,
             "lang": "en"
         }
     )

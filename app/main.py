@@ -3,7 +3,7 @@ import sys
 import requests
 
 API_BASE = "https://api.weatherapi.com/v1/current.json"
-CITY = "Poznan"
+CITY = "Paris"
 
 
 def get_weather() -> None:

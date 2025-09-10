@@ -16,9 +16,9 @@ def print_weather_info(data: dict) -> None:
     condition = current.get("condition")
 
     print(
-        f"{location["name"]}/{location["country"]} "
-        f"{location["localtime"]} Weather: "
-        f"{current["temp_c"]} Celsius, {condition["text"]}"
+        f'{location["name"]}/{location["country"]} '
+        f'{location["localtime"]} Weather: '
+        f'{current["temp_c"]} Celsius, {condition["text"]}'
     )
 
 

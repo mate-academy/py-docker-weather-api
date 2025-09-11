@@ -13,7 +13,7 @@ def get_weather() -> str:
     response = requests.get(
         URL,
         params={
-            "key": API_key,
+            "key": API_KEY,
             "q": CITY,
             "aqi": "no"
         }

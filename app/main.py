@@ -2,7 +2,6 @@ import os
 import requests
 
 
-
 BASE_URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 TIMEOUT = 10
@@ -28,7 +27,9 @@ def get_weather() -> None:
     country = data["location"]["country"]
     current_time = data["location"]["localtime"]
 
-    print(f"{city}/{country} {current_time} Weather: {temp} Celsius, {condition}")
+    print(
+        f"{city}/{country} {current_time} Weather: {temp} Celsius, {condition}"
+    )
 
 
 if __name__ == "__main__":

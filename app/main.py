@@ -12,7 +12,7 @@ if not API_KEY:
     sys.exit(1)
 
 CITY = "Paris"
-API_BASE_URL = f"http://api.weatherapi.com/v1/current.json"
+API_BASE_URL = "http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:

@@ -35,5 +35,4 @@ So in this task requirements are next:
 
 ```docker pull test_user/weather```
 </details>
-
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

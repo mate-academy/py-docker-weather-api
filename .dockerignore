@@ -11,5 +11,4 @@ venv/
 README.md
 checklist.md
 result.png
-requirements-dev.txt
 .flake8

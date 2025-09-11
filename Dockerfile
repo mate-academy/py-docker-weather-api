@@ -4,7 +4,7 @@ LABEL maintainer="vskesha@gmail.com"
 ENV PYTHONUNBUFFERED=1
 ENV DONTWRITEBYTECODE=1
 
-WORKDIR app/
+WORKDIR /root
 
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt

@@ -7,21 +7,22 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
-if not WEATHER_API_KEY:
-    print("API key is missing. Set WEATHER_API_KEY.")
+API_KEY = os.environ.get("API_KEY")
+if not API_KEY:
+    print("API_KEY is missing. Please set API_KEY.")
     sys.exit(1)
 
 BASE_URL = "https://api.weatherapi.com/v1"
+ENDPOINT_CURRENT = "/current.json"
 CITY = "Paris"
 
 
 def get_weather() -> None:
     print(f"Performing request to Weather API for city {CITY}...")
     response = requests.get(
-        url=BASE_URL + "/current.json",
+        url=BASE_URL + ENDPOINT_CURRENT,
         params={
-            "key": WEATHER_API_KEY,
+            "key": API_KEY,
             "q": CITY,
         }
     )

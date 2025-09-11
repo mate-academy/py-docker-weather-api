@@ -37,3 +37,9 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+### Solution:
+#### To pull image:
+`docker pull kostenikov/weather_app`
+#### To start container: 
+`docker run -e API_KEY=your_api_key kostenikov/weather_app`

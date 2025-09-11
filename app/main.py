@@ -34,8 +34,6 @@ def get_weather() -> None:
         print(f"Error: {e}")
         sys.exit(1)
 
-
-
     print(f"{data['location']['name']} - {data['current']['temp_c']}")
 
 

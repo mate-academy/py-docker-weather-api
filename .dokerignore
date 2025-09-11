@@ -10,4 +10,5 @@ venv/
 *.log
 tmp/
 temp/
+.dockerignore
 Dockerfile

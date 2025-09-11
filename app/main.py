@@ -8,7 +8,7 @@ TIMEOUT = 10
 
 
 def get_weather() -> None:
-    print("Performing request to Weather API for city Paris...")
+    print(f"Performing request to Weather API for city {CITY}...")
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError("API_KEY is not set in environment variables")

@@ -12,7 +12,11 @@ def get_weather() -> None:
         print("Error: API_KEY environment variable is not set")
         return
 
-    params = {"key": api_key, "q": CITY, "aqi": "no"}
+    params = {
+        "key": api_key,
+        "q": CITY,
+        "aqi": "no"
+    }
 
     try:
         response = requests.get(URL, params=params)

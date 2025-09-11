@@ -27,7 +27,7 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=`docker pull kostenikov/weather_app`.
 
 <details>
   <summary><strong>Hint</strong></summary>
@@ -37,3 +37,9 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+### Solution:
+#### To pull image:
+`docker pull kostenikov/weather_app`
+#### To start container: 
+`docker run -e API_KEY=your_api_key kostenikov/weather_app`

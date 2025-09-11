@@ -1,5 +1,4 @@
 FROM python:3.13-slim
-LABEL maintainer="yor_docker_username"
 
 ENV PYTHONUNBUFFERED=1
 

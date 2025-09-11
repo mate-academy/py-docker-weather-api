@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.env
+.venv/
+venv/
+.git/
+.gitignore
+README.md
+checklist.md
+result.png
+requirements-dev.txt
+.flake8

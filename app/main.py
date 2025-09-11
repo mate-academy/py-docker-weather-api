@@ -4,10 +4,12 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
+KEY = os.getenv("API_KEY")
+URL = "http://api.weatherapi.com/v1/current.json"
+
 
 def get_weather() -> None:
-    KEY = os.getenv("API_KEY")
-    URL = "http://api.weatherapi.com/v1/current.json"
+
     params = {
         "key": KEY,
         "q": "Paris",

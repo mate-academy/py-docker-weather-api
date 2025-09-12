@@ -13,7 +13,11 @@ def get_weather() -> None:
         sys.exit(1)
 
     try:
-        resp = requests.get(API_URL, params={"key": api_key, "q": city}, timeout=15)
+        resp = requests.get(
+            API_URL,
+            params={"key": api_key, "q": city},
+            timeout=15
+        )
         resp.raise_for_status()
     except requests.RequestException as e:
         print(f"ERROR: request failed: {e}", file=sys.stderr)
@@ -28,11 +32,13 @@ def get_weather() -> None:
     wind_kph = cur.get("wind_kph", "?")
 
     try:
-        temp_str = f"{float(temp_c):.1f}°C"
+        temp_str = f"{float(temp_c): .1f}°C"
     except (TypeError, ValueError):
         temp_str = f"{temp_c}°C"
 
-    print(f"{loc}: {temp_str}, {condition}, humidity {humidity}%, wind {wind_kph} kph")
+    print(f"{loc}: {temp_str}, "
+          f"{condition}, humidity "
+          f"{humidity}%, wind {wind_kph} kph")
 
 
 if __name__ == "__main__":

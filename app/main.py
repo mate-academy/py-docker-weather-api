@@ -1,5 +1,4 @@
 def get_weather() -> None:
-    # write your code here
     pass
 
 

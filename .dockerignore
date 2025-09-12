@@ -1,14 +1,14 @@
-# .dockerignore
 __pycache__/
 *.py[cod]
-*.swp
-.env
+*.log
 .venv/
 venv/
-env/
 .git/
 .gitignore
-Dockerfile
-docker-compose.yml
-README*
-tests/
+.cache/
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+README.md

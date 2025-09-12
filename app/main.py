@@ -8,9 +8,13 @@ CITY = "Paris"
 
 
 def get_weather() -> None:
+    if not API_KEY:
+        raise ValueError("API_KEY environment variable is required")
+
     url = f"{BASE_URL}?key={API_KEY}&q={CITY}&aqi=no"
 
     response = requests.get(url)
+    response.raise_for_status()
     data = response.json()
 
     city_name = data["location"]["name"]

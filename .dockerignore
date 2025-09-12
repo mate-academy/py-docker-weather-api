@@ -1,8 +1,8 @@
-Dockerfile
 .env
 .venv
-.gitignore
 .github
-.flake8
+.gitignore
 checklist.md
 result.png
+__pycache__/
+*.pyc

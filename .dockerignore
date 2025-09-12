@@ -1,0 +1,14 @@
+# .dockerignore
+__pycache__/
+*.py[cod]
+*.swp
+.env
+.venv/
+venv/
+env/
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml
+README*
+tests/

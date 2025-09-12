@@ -8,6 +8,8 @@ CITY = "Paris"
 
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
+    city = os.getenv("CITY", "Paris")
+
     if not api_key:
         print("ERROR: API_KEY env var is not set.", file=sys.stderr)
         sys.exit(1)

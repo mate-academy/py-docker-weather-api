@@ -12,6 +12,7 @@ data about the weather.
 
 The result of this task will be tested by the next commands:
 ![img.png](result.png)
+
 Of course, instead of `danylott` - it must be your docker id.
 
 So in this task requirements are next:
@@ -26,8 +27,7 @@ So in this task requirements are next:
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
-- You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+- COMMAND=`docker pull sensiblenoob/docker-weather-api`.
 
 <details>
   <summary><strong>Hint</strong></summary>

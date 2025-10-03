@@ -20,14 +20,15 @@ def get_weather() -> None:
     res = requests.get(CURRENT_WEATHER_API_URL,
                        params=payload
                        )
+    res.raise_for_status()
     data = res.json()
     print(f"Here is information about the current weather in "
           f"{data['location']['name']}, {data['location']['country']}:")
-    print(f"Air tempareture is {data['current']['temp_c']}C "
+    print(f"Air temperature is {data['current']['temp_c']}C "
           f"which feels like {data['current']['feelslike_c']}C")
     print(f"It is {data['current']['condition']['text']}")
     print(f"Humidity is {data['current']['humidity']}%")
-    print(f"Wind speed is {data['current']['wind_mph']} km/h "
+    print(f"Wind speed is {data['current']['wind_kph']} km/h "
           f"with {data['current']['wind_dir']} direction")
     print(f"Cloud cover is {data['current']['cloud']}%")
     print(f"UV Index is {data['current']['uv']}")

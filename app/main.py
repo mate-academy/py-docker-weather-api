@@ -12,10 +12,10 @@ def get_weather() -> None:
     else:
         data = response.json()
         print("Performing request to Weather API for city Paris...")
-        print(f"{data["location"]["name"]}/{data["location"]["country"]} "
-              f"{data["current"]["last_updated"]} "
-              f"Weather: {data["current"]["temp_c"]} Celsius, "
-              f"{data["current"]["condition"]["text"]}")
+        print(f"{data['location']['name']}/{data['location']['country']} "
+              f"{data['current']['last_updated']} "
+              f"Weather: {data['current']['temp_c']} Celsius, "
+              f"{data['current']['condition']['text']}")
 
 
 if __name__ == "__main__":

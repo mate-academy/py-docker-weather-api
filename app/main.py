@@ -3,11 +3,13 @@ import requests
 from dotenv import load_dotenv
 
 
+CITY = "Paris"
+CURRENT_WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
+
+
 def get_weather() -> None:
     load_dotenv()
     api_key = os.environ.get("API_KEY")
-    CITY = "Paris"
-    CURRENT_WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
 
     if not api_key:
         print("Error: API_KEY not found in environment variables.")

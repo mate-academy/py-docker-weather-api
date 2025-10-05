@@ -1,0 +1,25 @@
+# Pliki Pythona i systemu, które nie są potrzebne w kontenerze
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.sqlite3
+
+# Pliki wirtualnego środowiska
+.venv/
+venv/
+
+# Pliki konfiguracyjne IDE
+.vscode/
+.idea/
+
+# Pliki logów
+*.log
+
+# Plik .env z kluczami API (zabezpieczenie przed przypadkowym dodaniem)
+.env
+
+# Git
+.git/
+.gitignore

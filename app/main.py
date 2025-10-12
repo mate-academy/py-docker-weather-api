@@ -1,16 +1,24 @@
 import os
 import requests
 
-def get_weather() -> None:
-    api_key = os.getenv("WEATHER_API_KEY")
+
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
+LANG = "en"
+
+def get_weather():
+    api_key = os.getenv("API_KEY")
     if not api_key:
-        print("Error: didn't find WEATHER_API_KEY in environment variables.")
+        print("Error: API_KEY not found in environment")
         return
 
-    city = "Paris"
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&lang=en"
+    params = {
+        "key": api_key,
+        "q": CITY,
+        "lang": LANG
+    }
 
-    response = requests.get(url)
+    response = requests.get(BASE_URL, params=params)
     if response.status_code == 200:
         data = response.json()
         location = data["location"]
@@ -19,7 +27,6 @@ def get_weather() -> None:
               f"Weather: {current['temp_c']} Celsius, {current['condition']['text']}")
     else:
         print("Error:", response.status_code)
-
 
 if __name__ == "__main__":
     get_weather()

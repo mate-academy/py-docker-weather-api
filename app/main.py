@@ -2,6 +2,7 @@ import os
 import sys
 import requests
 
+
 API_BASE_URL = "http://api.weatherapi.com/v1/current.json"
 DEFAULT_CITY = "Paris"
 

@@ -2,20 +2,20 @@ import os
 import requests
 
 
-API_URL = "http://api.openweathermap.org/data/2.5/weather"
+API_URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
-UNITS = "metric"
 
 
-def get_weather() -> None:
+def get_weather() -> dict:
+    """Fetch current weather data for the specified city."""
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError("API_KEY environment variable is not set")
 
     params = {
+        "key": api_key,
         "q": CITY,
-        "appid": api_key,
-        "units": UNITS
+        "aqi": "no"
     }
 
     response = requests.get(API_URL, params=params)
@@ -24,9 +24,10 @@ def get_weather() -> None:
 
 
 def main() -> None:
+    """Display current temperature and condition for the city."""
     weather_data = get_weather()
-    temp = weather_data["main"]["temp"]
-    description = weather_data["weather"][0]["description"]
+    temp = weather_data["current"]["temp_c"]
+    description = weather_data["current"]["condition"]["text"]
     print(f"Current weather in {CITY}: {temp}°C, {description}")
 
 

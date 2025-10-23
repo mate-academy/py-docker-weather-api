@@ -7,7 +7,7 @@ CITY = "Paris"
 UNITS = "metric"
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError("API_KEY environment variable is not set")
@@ -23,7 +23,7 @@ def get_weather():
     return response.json()
 
 
-def main():
+def main() -> None:
     weather_data = get_weather()
     temp = weather_data["main"]["temp"]
     description = weather_data["weather"][0]["description"]

@@ -2,6 +2,7 @@
 
 - **Read** [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
 - Look through [Weather API](https://www.weatherapi.com/docs/) documentation, you will need it in this task
+- To pull docker image use <docker pull rpriadko/docker-weather-api>
 
 ## Task
 

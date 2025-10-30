@@ -5,8 +5,8 @@ import requests
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
-CITY = os.getenv("CITY")
-AQI = os.getenv("AQI")
+CITY = "Paris"
+AQI = "no"
 BASE_URL = f"https://api.weatherapi.com/v1/current.json"
 
 

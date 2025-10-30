@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 LABEL maintainer="navolokovz@gmail.com"
 
 ENV PYTHOUNNBUFFERED 1
@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN ["python", "app/main.py"]
+CMD ["python", "app/main.py"]

@@ -5,10 +5,14 @@ import requests
 
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
-URL = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q=Paris&aqi=no"
+CITY = os.getenv("CITY")
+AQI = os.getenv("AQI")
+BASE_URL = f"https://api.weatherapi.com/v1/current.json"
+
 
 def get_weather() -> None:
-    response = requests.get(URL)
+    req_url = BASE_URL + f"?key={API_KEY}&q={CITY}&aqi={AQI}"
+    response = requests.get(req_url)
     data = response.json()
     condition = data["current"]["condition"]["text"]
     print(condition)

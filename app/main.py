@@ -5,17 +5,16 @@ import requests
 
 BASE_URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
-API_KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> None:
     # write your code here
-    if not API_KEY:
+    api_key = os.environ.get("API_KEY")
+    if not api_key:
         print("Please set 'API_KEY' environment variable")
     else:
-        response = requests.get(
-            BASE_URL + "?key=" + API_KEY + "&q=" + CITY
-        ).json()
+        params = {"key": api_key, "q": CITY}
+        response = requests.get(BASE_URL, params=params).json()
         location = response["location"]
         current_weather = response["current"]
         print(f"Current weather for {location['name']}")

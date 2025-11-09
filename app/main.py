@@ -14,9 +14,11 @@ def get_weather() -> None:
         print("Please set 'API_KEY' environment variable")
     else:
         params = {"key": api_key, "q": CITY}
-        response = requests.get(BASE_URL, params=params).json()
-        location = response["location"]
-        current_weather = response["current"]
+        response = requests.get(BASE_URL, params=params)
+        response.raise_for_status()
+        data = response.json()
+        location = data["location"]
+        current_weather = data["current"]
         print(f"Current weather for {location['name']}")
         print(f"Current temperature: {current_weather['temp_c']}°C")
         print(f"Feels like: {current_weather['feelslike_c']}°C")

@@ -1,0 +1,11 @@
+.env
+.venv
+result.png
+checklist.md
+README.md
+.flake8
+.github
+.idea
+.gitignore
+.pytest_cache/
+**__pycache__/

@@ -9,4 +9,3 @@ README.md
 .gitignore
 .pytest_cache/
 **__pycache__/
-Dockerfile

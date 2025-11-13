@@ -1,0 +1,13 @@
+.git
+.github
+.gitignore
+.venv
+.idea
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.png
+*.md
+.flake8

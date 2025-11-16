@@ -1,39 +1,43 @@
-# Docker Weather API
+# Weather API Service
 
-- **Read** [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
-- Look through [Weather API](https://www.weatherapi.com/docs/) documentation, you will need it in this task
+A simple Python app that fetches current weather for Paris using [WeatherAPI](https://www.weatherapi.com/).  
+Containerized with Docker and published on Docker Hub.
 
-## Task
+---
 
-In this task you will be implementing the service for getting current weather
-for Paris city. But the most interesting part, that this service must be dockerized
-and pushed to the dockerhub. Use [Weather API](https://www.weatherapi.com/docs/) for getting
-data about the weather.
+## Run locally
+```bash
+pip install -r requirements.txt
+API_KEY=your_api_key python app/main.py
+```
 
-The result of this task will be tested by the next commands:
-![img.png](result.png)
-Of course, instead of `danylott` - it must be your docker id.
+## Docker usage
 
-So in this task requirements are next:
-- The script for getting & printing weather info must be located at `app/main.py`;
-- This service must be Dockerized using only `Dockerfile` (`docker-compose.yml` here is forbidden);
-- The image of the service should be as thin as possible;
-- Use `.dockerignore` file to avoid adding unnecessary stuff to docker image;
-- You must use `requests` module for interacting with Weather API;
-- You must publish your image to Docker Hub and check it is available for the world;
-- You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`. 
+Build image:
+```bash
+docker build -t idyriv11/weather-api .
+```
 
-  You should use environment variables for that purpose. So, read `API_KEY` from environment. 
-  And to pass environment variables to docker container use `-e` flag.
-- Don't forget to add `.dockerignore` file to your PR;
-- You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+Run container:
+```bash
+docker run --rm -e API_KEY=your_api_key idyriv11/weather-api
+```
 
-<details>
-  <summary><strong>Hint</strong></summary>
-    Don't use `< >` in docker command. Here is the example:
+Push to Docker Hub:
+```bash
+docker push idyriv11/weather-api:latest
+```
 
-```docker pull test_user/weather```
-</details>
+Pull image:
+```
+docker pull idyriv11/weather-api:latest
+```
 
-### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+## Example output
+```
+Paris, France
+Temperature: 17.1 °C
+Condition: Light rain shower
+Wind: 14.8 kph
+Humidity: 72%
+```

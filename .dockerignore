@@ -1,0 +1,8 @@
+.env
+.venv
+.github
+.flake8
+Dockerfile
+README.md
+checklist.md
+result.png

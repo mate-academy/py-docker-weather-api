@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY app/ /app/
 
-RUN pip install requests python-dotenv
+RUN pip install requests
 
 CMD ["python", "main.py"]

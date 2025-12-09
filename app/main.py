@@ -27,7 +27,7 @@ def get_weather() -> None:
         data = response.json()
 
         if "error" in data:
-            print(f"❌ Помилка API: {data["error"]["message"]}")
+            print(f"❌ Помилка API: {data['error']['message']}")
             return
 
         location = data["location"]

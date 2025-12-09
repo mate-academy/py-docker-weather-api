@@ -15,11 +15,11 @@ def get_weather() -> None:
     response = requests.get(url)
     data = response.json()
 
-    city = data['location']['name']
-    country = data['location']['country']
-    localtime = data['location']['localtime']
-    temp = data['current']['temp_c']
-    condition = data['current']['condition']['text']
+    city = data["location"]["name"]
+    country = data["location"]["country"]
+    localtime = data["location"]["localtime"]
+    temp = data["current"]["temp_c"]
+    condition = data["current"]["condition"]["text"]
 
     print(f"{city}/{country} {localtime} Weather: {temp} Celsius, {condition}")
 

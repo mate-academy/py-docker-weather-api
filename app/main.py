@@ -4,13 +4,13 @@ import requests
 
 def get_weather() -> None:
 
-    api_key = os.getenv("API_KEY")
-    city = "Paris"
+    API_KEY = os.getenv("API_KEY")
+    CITY = "Paris"
 
-    if not api_key:
+    if not API_KEY:
         raise ValueError("API_KEY environment variable is missing")
 
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
+    url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
 
     response = requests.get(url)
     data = response.json()

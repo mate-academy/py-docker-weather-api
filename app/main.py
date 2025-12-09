@@ -2,10 +2,10 @@ import os
 import requests
 
 
-def get_weather() -> None:
+API_KEY = os.getenv("API_KEY")
+CITY = "Paris"
 
-    API_KEY = os.getenv("API_KEY")
-    CITY = "Paris"
+def get_weather() -> None:
 
     if not API_KEY:
         raise ValueError("API_KEY environment variable is missing")

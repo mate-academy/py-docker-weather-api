@@ -2,6 +2,9 @@ import os
 import requests
 from dotenv import load_dotenv
 
+API_URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
+
 
 def get_weather() -> None:
 
@@ -15,14 +18,12 @@ def get_weather() -> None:
 
     params = {
         "key": WEATHER_API_KEY,
-        "q": "Paris",
+        "q": CITY,
         "lang": "en"
     }
 
     try:
-        response = requests.get(
-            "http://api.weatherapi.com/v1/current.json", params=params
-        )
+        response = requests.get(API_URL, params=params)
         data = response.json()
 
         if "error" in data:

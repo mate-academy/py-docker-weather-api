@@ -1,12 +1,13 @@
 FROM python:3.13-slim
 LABEL maintainer="totsevich02@gmail.com"
 
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 
 CMD ["python", "app/main.py"]

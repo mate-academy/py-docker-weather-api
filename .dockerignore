@@ -1,0 +1,10 @@
+.github
+.venv
+.env
+Dockerfile
+result.png
+Код
+__pycache__
+*.pyc
+*.pyo
+.git

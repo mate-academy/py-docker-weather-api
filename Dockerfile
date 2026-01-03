@@ -8,7 +8,6 @@ WORKDIR weather-api/
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-RUN apk add --no-cache bash
 
 COPY . .
 

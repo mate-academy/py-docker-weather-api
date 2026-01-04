@@ -1,0 +1,6 @@
+.env
+Dockerfile
+venv
+.idea
+__pycache__/
+.github

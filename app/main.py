@@ -4,7 +4,11 @@ import logging
 import sys
 import os
 
-from requests.exceptions import RequestException, Timeout, HTTPError
+from requests.exceptions import (
+    RequestException,
+    Timeout,
+    HTTPError
+)
 import requests
 
 
@@ -13,6 +17,10 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+DEFAULT_CITY = "Paris"
+AQI_PARAM_KEY = "aqi"
+AQI_PARAM_VALUE = "no"
 
 
 @dataclass
@@ -39,7 +47,6 @@ class WeatherAPIClient:
     TIMEOUT = 10
 
     def __init__(self, api_key: Optional[str] = None) -> None:
-
         self.api_key = api_key or os.getenv("API_KEY")
         if not self.api_key:
             raise ValueError(
@@ -54,7 +61,7 @@ class WeatherAPIClient:
         params = {
             "key": self.api_key,
             "q": city.strip(),
-            "aqi": "no"
+            AQI_PARAM_KEY: AQI_PARAM_VALUE
         }
 
         try:
@@ -104,7 +111,7 @@ def main() -> None:
     try:
         client = WeatherAPIClient()
 
-        city = os.getenv("WEATHER_CITY", "Paris")
+        city = os.getenv("WEATHER_CITY", DEFAULT_CITY)
         weather = client.get_current_weather(city)
 
         print(weather)

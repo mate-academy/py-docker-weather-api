@@ -9,14 +9,14 @@ AQI = "no"
 
 
 def get_weather() -> None:
-    API_KEY = os.getenv("API_KEY")
+    api_key = os.getenv("api_key")
 
-    if not API_KEY:
-        print("Error: API_KEY environment variable is not set.")
+    if not api_key:
+        print("Error: api_key environment variable is not set.")
         sys.exit(1)
 
     params = {
-        "key": API_KEY,
+        "key": api_key,
         "q": CITY,
         "aqi": AQI
     }

@@ -29,7 +29,7 @@ So in this task requirements are next:
 
 - Don't forget to add `.dockerignore` file to your PR;
 - You must _modify_ this line with correct command to pull your image:
-  COMMAND=`docker pull dimavdev/weathr-api:v1.0`.
+  COMMAND=docker pull dimavdev/weathr-api:v1.0.
 
 <details>
   <summary><strong>Hint</strong></summary>

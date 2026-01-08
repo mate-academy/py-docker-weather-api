@@ -20,7 +20,6 @@ venv/
 .gitignore
 
 # Docker
-Dockerfile
 .dockerignore
 
 # Tests

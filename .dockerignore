@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+.gitignore
+.venv
+.git/
+.github/
+.idea/
+**__pycache__/
+.pytest_cache/
+*.iml
+.vscode/

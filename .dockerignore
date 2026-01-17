@@ -1,0 +1,15 @@
+# Python
+.venv
+
+# Git
+.github/
+.gitignore
+
+# Documentation
+README.md
+result.png
+.flake8
+*.md
+
+# Docker
+.dockerignore

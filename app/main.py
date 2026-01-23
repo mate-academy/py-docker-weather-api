@@ -13,7 +13,10 @@ def perform_request() -> dict:
     payload = {
         "q": CITY
     }
-    headers = {"key": os.environ["API_KEY"]}
+    key_api = os.getenv("API_KEY")
+    if key_api is None:
+        raise ValueError("API_KEY isn't set!")
+    headers = {"key": key_api}
     response = requests.get(
         WEATHER_API_URL,
         params=payload,

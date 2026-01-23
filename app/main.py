@@ -5,19 +5,24 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+CITY = "Paris"
+WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
+
 
 def perform_request() -> dict:
     payload = {
-        "q": "Paris"
+        "q": CITY
     }
     headers = {"key": os.environ["API_KEY"]}
-    url = "http://api.weatherapi.com/v1/current.json"
-    response = requests.get(url, params=payload, headers=headers).json()
+    response = requests.get(
+        WEATHER_API_URL,
+        params=payload,
+        headers=headers
+    ).json()
     return response
 
 
 def parse_response(response: dict) -> str:
-    response = perform_request()
     city = response["location"]["name"]
     country = response["location"]["country"]
     local_time = response["location"]["localtime"]

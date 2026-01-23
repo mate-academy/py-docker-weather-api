@@ -2,6 +2,10 @@ import os
 import sys
 import requests
 
+# Constants defined at module level
+CITY = "Paris"
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+
 def get_weather():
     # 1. Get API Key from Environment Variable
     api_key = os.environ.get("API_KEY")
@@ -9,19 +13,14 @@ def get_weather():
         print("Error: API_KEY environment variable not set.")
         sys.exit(1)
 
-    city = "Paris"
-    base_url = "http://api.weatherapi.com/v1/current.json"
-    
-    # 2. Print the "Performing request..." line as shown in the task
-    print(f"Performing request to Weather API for city {city}...")
+    print(f"Performing request to Weather API for city {CITY}...")
 
     try:
-        response = requests.get(f"{base_url}?key={api_key}&q={city}")
+        response = requests.get(f"{BASE_URL}?key={api_key}&q={CITY}")
         response.raise_for_status()
         data = response.json()
 
-        # 3. Extract data to match the screenshot format:
-        # "Paris/France 2022-06-14 11:55 Weather: 22.0 Celsius, Sunny"
+        # Extract data
         location = data['location']['name']
         country = data['location']['country']
         local_time = data['location']['localtime']

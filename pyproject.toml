@@ -1,0 +1,6 @@
+[tool.ruff]
+line-length = 79
+target-version = "py314"
+lint.ignore = ["E203", "E266", "ANN002", "ANN003", "ANN401", "N807", "N818"]
+lint.select = ["B", "C", "E", "F", "W", "B9", "ANN", "Q0", "N8"]
+exclude = ["venv", ".venv"]

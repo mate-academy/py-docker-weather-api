@@ -1,4 +1,5 @@
 import os
+import sys
 
 import requests
 
@@ -8,10 +9,18 @@ FILTERING = "Paris"
 
 
 def get_weather() -> None:
-    url = f"{BASE_URL}key={API_KEY}&q={FILTERING}"
-    res = requests.get(url).json()
-    print(f"The temperature in {FILTERING} is "
-          f"{res['current']['temp_c']} degrees Celsius")
+    if not API_KEY:
+        print("API key not found")
+        sys.exit(1)
+
+    try:
+        url = f"{BASE_URL}key={API_KEY}&q={FILTERING}"
+        res = requests.get(url).json()
+        print(f"The temperature in {FILTERING} is "
+              f"{res['current']['temp_c']} degrees Celsius")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,4 @@
 .venv
 .env
-Dockerfile
 __pycache__
 *.pyc

@@ -3,13 +3,20 @@ import requests
 
 WEATHER_API_KEY = os.getenv("API_KEY")
 
-BASE_URL = "http://api.weatherapi.com/v1/current.json?"
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
 
 
 def get_weather() -> None:
-    assert WEATHER_API_KEY is not None
-    result = requests.get(BASE_URL + f"key={WEATHER_API_KEY}&q={FILTERING}")
+    if WEATHER_API_KEY is None:
+        print("API key not installed")
+        return
+
+    params = {
+        "key": WEATHER_API_KEY,
+        "q": FILTERING
+    }
+    result = requests.get(BASE_URL, params=params)
     if result.status_code == 200:
         print(result.json())
     else:

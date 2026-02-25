@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+*.iml
+.env
+.DS_Store
+venv/
+.pytest_cache/
+**__pycache__/
+.gitignore
+Dockerfile
+.git/
+db.sqlite3
+README.md
+*.pyc

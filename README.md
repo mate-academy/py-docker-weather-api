@@ -29,6 +29,8 @@ So in this task requirements are next:
 - You must *modify* this line with correct command to pull your image:
   COMMAND=`docker pull strauuch/weather-api:latest`.
 
+**COMMAND=`docker pull strauuch/weather-api:latest`**
+
 <details>
   <summary><strong>Hint</strong></summary>
     Don't use `< >` in docker command. Here is the example:

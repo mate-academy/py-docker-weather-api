@@ -4,15 +4,15 @@ import os
 
 def get_weather() -> None:
 
-    weather_api_key = os.environ.get("API_KEY")
-    base_url = "http://api.weatherapi.com/v1/current.json"
-    city = "Paris"
+    WEATHER_API_KEY = os.environ.get("API_KEY")
+    BASE_URL = "http://api.weatherapi.com/v1/current.json"
+    CITY = "Paris"
 
-    if not weather_api_key:
+    if not WEATHER_API_KEY:
         print("Error: API_KEY is not set.")
         return
 
-    url = f"{base_url}?key={weather_api_key}&q={city}"
+    url = f"{BASE_URL}?key={WEATHER_API_KEY}&q={CITY}"
 
     response = requests.get(url)
     response.raise_for_status()

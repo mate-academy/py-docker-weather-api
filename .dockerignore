@@ -1,0 +1,10 @@
+venv/
+.git/
+.github/
+.gitignore
+.flake8
+__pycache__/
+*.png
+*.md
+Dockerfile
+.dockerignore

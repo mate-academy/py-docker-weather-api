@@ -1,0 +1,16 @@
+venv/
+.venv/
+env/
+
+.env
+
+\*_/**pycache**/
+_.pyc
+
+.git/
+.github/
+
+result.png
+README.md
+.flake8
+checklist.md

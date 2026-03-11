@@ -6,3 +6,10 @@
 venv/
 .pytest_cache/
 **__pycache__/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
+*.sqlite3

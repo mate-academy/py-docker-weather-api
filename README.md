@@ -24,7 +24,7 @@ So in this task requirements are next:
 - You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`. 
 
   You should use environment variables for that purpose. So, read `API_KEY` from environment. 
-  And to pass environment variables to docker container use `-e` flag.
+  And to pass environment variables to docker container use `-e` flag or `.env` file.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
   COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
@@ -36,4 +36,10 @@ So in this task requirements are next:
 ```docker pull test_user/weather```
 </details>
 
-### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+---
+
+## 🚀 How to Run
+
+### 1. Build the image
+```bash
+docker build -t weather .

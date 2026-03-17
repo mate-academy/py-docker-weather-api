@@ -1,8 +1,31 @@
+# IDE settings
 .idea/
 .vscode/
 *.iml
+
+# Environment variables
 .env
+
+# OS-specific files
 .DS_Store
+
+# Virtual environments
 venv/
-.pytest_cache/
+.venv/
+
+# Python cache
 **__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Logs and coverage
+*.log
+.coverage
+htmlcov/
+
+# Databases
+*.sqlite3
+*.db
+
+# Other temporary files
+*.pid

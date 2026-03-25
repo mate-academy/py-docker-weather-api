@@ -1,0 +1,13 @@
+.venv
+.git
+.gitignore
+.dockerignore
+__pycache__
+*.pyc
+*.pyo
+.env
+README.md
+result.png
+checklist.md
+.flake8
+.github

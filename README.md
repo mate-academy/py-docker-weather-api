@@ -37,3 +37,9 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+# Weather API Docker Project
+
+To pull the image from Docker Hub, use the following command:
+
+COMMAND=docker pull velviktor/docker-weather-api:latest

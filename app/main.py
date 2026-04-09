@@ -1,10 +1,14 @@
 import os
+
 import requests
+
+SECRET_KEY = os.environ.get("API_KEY")
+CITY = "Paris"
+WEATHER_URL = f"https://api.weatherapi.com/v1/current.json?q={CITY}&key={SECRET_KEY}"
 
 
 def get_weather() -> None:
-    SECRET_KEY = os.environ.get('API_KEY')
-    r = requests.get(f'https://api.weatherapi.com/v1/current.json?q=Paris&key={SECRET_KEY}')
+    r = requests.get(WEATHER_URL)
     print(r.json())
 
 

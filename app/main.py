@@ -2,9 +2,10 @@ import os
 
 import requests
 
-SECRET_KEY = os.environ.get("API_KEY")
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
-WEATHER_URL = f"https://api.weatherapi.com/v1/current.json?q={CITY}&key={SECRET_KEY}"
+SECRET_KEY = os.environ.get("API_KEY")
+WEATHER_URL = f"{BASE_URL}?q={CITY}&key={SECRET_KEY}"
 
 
 def get_weather() -> None:

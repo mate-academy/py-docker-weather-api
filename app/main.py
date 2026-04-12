@@ -7,7 +7,7 @@ def get_weather() -> None:
     # write your code here
     url_city = "Paris"
     url_api_key = os.environ.get("API_KEY")
-    url = (f"http: //api.weatherapi.com/v1/current.json"
+    url = (f"http://api.weatherapi.com/v1/current.json"
            f"?key={url_api_key}"
            f"&q={url_city}&aqi=no"
            )

@@ -37,3 +37,67 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+
+## 📌 Description
+
+This PR adds a simple weather API client using Python.
+The application fetches real-time weather data for a specified city using an external API.
+
+## 🚀 Features
+
+* Load environment variables using `.env`
+* Fetch weather data via HTTP request
+* Display:
+
+  * City and country
+  * Local time
+  * Temperature (°C)
+  * Weather condition
+* Basic error handling for missing API key and failed requests
+
+## 🛠️ Tech Stack
+
+* Python
+* requests
+* python-dotenv
+* Docker (project prepared for containerization)
+
+## 📷 Screenshots
+
+![Weather API Output](images/weather-api.png)
+![Weather API Output](images/weather-api-1.png)
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the root directory and add:
+
+```
+API_KEY=your_api_key_here
+```
+
+## ▶️ How to Run
+
+```bash
+python app/main.py
+```
+
+## 📦 Dependencies
+
+Listed in `requirements.txt`:
+
+* requests
+* python-dotenv
+
+## 💡 Notes
+
+* Default city is set to **Paris**
+* API used: WeatherAPI
+* `.env` file is excluded via `.dockerignore`
+
+## ✅ Result Example
+
+```
+Paris / France 2026-04-15 10:29
+Weather: 13.3 Celsius, Partly Cloudy
+```

@@ -10,12 +10,13 @@ wheather_api_key = os.environ.get("WHEATHER_API_KEY")
 def get_weather() -> None:
     print("Performing request to Whether API for city Paris...")
 
-    url = (
+    URL = (
         f"http://api.weatherapi.com/v1/current.json"
-        f"?key={wheather_api_key}&q=Paris&aqi=no"
+        f"?key={wheather_api_key}&aqi=no"
     )
+    FILTERING = "Paris"
 
-    data = requests.get(url)
+    data = requests.get(URL + f"&q={FILTERING}")
     data = data.json()
 
     try:

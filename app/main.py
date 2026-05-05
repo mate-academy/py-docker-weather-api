@@ -3,17 +3,17 @@ import os
 
 API_KEY = os.environ.get("API_KEY")
 
-url = (
+URL = (
     f"http://api.weatherapi.com/v1/current.json"
     f"?key={API_KEY}&aqi=no"
 )
-filtering = "Paris"
+FILTERING = "Paris"
 
 
 def get_weather() -> None:
     print("Performing request to Whether API for city Paris...")
 
-    data = requests.get(url + f"&q={filtering}")
+    data = requests.get(URL + f"&q={FILTERING}")
     data = data.json()
 
     try:
@@ -23,7 +23,7 @@ def get_weather() -> None:
         local_date_and_time = location["localtime"]
         temp_celsius = current_data["temp_c"]
         whether_condition = current_data["condition"]["text"]
-    except KeyError or Exception:
+    except(KeyError, Exception):
         raise Exception(f"{data}")
 
     result = (

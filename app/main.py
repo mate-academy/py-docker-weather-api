@@ -23,7 +23,7 @@ def get_weather() -> None:
         local_date_and_time = location["localtime"]
         temp_celsius = current_data["temp_c"]
         whether_condition = current_data["condition"]["text"]
-    except(KeyError, Exception):
+    except (KeyError, Exception):
         raise Exception(f"{data}")
 
     result = (

@@ -1,22 +1,19 @@
 import requests
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 API_KEY = os.environ.get("API_KEY")
+
+url = (
+    f"http://api.weatherapi.com/v1/current.json"
+    f"?key={API_KEY}&aqi=no"
+)
+filtering = "Paris"
 
 
 def get_weather() -> None:
     print("Performing request to Whether API for city Paris...")
 
-    URL = (
-        f"http://api.weatherapi.com/v1/current.json"
-        f"?key={API_KEY}&aqi=no"
-    )
-    FILTERING = "Paris"
-
-    data = requests.get(URL + f"&q={FILTERING}")
+    data = requests.get(url + f"&q={filtering}")
     data = data.json()
 
     try:

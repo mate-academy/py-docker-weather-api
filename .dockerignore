@@ -1,0 +1,7 @@
+.venv/
+.git/
+__pycache__/
+*.pyc
+.flake8
+*.md
+Dockerfile

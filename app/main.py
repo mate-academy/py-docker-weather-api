@@ -1,24 +1,27 @@
 import os
 import requests
 
-from dotenv import load_dotenv
-
-
-load_dotenv()
 
 URL = "http://api.weatherapi.com/v1/current.json"
 FILTERING = "Paris"
 
 
 def get_weather() -> None:
+    api_key = os.getenv("API_KEY")
+
+    if not api_key:
+        raise ValueError("Missing API_KEY environment variable")
+
     params = {
-        "key": os.getenv("API_KEY"),
+        "key": api_key,
         "q": FILTERING,
     }
 
-    result = requests.get(URL, params=params)
+    try:
+        result = requests.get(URL, params=params, timeout=5)
 
-    if result.status_code == 200:
+        result.raise_for_status()
+
         data = result.json()
 
         city = data["location"]["name"]
@@ -30,9 +33,11 @@ def get_weather() -> None:
         print(f"Temperature: {temp}°C")
         print(f"Condition: {condition}")
 
-    else:
-        print(f"Error: {result.status_code}")
-        print(result.text)
+    except requests.Timeout:
+        print("Error: request timed out")
+
+    except requests.RequestException as e:
+        print(f"Error: request failed -> {e}")
 
 
 if __name__ == "__main__":

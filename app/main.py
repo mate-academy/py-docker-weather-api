@@ -1,9 +1,6 @@
 import os
 import sys
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
 
 BASE_URL = "http://api.weatherapi.com/v1/current.json"
 TARGET_CITY = "Paris"

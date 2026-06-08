@@ -1,0 +1,11 @@
+.git
+.gitignore
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.flake8
+README.md
+checklist.md
+result.png

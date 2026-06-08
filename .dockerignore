@@ -1,0 +1,7 @@
+venv_new/
+.git/
+.github/
+.idea/
+__pycache__/
+*.pyc
+result.png

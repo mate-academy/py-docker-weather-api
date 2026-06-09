@@ -1,0 +1,19 @@
+# git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual env
+venv/
+.venv/
+env/
+ENV/
+
+# pycharm
+.idea/
+.vscode/
+*.swp

@@ -37,3 +37,15 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+## Docker Deployment (My Implementation)
+
+Цей проєкт було контейнеризовано за допомогою Docker.
+
+### Як використовувати:
+1. **Завантаження:**
+   ```bash
+   docker pull rustam24/weather-api:latest
+   Запуск контейнера:
+Для успішного запуску необхідно передати ваш API ключ у змінну середовища API_KEY:
+docker run -e API_KEY=ваш_ключ_тут rustam24/weather-api:latest

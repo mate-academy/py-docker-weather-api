@@ -1,17 +1,18 @@
 import os
 import requests
 
+BASE_URL = "http://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
+
 
 def get_weather() -> None:
     api_key = os.getenv("WEATHER_API_KEY")
-    base_url = "http://api.weatherapi.com/v1/current.json"
-    city = "Paris"
 
-    print(f"Performing request to Weather API for city {city}...")
+    print(f"Performing request to Weather API for city {CITY}...")
 
-    params = {"key": api_key, "q": city}
+    params = {"key": api_key, "q": CITY}
 
-    response = requests.get(base_url, params=params)
+    response = requests.get(BASE_URL, params=params)
 
     if response.status_code == 200:
         data = response.json()

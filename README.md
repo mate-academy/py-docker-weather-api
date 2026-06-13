@@ -27,13 +27,25 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull  livan94/docker-weather-api.
+  COMMAND=`docker pull  livan94/docker-weather-api`.
+
+## Run example
+
+```bash
+docker pull livan94/docker-weather-api
+docker run -e API_KEY=YOUR_API_KEY livan94/docker-weather-api
+```
 
 <details>
   <summary><strong>Hint</strong></summary>
-    Don't use `< >` in docker command. Here is the example:
 
-```docker pull test_user/weather```
+Don't use `< >` in docker command. Here is the example:
+
+```bash
+docker pull test_user/weather
+```
+
 </details>
+
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

@@ -26,5 +26,6 @@ def get_weather() -> None:
     print(f"Temperature: {data['current']['temp_c']}°C")
     print(f"Condition: {data['current']['condition']['text']}")
 
+
 if __name__ == "__main__":
     get_weather()

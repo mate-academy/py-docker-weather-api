@@ -1,4 +1,4 @@
-FROM python:alpine3.23
+FROM python:3.10.8-slim
 LABEL maintainer="armahanz.music@gmail.com"
 
 ENV PYTHONUNBUFFERED 1

@@ -25,7 +25,9 @@ def get_weather() -> None:
 
     date, time = localtime.split(" ")
 
-    print(f"{city_name}/{country} {date} {time} Weather: {temp} Celsius, {condition}")
+    print(f"{city_name}/{country} "
+          f"{date} {time}"
+          f" Weather: {temp} Celsius, {condition}")
 
 
 if __name__ == "__main__":

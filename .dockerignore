@@ -1,0 +1,8 @@
+.venv
+.git
+.github
+__pycache__
+*.md
+*.png
+.flake8
+.gitignore

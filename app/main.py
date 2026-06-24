@@ -4,16 +4,16 @@ import requests
 
 def get_weather() -> None:
 
-    api_key = os.getenv("api_key")
+    API_KEY = os.getenv("API_KEY")
 
-    if not api_key:
-        raise ValueError("api_key environment variable is required")
+    if not API_KEY:
+        raise ValueError("API_KEY environment variable is required")
 
     BASE_URL = "http://api.weatherapi.com/v1/current.json"
 
     CITY = "Paris"
 
-    url = f"{BASE_URL}?key={api_key}&q={CITY}"
+    url = f"{BASE_URL}?key={API_KEY}&q={CITY}"
 
     response = requests.get(url)
     response.raise_for_status()

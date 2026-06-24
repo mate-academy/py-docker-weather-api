@@ -13,9 +13,9 @@ def get_weather() -> None:
 
     CITY = "Paris"
 
-    url = f"{BASE_URL}?key={API_KEY}&q={CITY}"
+    URL = f"{BASE_URL}?key={API_KEY}&q={CITY}"
 
-    response = requests.get(url)
+    response = requests.get(URL)
     response.raise_for_status()
 
     data = response.json()

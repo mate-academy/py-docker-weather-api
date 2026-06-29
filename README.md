@@ -21,19 +21,12 @@ So in this task requirements are next:
 - Use `.dockerignore` file to avoid adding unnecessary stuff to docker image;
 - You must use `requests` module for interacting with Weather API;
 - You must publish your image to Docker Hub and check it is available for the world;
-- You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`. 
+- You need to generate `API_KEY` for using Weather API, but it shouldn't be hard-coded in `main.py`.
 
-  You should use environment variables for that purpose. So, read `API_KEY` from environment. 
+  You should use environment variables for that purpose. So, read `API_KEY` from environment.
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
-
-<details>
-  <summary><strong>Hint</strong></summary>
-    Don't use `< >` in docker command. Here is the example:
-
-```docker pull test_user/weather```
-</details>
+  COMMAND=`docker pull shongi85/weather`.
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

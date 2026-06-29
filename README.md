@@ -29,11 +29,4 @@ So in this task requirements are next:
 - You must *modify* this line with correct command to pull your image:
   COMMAND=`docker pull shongi85/weather`.
 
-<details>
-  <summary><strong>Hint</strong></summary>
-    Don't use `< >` in docker command. Here is the example:
-
-```docker pull test_user/weather```
-</details>
-
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

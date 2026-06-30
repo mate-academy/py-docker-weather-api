@@ -37,3 +37,5 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+COMMAND=docker pull danyatatarchuk/docker-weather-api

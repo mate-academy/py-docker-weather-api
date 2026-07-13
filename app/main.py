@@ -3,13 +3,16 @@ import sys
 import requests
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
         print("Error: API_KEY environment variable is not set.")
         sys.exit(1)
 
-    url = f"https://api.weatherapi.com/v1/current.json?key={api_key}&q=Paris"
+    url = (
+        "https://api.weatherapi.com/v1/current.json"
+        f"?key={api_key}&q=Paris"
+    )
 
     try:
         response = requests.get(url)
@@ -20,7 +23,10 @@ def get_weather():
         condition = data["current"]["condition"]["text"]
         temp_c = data["current"]["temp_c"]
 
-        print(f"Current weather in {location}: {condition}, Temperature: {temp_c}°C")
+        print(
+            f"Current weather in {location}: "
+            f"{condition}, Temperature: {temp_c}°C"
+        )
     except requests.exceptions.RequestException as e:
         print(f"Error fetching weather data: {e}")
         sys.exit(1)

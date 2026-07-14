@@ -1,8 +1,8 @@
-FROM python:3.10.20-alpine3.24
+FROM python:3.10.8-slim
 
 LABEL maintainer="asonsone@gmail.com"
 
-ENV PYTHOUNNBUFFERED=1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 

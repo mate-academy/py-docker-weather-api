@@ -2,6 +2,7 @@ import os
 import sys
 import requests
 
+
 def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
 
@@ -10,7 +11,10 @@ def get_weather() -> None:
         sys.exit(1)
 
     city = "Paris"
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
+    url = (
+        f"http://api.weatherapi.com/v1/current.json"  # noqa: E231
+        f"?key={api_key}&q={city}"
+    )
 
     try:
         response = requests.get(url)
@@ -22,14 +26,15 @@ def get_weather() -> None:
 
         print("Performing request to WEATHER API for city Paris")
         print(
-            f" {location['name']}/{location['country']}"
-            f" {location['localtime']} "
-            f" Weather: {current['temp_c']} "
-            f" Celsius, {current['condition']['text']}"
+            f" {location["name"]}/{location["country"]}"
+            f" {location["localtime"]} "
+            f" Weather: {current["temp_c"]} "
+            f" Celsius, {current["condition"]["text"]}"
         )
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     get_weather()

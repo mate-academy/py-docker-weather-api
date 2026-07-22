@@ -2,7 +2,7 @@ import os
 import sys
 import requests
 
-URL = "http://weatherapi.com"
+URL = "http://api.weatherapi.com/v1/current.json"
 CITY = "Paris"
 
 

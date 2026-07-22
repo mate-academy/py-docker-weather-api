@@ -1,0 +1,9 @@
+.git
+.github
+.flake8
+.gitignore
+venv
+__pycache__
+*.pyc
+*.md
+result.png

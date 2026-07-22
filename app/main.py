@@ -10,14 +10,14 @@ def get_weather() -> None:
         print("API_KEY not set")
         sys.exit(1)
 
-    CITY = "Paris"
-    URL = (
+    city = "Paris"
+    url = (
         f"http://api.weatherapi.com/v1/current.json"
-        f"?key={api_key}&q={CITY}"
+        f"?key={api_key}&q={city}"
     )
 
     try:
-        response = requests.get(URL)
+        response = requests.get(url)
         response.raise_for_status()
         data = response.json()
 

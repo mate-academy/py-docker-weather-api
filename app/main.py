@@ -6,7 +6,7 @@ URL = "http://weatherapi.com"
 CITY = "Paris"
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.getenv("API_KEY")
     if not api_key:
         sys.exit("Error: API_KEY environment variable is missing.")

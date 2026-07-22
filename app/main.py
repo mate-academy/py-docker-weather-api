@@ -26,10 +26,10 @@ def get_weather() -> None:
 
         print("Performing request to WEATHER API for city Paris")
         print(
-            f"{location["name"]}/{location["country"]} "
-            f"{location["localtime"]} "
-            f"Weather: {current["temp_c"]} "
-            f"Celsius, {current["condition"]["text"]}"
+            f"{location['name']}/{location['country']} "
+            f"{location['localtime']} "
+            f"Weather: {current['temp_c']} "
+            f"Celsius, {current['condition']['text']}"
         )
 
     except requests.exceptions.RequestException as e:

@@ -1,4 +1,4 @@
-FROM python:3.11.6-alpine3.18
+FROM python:3.10.8-slim
 LABEL mainteiner="me"
 
 ENV PYTHONUNBUFFERED=1

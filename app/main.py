@@ -3,7 +3,7 @@ import os
 
 KEY = os.environ["API_KEY"]
 BASE_URL = "http://api.weatherapi.com/v1"
-FILTERING = "London"
+FILTERING = "Paris"
 
 
 def get_weather() -> None:
@@ -15,7 +15,7 @@ def get_weather() -> None:
         }
     )
     data = response.json()
-    print("Performing request for to weather API for city of London...")
+    print(f"Performing request for to weather API for city of {FILTERING}...")
     print(
         f"{data['location']['localtime']}"
         f" Weather: {data['current']['temp_c']} Celsius, "

@@ -12,19 +12,19 @@ class WeatherAPIError(Exception):
 
 def get_weather(city: str = "Paris", aqi: bool = True) -> dict:
 
-    API_KEY = os.environ.get("API_KEY")
-    if not API_KEY:
+    api_key = os.environ.get("API_KEY")
+    if not api_key:
         raise SystemExit("ERROR: API_KEY environment variable is not set.")
 
-    BASE_URL = "https://api.weatherapi.com/v1"
+    base_url = "https://api.weatherapi.com/v1"
     params = {
-        "key": API_KEY,
+        "key": api_key,
         "q": city,
         "aqi": "yes" if aqi else "no",
     }
 
     print(f"Performing request to Weather API for city {city}...")
-    response = requests.get(f"{BASE_URL}/current.json",
+    response = requests.get(f"{base_url}/current.json",
                             params=params, timeout=10)
 
     if not response.ok:
@@ -38,9 +38,9 @@ def print_weather(data: dict) -> None:
     location = data["location"]
     current = data["current"]
     print(
-        f"{location['name']}/{location['country']} "
-        f"{location['localtime']} "
-        f"Weather: {current['temp_c']} Celsius, {current['condition']['text']}"
+        f"{location["name"]}/{location["country"]} "
+        f"{location["localtime"]} "
+        f"Weather: {current["temp_c"]} Celsius, {current["condition"]["text"]}"
     )
 
 

@@ -38,9 +38,9 @@ def print_weather(data: dict) -> None:
     location = data["location"]
     current = data["current"]
     print(
-        f"{location["name"]}/{location["country"]} "
-        f"{location["localtime"]} "
-        f"Weather: {current["temp_c"]} Celsius, {current["condition"]["text"]}"
+        f"{location['name']}/{location['country']} "
+        f"{location['localtime']} "
+        f"Weather: {current['temp_c']} Celsius, {current['condition']['text']}"
     )
 
 

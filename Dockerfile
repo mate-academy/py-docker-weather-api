@@ -14,4 +14,3 @@ COPY . .
 
 CMD ["python", "app/main.py", "runserver", "0.0.0.0:8000"]
 
-EXPOSE 8000

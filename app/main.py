@@ -5,6 +5,7 @@ import requests
 BASE_URL = "http://api.weatherapi.com/v1/current.json"
 API_KEY = os.environ.get("API_KEY")
 
+
 def get_weather() -> None:
     response = requests.get(
         BASE_URL,
@@ -26,6 +27,7 @@ def get_weather() -> None:
     print(
         f"{city}/{country} {localtime} Weather: {temp_c} Celsius, {condition}"
     )
+
 
 if __name__ == "__main__":
     get_weather()

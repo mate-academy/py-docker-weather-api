@@ -9,7 +9,7 @@ CITY = "Paris"
 
 
 def get_weather() -> None:
-    api_key = os.getenv("API_KEY")
+    api_key = os.environ.get("API_KEY")
 
     if not api_key:
         print("Error: API_KEY is not set in environment variables.")

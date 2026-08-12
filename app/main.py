@@ -5,19 +5,19 @@ import os
 def get_weather() -> None:
     api_key = os.getenv("API_KEY")
 
-    URL = "https://api.weatherapi.com/v1/current.json?"
-    PAYLOAD = {
-    "q": "Paris",
-    "aqi": "no",
-    "pollen": "no",
-    "lang": "string",
-    "current_fields": "string"
-}
+    url = "https://api.weatherapi.com/v1/current.json?"
+    payload = {
+        "q": "Paris",
+        "aqi": "no",
+        "pollen": "no",
+        "lang": "string",
+        "current_fields": "string"
+    }
 
     try:
         response = requests.get(
-            URL,
-            params=PAYLOAD,
+            url,
+            params=payload,
             headers={
                 "key": api_key,
             }

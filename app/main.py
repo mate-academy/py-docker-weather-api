@@ -33,10 +33,10 @@ def get_weather() -> None:
         data = response.json()
 
         print(
-            f"{data["location"]["name"]}/{data["location"]["country"]} "
-            f"{data["location"]["localtime"]} "
-            f"Wether: {data["current"]["temp_c"]} "
-            f"Celcius, {data["current"]["condition"]["text"]}"
+            f"{data['location']['name']}/{data['location']['country']} "
+            f"{data['location']['localtime']} "
+            f"Weather: {data['current']['temp_c']} "
+            f"Celsius, {data['current']['condition']['text']}"
         )
 
     except requests.exceptions.RequestException as e:

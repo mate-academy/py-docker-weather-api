@@ -27,7 +27,7 @@ def get_weather() -> None:
     condition = data["current"]["condition"]["text"]
 
     print(
-        f"{city}/{country} {date_time}"
+        f"{city}/{country} {date_time} "
         f"Weather: {temperature : .1f} Celsius, {condition}"
     )
 

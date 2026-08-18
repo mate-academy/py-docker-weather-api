@@ -1,0 +1,12 @@
+.venv/
+.dockerignore
+.flake8
+.github/
+.git/
+.gitignore
+Dockerfile
+.python-version
+pyproject.toml
+result.png
+README.md
+checklist.md

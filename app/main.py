@@ -8,7 +8,7 @@ load_dotenv()
 
 
 URL = os.getenv("URL", "https://api.weatherapi.com/v1/current.json")
-FILTERING = os.getenv("FILTERING", "Kyiv")
+FILTERING = os.getenv("FILTERING", "Paris")
 API_KEY = os.getenv("API_KEY", None)
 
 

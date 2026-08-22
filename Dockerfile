@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+LABEL author="Marek Biela"
+
+ENV PYTHONBUFFERED=1
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app/main.py"]

@@ -16,5 +16,6 @@ def get_weather() -> None:
     else:
         print(f"Помилка: {response.status_code}")
 
+
 if __name__ == "__main__":
     get_weather()

@@ -27,7 +27,10 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=`docker pull lukianmbda/weathereport`.
+Run the container:
+
+
 
 <details>
   <summary><strong>Hint</strong></summary>
@@ -35,5 +38,7 @@ So in this task requirements are next:
 
 ```docker pull test_user/weather```
 </details>
+
+
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.

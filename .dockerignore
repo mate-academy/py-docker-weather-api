@@ -1,0 +1,10 @@
+.venv/
+Dockerfile
+.env
+.git
+.gitignore
+__pycache__
+*.pyc
+README.md
+result.png
+checklist.md

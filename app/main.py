@@ -13,10 +13,10 @@ def get_weather() -> None:
     res = requests.get(API_URL, params={"key": API_KEY, "q": CITY_NAME})
     data = res.json()
 
-    print(f"{data["location"]["name"]}/{data["location"]["country"]}"
-          f" {data["location"]["localtime"]}"
-          f" Weather: {data["current"]["temp_c"]} Celsius, "
-          f" {data["current"]["condition"]["text"]}")
+    print(f"{data['location']['name']}/{data['location']['country']}"
+          f" {data['location']['localtime']}"
+          f" Weather: {data['current']['temp_c']} Celsius, "
+          f" {data['current']['condition']['text']}")
 
 
 if __name__ == "__main__":

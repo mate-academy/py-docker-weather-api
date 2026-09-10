@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+.github
+
+# Virtual environments
+.venv
+venv
+
+# Python cache
+__pycache__
+*.py[cod]
+*$py.class
+
+# IDE
+.idea
+.vscode
+
+# Environment variables
+.env
+
+# Tests / documentation / unnecessary files
+README.md
+checklist.md
+result.png
+
+# OS files
+.DS_Store
+Thumbs.db

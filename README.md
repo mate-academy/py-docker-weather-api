@@ -1,4 +1,4 @@
-# Docker Weather API
+﻿# Docker Weather API
 
 - **Read** [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md) before start
 - Look through [Weather API](https://www.weatherapi.com/docs/) documentation, you will need it in this task
@@ -27,7 +27,7 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=docker pull klypcont/docker-weather-api
 
 <details>
   <summary><strong>Hint</strong></summary>

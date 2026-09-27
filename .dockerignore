@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.env
+.flake8
+.gitignore
+README.md
+checklist.md
+result.png

@@ -27,7 +27,14 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+COMMAND=`docker pull sonituensem/docker-weather-api`.
+
+Build and run locally (replace `YOUR_API_KEY` with your WeatherAPI key):
+
+```bash
+docker build -t sonituensem/docker-weather-api .
+docker run --rm -e API_KEY=YOUR_API_KEY sonituensem/docker-weather-api
+```
 
 <details>
   <summary><strong>Hint</strong></summary>

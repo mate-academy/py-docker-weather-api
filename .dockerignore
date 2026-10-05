@@ -1,0 +1,7 @@
+.venv
+.env
+.git
+.github
+__pycache__
+README.md
+result.png

@@ -1,11 +1,11 @@
-FROM python:3.12.8
+FROM python:3.10.8-slim
 LABEL maintainer="t.balenko12008@gmail.com"
 
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .

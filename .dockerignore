@@ -1,0 +1,7 @@
+.venv
+__pycache__
+.git
+.flake8
+checklist.md
+README.md
+result.png

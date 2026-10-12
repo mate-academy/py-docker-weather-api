@@ -37,3 +37,23 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+```markdown
+# Docker Weather API
+
+Gets current weather information for Paris using WeatherAPI.com.
+
+## Pull the Docker image
+
+```bash
+docker pull khchan246810/weather
+```
+
+## Run the container
+
+Set your WeatherAPI key through the `API_KEY` environment variable:
+
+```bash
+docker run --rm -e API_KEY=YOUR_REAL_API_KEY khchan246810/weather
+```
+```

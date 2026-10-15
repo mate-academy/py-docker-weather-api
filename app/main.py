@@ -1,6 +1,9 @@
 import os
 import requests
 
+URL = "http://api.weatherapi.com/v1/current.json?"
+FILTERING = "Kyiv"
+
 
 def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
@@ -8,9 +11,9 @@ def get_weather() -> None:
         print("Error: API_KEY environment variable is missing.")
         return
 
-    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q=Paris"
+    full_url = f"{URL}key={api_key}&q={FILTERING}"
 
-    response = requests.get(url)
+    response = requests.get(full_url)
     if response.status_code == 200:
         data = response.json()
         location = data["location"]["name"]
@@ -18,7 +21,7 @@ def get_weather() -> None:
         condition = data["current"]["condition"]["text"]
         print(f"Weather in {location}: {temp}°C, {condition}")
     else:
-        print(f"Failed to fletch weather: {response.status_code}")
+        print(f"Failed to fetch weather: {response.status_code}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+.vscode
+venv
+.venv
+__pycache__
+*.pyc
+tests
+.flake8
+README.md
+.env

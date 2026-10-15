@@ -3,33 +3,34 @@ import requests
 
 
 CITY = "Paris"
-URL = "https://api.openweathermap.org/data/2.5/weather"
+URL = "https://api.weatherapi.com/v1/current.json"
 API_KEY = os.getenv("API_KEY")
 
 
 def get_weather() -> dict:
-    if not api_key:
+    if not API_KEY:
         raise ValueError(
             "API_KEY environment variable is not set."
         )
     params = {
         "q": CITY,
-        "appid": API_KEY,
-        "units": "metric",
+        "key": API_KEY,
     }
-    response = requests.get(URL, params=params, timeout=10)
+    response = requests.get(URL, params=params)
     response.raise_for_status()
     return response.json()
 
 
 def main() -> None:
     weather = get_weather()
-    print(f"\nWeather in {weather['name']}:")
-    print(f"Temperature: {weather['main']['temp']} °C")
-    print(f"Feels like: {weather['main']['feels_like']} °C")
-    print(f"Humidity: {weather['main']['humidity']}%")
-    print(f"Conditions: {weather['weather'][0]['description']}")
-    print(f"Wind speed: {weather['wind']['speed']} m/s")
+    location = weather["location"]
+    current = weather["current"]
+    print(
+        f"{location['name']}/{location['country']} "
+        f"{location['localtime']} "
+        f"Weather: {current['temp_c']} Celsius, "
+        f"{current['condition']['text']}"
+    )
 
 
 if __name__ == "__main__":

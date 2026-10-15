@@ -6,7 +6,7 @@ CITY = "Paris"
 URL = "https://api.openweathermap.org/data/2.5/weather"
 
 
-def get_weather():
+def get_weather() -> dict:
     api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError(
@@ -22,7 +22,7 @@ def get_weather():
     return response.json()
 
 
-def main():
+def main() -> None:
     weather = get_weather()
     print(f"\nWeather in {weather['name']}:")
     print(f"Temperature: {weather['main']['temp']} °C")

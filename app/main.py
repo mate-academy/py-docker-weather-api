@@ -4,17 +4,17 @@ import requests
 
 CITY = "Paris"
 URL = "https://api.openweathermap.org/data/2.5/weather"
+API_KEY = os.getenv("API_KEY")
 
 
 def get_weather() -> dict:
-    api_key = os.getenv("API_KEY")
     if not api_key:
         raise ValueError(
             "API_KEY environment variable is not set."
         )
     params = {
         "q": CITY,
-        "appid": api_key,
+        "appid": API_KEY,
         "units": "metric",
     }
     response = requests.get(URL, params=params, timeout=10)

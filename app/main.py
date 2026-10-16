@@ -34,10 +34,10 @@ def get_weather() -> None:
     current_weather = weather_data["current"]
 
     print(
-        f"{location["name"]}/{location["country"]} "
-        f"{location["localtime"]} Weather: "
-        f"{current_weather["temp_c"]} Celsius, "
-        f"{current_weather["condition"]["text"]}"
+        f"{location['name']}/{location['country']} "
+        f"{location['localtime']} Weather: "
+        f"{current_weather['temp_c']} Celsius, "
+        f"{current_weather['condition']['text']}"
     )
 
 

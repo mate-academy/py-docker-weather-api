@@ -15,9 +15,9 @@ def get_weather() -> None:
     response = requests.get(BASE_URL, params=params)
     response.raise_for_status()
     weather_data = response.json()
-    print(f"City: {weather_data["location"]["name"]}")
-    print(f"Temperature: {weather_data["current"]["temp_c"]}°C")
-    print(f"Condition: {weather_data["current"]["condition"]["text"]}")
+    print(f"City: {weather_data['location']['name']}")
+    print(f"Temperature: {weather_data['current']['temp_c']}°C")
+    print(f"Condition: {weather_data['current']['condition']['text']}")
 
 
 if __name__ == "__main__":

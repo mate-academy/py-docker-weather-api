@@ -27,7 +27,7 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=`docker pull makar80008/docker-weather-api:latest`.
 
 <details>
   <summary><strong>Hint</strong></summary>
@@ -37,3 +37,51 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+## Run locally
+
+Use Python 3.10, matching the CI environment. With `uv`, in PowerShell:
+
+```powershell
+uv venv --python 3.10 venv
+uv pip install --python .\venv\Scripts\python.exe -r requirements.txt
+$env:API_KEY = "your-weatherapi-key"
+.\venv\Scripts\python.exe app/main.py
+```
+
+The script prints the current temperature and weather conditions in Paris.
+It exits with an error if `API_KEY` is missing or the API request fails.
+
+## Run with Docker
+
+Download and run the public image:
+
+```powershell
+docker pull makar80008/docker-weather-api:latest
+docker run --rm -e API_KEY makar80008/docker-weather-api:latest
+```
+
+Set `API_KEY` in your terminal before running the container. Alternatively,
+store `API_KEY=your-weatherapi-key` in a local `.env` file and run:
+
+```powershell
+docker run --rm --env-file .env makar80008/docker-weather-api:latest
+```
+
+The `.env` file is excluded from Git and from the Docker build context.
+Only the runtime dependency (`requests`) is installed in the image;
+the root `requirements.txt` also installs development tools locally.
+
+To build and run the image locally:
+
+```powershell
+docker build -t docker-weather-api .
+docker run --rm --env-file .env docker-weather-api
+```
+
+## Check the solution
+
+```powershell
+.\venv\Scripts\python.exe -m unittest discover -s tests -v
+.\venv\Scripts\python.exe -m flake8 app/
+```

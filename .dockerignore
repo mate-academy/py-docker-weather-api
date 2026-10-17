@@ -10,7 +10,6 @@ ENV/
 .env
 .flake8
 .gitignore
-Dockerfile
 
 **/__pycache__/
 *.pyc

@@ -1,12 +1,13 @@
 import os
 import requests
 
+URL = "http://api.weatherapi.com/v1/current.json?"
+FILTERING = "Paris"
+
 
 def get_weather() -> None:
     print("Perfoming request to Weather API for city Paris...")
     api_key = os.getenv("API_KEY")
-    URL = "http://api.weatherapi.com/v1/current.json?"
-    FILTERING = "Paris"
     weather = requests.get(URL + f"key={api_key}&q={FILTERING}&aqi=no").json()
     print(f"{weather['location']['name']}/"
           f"{weather['location']['country']} "

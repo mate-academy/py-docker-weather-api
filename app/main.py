@@ -2,7 +2,7 @@ import os
 import requests
 
 
-def get_weather():
+def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     if not api_key:
         print("Error: API_KEY environment variable is missing.")

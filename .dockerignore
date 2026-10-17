@@ -1,0 +1,17 @@
+README.md
+checklist.md
+result.png
+
+.github/
+.venv/
+venv/
+ENV/
+
+.env
+.flake8
+.gitignore
+Dockerfile
+
+**/__pycache__/
+*.pyc
+.DS_Store

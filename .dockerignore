@@ -1,0 +1,12 @@
+venv/
+.venv/
+.git/
+.github/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.flake8
+requirements.txt

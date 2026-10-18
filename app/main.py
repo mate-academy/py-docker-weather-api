@@ -4,6 +4,7 @@ import requests
 
 CURRENT_WEATHER_URL = "https://api.weatherapi.com/v1/current.json"
 
+
 def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     if api_key is None:

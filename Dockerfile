@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.10.8-slim
 
 WORKDIR /app
 
@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "main.py"]
+CMD ["python", "app/main.py"]

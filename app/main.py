@@ -6,6 +6,7 @@ import requests
 CITY = "Paris"
 URL = "http://api.weatherapi.com/v1/current.json"
 
+
 def get_weather() -> None:
     api_key = os.environ.get("API_KEY")
     if not api_key:
@@ -29,7 +30,7 @@ def get_weather() -> None:
         humidity = data["current"]["humidity"]
         wind = data["current"]["wind_kph"]
 
-        print(f"Weather in {CITY}:")
+        print(f"Weather in {CITY}: ")
         print(f"Temperature: {temp}°C")
         print(f"Condition: {condition}")
         print(f"Humidity: {humidity}%")

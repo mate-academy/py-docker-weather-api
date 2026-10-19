@@ -20,17 +20,23 @@ def get_weather() -> None:
     response.raise_for_status()
     data = response.json()
 
-    location = data["location"]
-    current = data["current"]
+    name = data["location"]["name"]
+    country = data["location"]["country"]
+    localtime = data["location"]["localtime"]
+    condition = data["current"]["condition"]["text"]
+    temp = data["current"]["temp_c"]
+    feels_like = data["current"]["feelslike_c"]
+    wind = data["current"]["wind_kph"]
+    humidity = data["current"]["humidity"]
 
-    print(f"Performing request to Weather API for city {location["name"]}...")
-    print(f"Weather in {location["name"]}, {location["country"]}")
-    print(f"Local time: {location["localtime"]}")
-    print(f"Condition: {current["condition"]["text"]}")
-    print(f"Temperature: {current["temp_c"]} °C")
-    print(f"Feels like: {current["feelslike_c"]} °C")
-    print(f"Wind: {current["wind_kph"]} kph")
-    print(f"Humidity: {current["humidity"]}%")
+    print(f"Performing request to Weather API for city {name}...")
+    print(f"Weather in {name}, {country}")
+    print(f"Local time: {localtime}")
+    print(f"Condition: {condition}")
+    print(f"Temperature: {temp} °C")
+    print(f"Feels like: {feels_like} °C")
+    print(f"Wind: {wind} kph")
+    print(f"Humidity: {humidity}%")
 
 
 if __name__ == "__main__":

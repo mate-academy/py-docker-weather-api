@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY app/requirements requirements.txt
+COPY app/requirements.txt requirements.txt
 
 RUN pip install --no-cache-dir -r requirements.txt
 

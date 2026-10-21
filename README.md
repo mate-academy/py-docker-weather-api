@@ -27,7 +27,7 @@ So in this task requirements are next:
   And to pass environment variables to docker container use `-e` flag.
 - Don't forget to add `.dockerignore` file to your PR;
 - You must *modify* this line with correct command to pull your image:
-  COMMAND=`docker pull <YOUR_DOCKER_ID/YOUR_IMAGE_NAME>`.
+  COMMAND=`docker pull sydneyhart/docker-weather-api:latest`.
 
 <details>
   <summary><strong>Hint</strong></summary>
@@ -37,3 +37,57 @@ So in this task requirements are next:
 </details>
 
 ### Note: Check your code using this [checklist](checklist.md) before pushing your solution.
+
+## Run locally
+
+Use Python 3.13 and a key from https://www.weatherapi.com/.
+Set `API_KEY` in your environment, then run:
+
+```sh
+python -m pip install -r requirements-runtime.txt
+python app/main.py
+```
+
+The script prints the current Paris weather and exits. Missing credentials,
+request failures, and invalid responses produce an error and exit status 1.
+The API key is read at runtime; do not commit it or bake it into the image.
+
+## Build and run with Docker
+
+```sh
+docker build -t sydneyhart/docker-weather-api:latest .
+docker run --rm -e API_KEY sydneyhart/docker-weather-api:latest
+```
+
+Only the runtime dependency and application are copied into the slim image.
+The container runs as an unprivileged user.
+
+## Publish to Docker Hub
+
+The intended public image is `sydneyhart/docker-weather-api:latest`.
+Publication and public pull verification are still pending; the pull command
+above becomes usable after these steps complete on a Docker-enabled machine:
+
+```sh
+docker login --username sydneyhart
+docker buildx build --platform linux/amd64,linux/arm64 \
+  -t sydneyhart/docker-weather-api:latest --push .
+```
+
+Create or configure `sydneyhart/docker-weather-api` as a public Docker Hub
+repository. From a separate, unauthenticated Docker environment, verify:
+
+```sh
+docker pull sydneyhart/docker-weather-api:latest
+docker run --rm -e API_KEY sydneyhart/docker-weather-api:latest
+```
+
+## Tests
+
+```sh
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
+flake8 app/
+```
+
+Tests mock Weather API responses and require no real API key or network.

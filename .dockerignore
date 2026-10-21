@@ -1,0 +1,5 @@
+**
+!Dockerfile
+!requirements-runtime.txt
+!app/
+!app/main.py

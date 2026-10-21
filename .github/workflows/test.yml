@@ -1,9 +1,13 @@
 name: Test
 
 on:
+  push:
+    branches:
+      - "develop"
   pull_request:
     branches:
       - "master"
+      - "develop"
 
 jobs:
   test:
@@ -12,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set Up Python 3.10
-        uses: actions/setup-python@v2
+      - name: Set Up Python 3.13
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.13"
 
       - name: Install requirements
         run: |
@@ -26,3 +30,19 @@ jobs:
 
       - name: Run flake8
         run: flake8 app/
+
+      - name: Test weather client
+        run: python -m unittest discover -s tests -v
+
+      - name: Build Docker image
+        run: docker build -t weather-api:test .
+
+      - name: Check container startup and missing-key handling
+        run: |
+          set +e
+          output=$(docker run --rm weather-api:test 2>&1)
+          status=$?
+          set -e
+          test "$status" -eq 1
+          test "$output" = "Error: Set the API_KEY environment variable."
+

@@ -1,12 +1,12 @@
-from python:3.11-alpine
+from python:3.10.8-slim
 LABEL maintainer="imvovo4kaa@gmail.com"
 
-ENV PYTHONBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
-WORKDIR app/ ./app/
+WORKDIR /app/.
 
 COPY requirements.txt requirements.txt
-RUN pip install requests
+RUN pip install -r requirements.txt
 
 COPY . .
 

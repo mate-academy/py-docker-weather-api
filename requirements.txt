@@ -3,3 +3,4 @@ flake8-annotations
 flake8-quotes
 flake8-variables-names
 pep8-naming
+requests==2.32.3

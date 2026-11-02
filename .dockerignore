@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+.idea
+.vscode
+.venv
+venv
+__pycache__
+*.pyc
+.flake8
+.pytest_cache
+README.md
+checklist.md
+Dockerfile
+.dockerignore

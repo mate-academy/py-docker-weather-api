@@ -1,7 +1,9 @@
-
 import os
 
 import requests
+
+API_URL = "https://api.weatherapi.com/v1/current.json"
+CITY = "Paris"
 
 
 def get_weather(city: str) -> None:
@@ -14,7 +16,7 @@ def get_weather(city: str) -> None:
 
     try:
         response = requests.get(
-            "https://api.weatherapi.com/v1/current.json",
+            API_URL,
             params={
                 "key": api_key,
                 "q": city,
@@ -41,4 +43,4 @@ def get_weather(city: str) -> None:
 
 
 if __name__ == "__main__":
-    get_weather("Paris")
+    get_weather(CITY)

@@ -1,0 +1,12 @@
+.venv
+.github
+requirmenets.txt
+result.png
+.git
+.idea
+__pycache__
+*.pyc
+.DS_Store
+README.md
+checklist.md
+.flake8

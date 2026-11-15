@@ -1,1 +1,5 @@
-requests==2.34.2
+flake8
+flake8-annotations
+flake8-quotes
+flake8-variables-names
+pep8-naming

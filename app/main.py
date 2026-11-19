@@ -4,6 +4,7 @@ from requests.exceptions import HTTPError, RequestException
 
 URL = "https://api.weatherapi.com/v1/current.json"
 
+
 def get_weather() -> None:
     try:
         api_key = os.environ["API_KEY"]

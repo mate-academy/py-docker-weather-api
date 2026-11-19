@@ -1,4 +1,4 @@
-FROM python:3.15.2
+FROM python:3.15.2-alpine
 LABEL author="Mateusz"
 
 ENV PYTHONUNBUFFERED=1

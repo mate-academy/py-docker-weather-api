@@ -9,7 +9,7 @@ def get_weather() -> None:
     try:
         api_key = os.environ["API_KEY"]
     except KeyError:
-        raise KeyError(f"API_KEY environment variable is not set")
+        raise KeyError("API_KEY environment variable is not set")
 
     params = {
         "key": api_key,
@@ -34,11 +34,18 @@ def get_weather() -> None:
         )
 
     except HTTPError as error:
-        raise HTTPError(f"Weather API HTTP error: {error}") from error
+        raise HTTPError(
+            f"Weather API HTTP error: {error}"
+        ) from error
     except RequestException as error:
-        raise RequestException(f"Weather API connection error: {error}") from error
+        raise RequestException(
+            f"Weather API connection error: {error}"
+        ) from error
     except ValueError as error:
-        raise ValueError("Invalid JSON response from Weather API.") from error
+        raise ValueError(
+            "Invalid JSON response from Weather API."
+        ) from error
+
 
 if __name__ == "__main__":
     get_weather()

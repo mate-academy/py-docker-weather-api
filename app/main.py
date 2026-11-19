@@ -2,10 +2,9 @@ import os
 import requests
 from requests.exceptions import HTTPError, RequestException
 
+URL = "https://api.weatherapi.com/v1/current.json"
 
 def get_weather() -> None:
-    url = "https://api.weatherapi.com/v1/current.json"
-
     try:
         api_key = os.environ["API_KEY"]
     except KeyError:
@@ -19,7 +18,7 @@ def get_weather() -> None:
 
     print("Preforming request to Weather API for city Paris...")
     try:
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(URL, params=params, timeout=10)
         response.raise_for_status()
 
         data = response.json()
